@@ -725,6 +725,15 @@ function configurarEventos() {
     aplicarFiltros();
   });
   
+  // Botão para limpar apenas a busca por nome (no banner)
+  const btnLimparBuscaNome = document.getElementById('btn-limpar-busca-nome');
+  if (btnLimparBuscaNome) {
+    btnLimparBuscaNome.addEventListener('click', () => {
+      document.getElementById('filtro-busca-nome').value = '';
+      aplicarFiltros();
+    });
+  }
+  
   // Toggle de visualização do gráfico de evolução
   const toggleEvolucaoView = document.getElementById('toggle-evolucao-view');
   if (toggleEvolucaoView) {
@@ -1088,6 +1097,9 @@ function aplicarFiltros() {
   console.log(`🔍 Filtros aplicados:`, filtros);
   console.log(`📊 Resultado: ${dadosFiltrados.length} registros`);
   
+  // Atualizar banner de busca por nome
+  atualizarBannerBuscaNome(filtros.buscaNome, dadosFiltrados);
+  
   atualizarDashboard();
   
   // Se houver um relatório aberto, atualizar automaticamente
@@ -1100,6 +1112,135 @@ function aplicarFiltros() {
       showToast('Erro ao atualizar relatório. Verifique o console.', 'danger', 3000);
     }
   }
+}
+
+/**
+ * Atualiza o banner informativo quando há busca por nome
+ */
+function atualizarBannerBuscaNome(buscaNome, dadosFiltrados) {
+  const banner = document.getElementById('banner-busca-nome');
+  const conteudo = document.getElementById('banner-busca-conteudo');
+  
+  if (!banner || !conteudo) return;
+  
+  // Se não há busca por nome, ocultar banner
+  if (!buscaNome || buscaNome.trim() === '') {
+    banner.classList.add('d-none');
+    return;
+  }
+  
+  // Calcular pessoas únicas encontradas
+  const pessoasUnicas = new Map(); // CPF -> { nome, registros }
+  
+  dadosFiltrados.forEach(reg => {
+    const cpf = reg.cpf && reg.cpf.trim() !== '' ? reg.cpf.trim() : null;
+    const nome = reg.nome && reg.nome.trim() !== '' ? reg.nome.trim() : 'Sem nome';
+    
+    if (cpf) {
+      if (!pessoasUnicas.has(cpf)) {
+        pessoasUnicas.set(cpf, {
+          nome: nome,
+          registros: 0,
+          competencias: new Set()
+        });
+      }
+      const pessoa = pessoasUnicas.get(cpf);
+      pessoa.registros++;
+      if (reg.competencia) {
+        pessoa.competencias.add(reg.competencia);
+      }
+    } else {
+      // Se não tem CPF, usar nome como chave
+      const chave = `nome_${nome}`;
+      if (!pessoasUnicas.has(chave)) {
+        pessoasUnicas.set(chave, {
+          nome: nome,
+          registros: 0,
+          competencias: new Set()
+        });
+      }
+      const pessoa = pessoasUnicas.get(chave);
+      pessoa.registros++;
+      if (reg.competencia) {
+        pessoa.competencias.add(reg.competencia);
+      }
+    }
+  });
+  
+  const totalPessoas = pessoasUnicas.size;
+  const totalRegistros = dadosFiltrados.length;
+  
+  // Montar conteúdo do banner
+  let html = '';
+  
+  if (totalPessoas === 0) {
+    html = `
+      <p class="mb-0">
+        <i class="bi bi-exclamation-triangle me-2"></i>
+        <strong>Nenhuma pessoa encontrada</strong> com o termo "<strong>${buscaNome}</strong>".
+      </p>
+    `;
+    banner.classList.remove('alert-info');
+    banner.classList.add('alert-warning');
+  } else {
+    // Listar até 5 pessoas encontradas
+    const pessoasArray = Array.from(pessoasUnicas.values());
+    const pessoasParaMostrar = pessoasArray.slice(0, 5);
+    const temMais = pessoasArray.length > 5;
+    
+    html = `
+      <p class="mb-2">
+        <strong>${totalPessoas}</strong> ${totalPessoas === 1 ? 'pessoa encontrada' : 'pessoas encontradas'} 
+        com o termo "<strong>${buscaNome}</strong>".
+      </p>
+      <p class="mb-2 small">
+        <i class="bi bi-info-circle me-1"></i>
+        <strong>Os relatórios abaixo mostram dados específicos para ${totalPessoas === 1 ? 'esta pessoa' : 'estas pessoas'}.</strong>
+        ${totalRegistros > 1 ? `<br>Total de ${totalRegistros} registro${totalRegistros > 1 ? 's' : ''} encontrado${totalRegistros > 1 ? 's' : ''}.` : ''}
+      </p>
+    `;
+    
+    if (pessoasParaMostrar.length > 0) {
+      html += `
+        <div class="mt-2">
+          <strong class="small">Pessoa${pessoasParaMostrar.length > 1 ? 's' : ''} encontrada${pessoasParaMostrar.length > 1 ? 's' : ''}:</strong>
+          <ul class="mb-0 mt-1 small" style="list-style: none; padding-left: 0;">
+      `;
+      
+      pessoasParaMostrar.forEach(pessoa => {
+        const competenciasTexto = Array.from(pessoa.competencias).sort().join(', ');
+        html += `
+          <li class="mb-1">
+            <i class="bi bi-person-fill me-2 text-primary"></i>
+            <strong>${pessoa.nome}</strong>
+            <span class="text-muted ms-2">
+              (${pessoa.registros} registro${pessoa.registros > 1 ? 's' : ''}${competenciasTexto ? ` - ${competenciasTexto}` : ''})
+            </span>
+          </li>
+        `;
+      });
+      
+      if (temMais) {
+        html += `
+          <li class="text-muted small">
+            <i class="bi bi-three-dots me-2"></i>
+            e mais ${pessoasArray.length - 5} pessoa${pessoasArray.length - 5 > 1 ? 's' : ''}...
+          </li>
+        `;
+      }
+      
+      html += `
+          </ul>
+        </div>
+      `;
+    }
+    
+    banner.classList.remove('alert-warning');
+    banner.classList.add('alert-info');
+  }
+  
+  conteudo.innerHTML = html;
+  banner.classList.remove('d-none');
 }
 
 // Expor charts globalmente para o dark mode toggle
