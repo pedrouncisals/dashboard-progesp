@@ -1,0 +1,22 @@
+{
+  "name": "folha-pagamento-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard de Relatórios de Folha de Pagamento - UNCISAL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "dashboard",
+    "folha-pagamento",
+    "uncisal",
+    "relatorios"
+  ],
+  "author": "UNCISAL",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+

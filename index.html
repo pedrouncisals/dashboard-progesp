@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard Servidores - UNCISAL | Análise de dados de folha de pagamento">
+  <title>Dashboard Servidores - UNCISAL</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cosmo/bootstrap.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  
+  <!-- Google Fonts - Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Forçar Dark Mode Sempre -->
+  <script>
+    (function() {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.body.classList.add('dark-mode');
+    })();
+  </script>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+  
+  <!-- Main Content -->
+  <main class="container-fluid py-5 px-4">
+    <!-- Dashboard Principal -->
+    <div id="dashboard-main">
+    
+    <!-- Header Section -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-4 mb-4">
+          <div>
+            <h1 class="fw-bold mb-3" style="font-size: 2.75rem; letter-spacing: -0.03em; line-height: 1.1; color: var(--color-text-primary);">
+              <i class="bi bi-people-fill text-primary me-3" style="font-size: 2.5rem;"></i>
+              Dashboard Servidores
+            </h1>
+            <p class="text-muted mb-0" style="font-size: 1.125rem; font-weight: 400; line-height: 1.6;">
+              Análise completa e detalhada dos servidores da UNCISAL
+            </p>
+            <div class="mt-3">
+              <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2" style="font-size: 0.875rem; font-weight: 500;">
+                <i class="bi bi-info-circle me-2"></i>
+                Os dados apresentados são extraídos das folhas de pagamento da instituição
+              </span>
+            </div>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <span class="badge badge-success" style="font-size: 0.875rem; padding: 0.625rem 1.25rem; border-radius: 50px; font-weight: 500;">
+              <i class="bi bi-check-circle me-1"></i>
+              <span id="status-dados">Carregando...</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Cards de Métricas -->
+    <div class="row g-3 mb-4" id="metricas-container">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="metric-card">
+          <div class="metric-icon text-primary">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <div class="metric-value" id="total-funcionarios">--</div>
+          <div class="metric-label">Total de Funcionários</div>
+          <div class="metric-trend">
+            <span class="text-muted small">Nos dados carregados</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="metric-card">
+          <div class="metric-icon text-success">
+            <i class="bi bi-currency-dollar"></i>
+          </div>
+          <div class="metric-value" id="total-liquido">--</div>
+          <div class="metric-label">Total Líquido</div>
+          <div class="metric-trend">
+            <span class="text-muted small">Servidores</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="metric-card">
+          <div class="metric-icon text-success">
+            <i class="bi bi-arrow-up-circle-fill"></i>
+          </div>
+          <div class="metric-value" id="total-vantagens">--</div>
+          <div class="metric-label">Total Vantagens</div>
+          <div class="metric-trend">
+            <span class="text-muted small">Proventos totais</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="metric-card">
+          <div class="metric-icon text-danger">
+            <i class="bi bi-arrow-down-circle-fill"></i>
+          </div>
+          <div class="metric-value" id="total-descontos">--</div>
+          <div class="metric-label">Total Descontos</div>
+          <div class="metric-trend">
+            <span class="text-muted small">Descontos totais</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Filtros -->
+    <div class="card mb-4 filter-card">
+      <div class="card-body">
+        <h6 class="fw-semibold mb-3">
+          <i class="bi bi-funnel me-2"></i>Filtros
+        </h6>
+        <div class="row g-3">
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Ano</label>
+            <select class="form-select" id="filtro-ano">
+              <option value="">Todos os anos</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Competência</label>
+            <select class="form-select" id="filtro-competencia">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Lotação</label>
+            <select class="form-select" id="filtro-lotacao">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Função</label>
+            <select class="form-select" id="filtro-funcao">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Vínculo</label>
+            <select class="form-select" id="filtro-vinculo">
+              <option value="">Todos</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Nível</label>
+            <select class="form-select" id="filtro-nivel">
+              <option value="">Todos</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Situação</label>
+            <select class="form-select" id="filtro-situacao">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2 col-sm-6">
+            <label class="form-label">Motivo Afastamento</label>
+            <select class="form-select" id="filtro-motivo-afastamento">
+              <option value="">Todos</option>
+            </select>
+          </div>
+          
+          <div class="col-12">
+            <label class="form-label">Buscar por nome</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="filtro-busca-nome" 
+              placeholder="Digite o nome do funcionário..."
+            >
+          </div>
+          
+          <div class="col-12">
+            <button type="button" class="btn btn-outline-secondary" id="btn-limpar-filtros">
+              <i class="bi bi-x-circle me-2"></i>Limpar Filtros
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Cards de Relatórios -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="fw-bold mb-2" style="font-size: 1.875rem; letter-spacing: -0.02em;">
+          <i class="bi bi-file-text me-2 text-primary"></i>Relatórios Disponíveis
+        </h2>
+        <p class="text-muted mb-4" style="font-size: 0.9375rem;">
+          Acesse análises detalhadas e específicas dos servidores da instituição
+        </p>
+      </div>
+    </div>
+    
+    <div class="row g-3 mb-4" id="relatorios-container">
+      <!-- Relatório 1: Vencimentos -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="vencimentos">
+          <div class="action-icon action-blue">
+            <i class="bi bi-calendar-check-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório de Vencimentos</strong>
+            <span>Lista completa de vencimentos do mês</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 2: Descontos -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="descontos">
+          <div class="action-icon action-red">
+            <i class="bi bi-arrow-down-circle-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório de Descontos</strong>
+            <span>Análise detalhada de descontos aplicados</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 3: Vantagens -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="vantagens">
+          <div class="action-icon action-green">
+            <i class="bi bi-arrow-up-circle-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório de Vantagens</strong>
+            <span>Análise de vantagens e proventos pagos</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 4: Por Lotação -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="lotacao">
+          <div class="action-icon action-purple">
+            <i class="bi bi-building"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório por Lotação</strong>
+            <span>Visão consolidada por unidade/lotação</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 5: Por Vínculo -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="vinculo">
+          <div class="action-icon action-orange">
+            <i class="bi bi-person-badge"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório por Vínculo</strong>
+            <span>Comparação entre tipos de vínculo</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 6: Ativos vs Afastados -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="ativos-afastados">
+          <div class="action-icon action-cyan">
+            <i class="bi bi-person-check-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Ativos vs Afastados</strong>
+            <span>Análise da situação dos funcionários</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 7: Evolução Mensal -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="evolucao-mensal">
+          <div class="action-icon action-indigo">
+            <i class="bi bi-graph-up"></i>
+          </div>
+          <div class="action-text">
+            <strong>Evolução Mensal</strong>
+            <span>Comparação da folha entre meses</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 8: Top Salários -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="top-salarios">
+          <div class="action-icon action-pink">
+            <i class="bi bi-trophy-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Top Salários</strong>
+            <span>Ranking dos maiores salários líquidos</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 9: Funções e Níveis -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="funcoes-niveis">
+          <div class="action-icon action-orange">
+            <i class="bi bi-briefcase-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Funções e Níveis</strong>
+            <span>Análise por função e nível funcional</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 10: Consolidado Geral -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="consolidado">
+          <div class="action-icon action-blue">
+            <i class="bi bi-file-earmark-bar-graph-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório Consolidado</strong>
+            <span>Visão geral completa com todas métricas</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Gráficos -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="fw-bold mb-2" style="font-size: 1.875rem; letter-spacing: -0.02em;">
+          <i class="bi bi-bar-chart-fill me-2 text-primary"></i>Visualizações
+        </h2>
+        <p class="text-muted mb-4" style="font-size: 0.9375rem;">
+          Gráficos interativos e análises visuais dos dados
+        </p>
+      </div>
+    </div>
+    
+    <div class="row g-3 mb-4">
+      <!-- Gráfico: Distribuição por Lotação -->
+      <div class="col-12 col-lg-8">
+        <div class="card h-100 chart-card">
+          <div class="card-header chart-header">
+            <h5 class="card-title mb-0">
+              <i class="bi bi-pie-chart-fill me-2"></i>Distribuição por Lotação
+            </h5>
+            <p class="text-muted small mb-0 mt-1">Funcionários por unidade</p>
+          </div>
+          <div class="card-body chart-container-medium">
+            <canvas id="chart-lotacao"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gráfico: Evolução Mensal -->
+      <div class="col-12 col-lg-4">
+        <div class="card h-100 chart-card">
+          <div class="card-header chart-header chart-header-compact">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <h5 class="card-title mb-0" style="font-size: 0.95rem;">
+                <i class="bi bi-graph-up me-1"></i>Evolução Mensal
+              </h5>
+              <span class="badge" id="variacao-evolucao-mes" style="font-size: 0.65rem; padding: 0.2rem 0.4rem;">
+                <i class="bi bi-arrow-up"></i> Carregando...
+              </span>
+            </div>
+            <div class="btn-group btn-group-sm w-100 mt-1" role="group" id="toggle-evolucao-view">
+              <button type="button" class="btn btn-outline-primary active" data-evolucao-view="ultimo">
+                Último
+              </button>
+              <button type="button" class="btn btn-outline-primary" data-evolucao-view="3meses">
+                3 Meses
+              </button>
+              <button type="button" class="btn btn-outline-primary" data-evolucao-view="todos">
+                Todos
+              </button>
+            </div>
+          </div>
+          <div class="card-body chart-container-compact">
+            <canvas id="chart-evolucao"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gráfico: Top 10 Salários -->
+      <div class="col-12">
+        <div class="card chart-card">
+          <div class="card-header chart-header">
+            <h5 class="card-title mb-0">
+              <i class="bi bi-bar-chart-fill me-2"></i>Top 10 Maiores Salários
+            </h5>
+            <p class="text-muted small mb-0 mt-1">Ranking de maiores valores líquidos</p>
+          </div>
+          <div class="card-body chart-container-medium">
+            <canvas id="chart-top-salarios"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    <!-- Container para Relatórios Detalhados -->
+    <div id="relatorio-detalhado-container" style="min-height: 200px; background: transparent; display: none;"></div>
+    
+  </main>
+  
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  
+  <!-- Loader Overlay -->
+  <div id="loader-overlay" class="loader-overlay">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <div id="loader-message">Carregando...</div>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  
+  <!-- jsPDF e AutoTable -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  
+  <!-- Dark Mode Toggle -->
+  <script>
+    function toggleTheme() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeIcon();
+      
+      // Atualizar gráficos quando tema mudar
+      if (window.dashboardCharts) {
+        Object.values(window.dashboardCharts).forEach(chart => {
+          if (chart && typeof chart.update === 'function') {
+            chart.update();
+          }
+        });
+      }
+    }
+    
+    function updateThemeIcon() {
+      const icon = document.getElementById('theme-icon');
+      if (icon) {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon-stars';
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+  </script>
+  
+  <!-- Main App Script (ES Module) -->
+  <script type="module" src="/pages/dashboard-folha.js"></script>
+  
+</body>
+</html>
+

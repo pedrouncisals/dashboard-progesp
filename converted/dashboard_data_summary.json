@@ -1,0 +1,5936 @@
+{
+  "meta": {
+    "gerado_em": "2025-11-24T19:47:39.492186Z",
+    "arquivos_processados": [
+      "2025-01_1 RELATORIO GERENCIAL JANEIRO.2025.json",
+      "2025-02_2 RELATORIO GERENCIAL FEVEREIRO.2025.json",
+      "2025-03_3 RELATORIO GERENCIAL MARÇO.2025.json",
+      "2025-04_4 RELATORIO GERENCIAL ABRIL.2025.json",
+      "2025-05_5 RELATORIO GERENCIAL MAIO.2025.json",
+      "2025-06_6 RELATORIO GERENCIAL JUNHO.2025.json",
+      "2025-07_7 RELATORIO GERENCIAL JULHO.2025.json",
+      "2025-08_8 RELATORIO GERENCIAL AGOSTO.2025.json",
+      "2025-09_9 RELATORIO GERENCIAL SETEMBRO.2025.json",
+      "2025-10_10 RELATORIO GERENCIAL OUTUBRO.2025.json"
+    ],
+    "total_registros": 27369
+  },
+  "competencias": {
+    "2025-01": {
+      "competencia": "2025-01",
+      "count": 2769,
+      "liquido": 20825608.919999957,
+      "vantagem": 30065465.819999967,
+      "desconto": 9239856.900000012
+    },
+    "2025-02": {
+      "competencia": "2025-02",
+      "count": 2739,
+      "liquido": 21140043.160000004,
+      "vantagem": 30039313.179999992,
+      "desconto": 8899270.02000001
+    },
+    "2025-03": {
+      "competencia": "2025-03",
+      "count": 2758,
+      "liquido": 21001880.959999956,
+      "vantagem": 29916820.040000007,
+      "desconto": 8914939.08
+    },
+    "2025-04": {
+      "competencia": "2025-04",
+      "count": 2730,
+      "liquido": 20943681.69999998,
+      "vantagem": 29967354.739999972,
+      "desconto": 9023673.04000001
+    },
+    "2025-05": {
+      "competencia": "2025-05",
+      "count": 2728,
+      "liquido": 21013179.51999996,
+      "vantagem": 29995413.419999987,
+      "desconto": 8982233.9
+    },
+    "2025-06": {
+      "competencia": "2025-06",
+      "count": 2726,
+      "liquido": 22188562.700000003,
+      "vantagem": 31701542.740000017,
+      "desconto": 9512980.040000001
+    },
+    "2025-07": {
+      "competencia": "2025-07",
+      "count": 2719,
+      "liquido": 22465312.24000001,
+      "vantagem": 32212953.700000033,
+      "desconto": 9747641.459999993
+    },
+    "2025-08": {
+      "competencia": "2025-08",
+      "count": 2708,
+      "liquido": 24381859.260000005,
+      "vantagem": 31846635.060000032,
+      "desconto": 7464775.799999993
+    },
+    "2025-09": {
+      "competencia": "2025-09",
+      "count": 2795,
+      "liquido": 22344596.240000013,
+      "vantagem": 31886439.740000032,
+      "desconto": 9541843.499999996
+    },
+    "2025-10": {
+      "competencia": "2025-10",
+      "count": 2697,
+      "liquido": 22453037.60000001,
+      "vantagem": 32120448.83999999,
+      "desconto": 9667411.239999996
+    }
+  },
+  "lotacoes": {
+    "PROFA VALERIA": {
+      "chave": "PROFA VALERIA",
+      "count": 180,
+      "liquido": 538925.2299999999,
+      "vantagem": 841930.4800000008,
+      "desconto": 303005.25,
+      "funcionarios": [
+        "ADAILTON ISNAL",
+        "ALEXANDRE JOSE MOREIRA NASCIMENTO",
+        "CARLOS GUSTAVO DE MEDEIROS ROCHA CAVALCANTE",
+        "CESAR GUIMARAES BRAGA COSTA",
+        "EMILENE ANDRADA DONATO"
+      ]
+    },
+    "PORTUGAL RAMALHO": {
+      "chave": "PORTUGAL RAMALHO",
+      "count": 3245,
+      "liquido": 11002318.15999997,
+      "vantagem": 15166270.569999965,
+      "desconto": 4163952.409999985,
+      "funcionarios": [
+        "ADAILTON SANTOS SILVA",
+        "ADAUTO JUSTINO DOS SANTOS",
+        "ADELAIDE MOREIRA SCHEIDEGGER DA SILVA",
+        "ADRIANA PIMENTEL AZEVEDO",
+        "ALBENY CARVALHO DE AMORIM"
+      ]
+    },
+    "CHEFIA GABINETE": {
+      "chave": "CHEFIA GABINETE",
+      "count": 50,
+      "liquido": 140089.49000000008,
+      "vantagem": 166139.53999999995,
+      "desconto": 26050.050000000007,
+      "funcionarios": [
+        "ADALBERTO BANDEIRA DE MELO NETO",
+        "ADELSON DA SILVA",
+        "AMANDA DE MESQUITA VASCONCELOS FONSECA",
+        "MYLENE DE MELLO COSTA PEREIRA BARBOSA",
+        "PAULO SERGIO LINS DA SILVA"
+      ]
+    },
+    "MATERN ESCOLA SANTA": {
+      "chave": "MATERN ESCOLA SANTA",
+      "count": 8973,
+      "liquido": 37816721.98999999,
+      "vantagem": 54485036.119998865,
+      "desconto": 16668314.129999844,
+      "funcionarios": [
+        "ADALBERTO INACIO SILVA DOS SANTOS",
+        "ADEILTON VERISSIMO DUARTE",
+        "ADIELMA SILVA DOS SANTOS",
+        "ADJANE DELBERT DA SILVA LOPES",
+        "ADRIANA AMORIM DOS REIS"
+      ]
+    },
+    "MOVIMENTACAO FUNCIONA": {
+      "chave": "MOVIMENTACAO FUNCIONA",
+      "count": 84,
+      "liquido": 316105.29000000015,
+      "vantagem": 444394.5699999999,
+      "desconto": 128289.27999999997,
+      "funcionarios": [
+        "ADEHILDE MARIA SANTOS KESSELS",
+        "BARBARA KAMILLA FELIX SALGUEIRO",
+        "CARLOS ALBERTO DE MACEDO",
+        "GLAUCIA JANAUYS DE AMORIM",
+        "JOSIETE FRAGOSO SANTOS COSTA"
+      ]
+    },
+    "- SAUDE": {
+      "chave": "- SAUDE",
+      "count": 729,
+      "liquido": 3029753.8200000017,
+      "vantagem": 4308477.929999999,
+      "desconto": 1278724.1099999996,
+      "funcionarios": [
+        "ADEILDO DA SILVA RIJO",
+        "ADEILMA AGUIAR DOS SANTOS",
+        "AFRA VIVIANE DE ALMEIDA COUTINHO HARROTT",
+        "ALBA MARIA WANDERLEY SILVA QUINTELA CAVALCANTE",
+        "ALDA SOCORRO DE SOUZA PONTES"
+      ]
+    },
+    "REITORIA": {
+      "chave": "REITORIA",
+      "count": 1128,
+      "liquido": 3937861.480000029,
+      "vantagem": 5000045.079999974,
+      "desconto": 1062183.6000000043,
+      "funcionarios": [
+        "ADEILDO PEREIRA DE ANDRADE FILHO",
+        "ADRIANO LUIZ DOS SANTOS MELO",
+        "AJEANY ANGELICA BARBOSA FREIRE MENDES",
+        "ALICE NUNES DE BARROS",
+        "AMANDA PATRICIA SANTOS LORENA DE MENEZES"
+      ]
+    },
+    "HELVIO AUTO": {
+      "chave": "HELVIO AUTO",
+      "count": 4133,
+      "liquido": 15146973.580000069,
+      "vantagem": 21038803.410000052,
+      "desconto": 5891829.829999955,
+      "funcionarios": [
+        "ADELIA MARIA ANDRADE DA FONSECA",
+        "ADRIANA MARCIA SIQUEIRA CAVALCANTE BERNARDO",
+        "ADRIANA MARIA DE OLIVEIRA FREIRE",
+        "ADRIANA RODRIGUES DA SILVA VIEIRA",
+        "ADRIANA VIEIRA JUNGES"
+      ]
+    },
+    "CENTRO DE CIENCIAS DA SAUDE": {
+      "chave": "CENTRO DE CIENCIAS DA SAUDE",
+      "count": 1428,
+      "liquido": 8863337.630000005,
+      "vantagem": 13246733.840000005,
+      "desconto": 4383396.209999983,
+      "funcionarios": [
+        "ADRIANA DE MEDEIROS MELO",
+        "ADRIANA DI MARTELLA ORSI",
+        "ADRIANA REIS DE BARROS",
+        "ALBA MARIA BOMFIM DE FRANCA",
+        "ALBERTO MONTEIRO PEIXOTO"
+      ]
+    },
+    "SERVICO VERIFICACAO OBITOS": {
+      "chave": "SERVICO VERIFICACAO OBITOS",
+      "count": 454,
+      "liquido": 1716840.7700000007,
+      "vantagem": 2386839.4999999977,
+      "desconto": 669998.7299999992,
+      "funcionarios": [
+        "ADRIANA ROSENDO DE LIMA",
+        "ANA PAULA DE SOUZA E PINTO",
+        "ANDRE DE SOUZA TOMAZ",
+        "ANTONIO FERNANDO DE SOUSA BEZERRA",
+        "DAVI EDUARDO MELQUIADES PEREIRA"
+      ]
+    },
+    "CENTRO DE CIENCIAS INTEGRADORAS": {
+      "chave": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "count": 1115,
+      "liquido": 6933402.010000002,
+      "vantagem": 10298277.52000004,
+      "desconto": 3364875.509999989,
+      "funcionarios": [
+        "ADRIANE BORGES CABRAL",
+        "ALDEMAR ARAUJO CASTRO",
+        "ALENILZA BEZERRA COSTA",
+        "ALMIRA ALVES DOS SANTOS",
+        "AMAURI CLEMENTE DA ROCHA"
+      ]
+    },
+    "SUPERVISAO ADMINISTRATIVA": {
+      "chave": "SUPERVISAO ADMINISTRATIVA",
+      "count": 267,
+      "liquido": 558387.7900000006,
+      "vantagem": 737140.4599999998,
+      "desconto": 178752.6700000001,
+      "funcionarios": [
+        "ADSON BRANCO RAMALHO LINS",
+        "AFRANIO JORGE DA SILVA",
+        "ANTONIO CARLOS DA SILVA",
+        "ANTONIO MOISES DE OLIVEIRA",
+        "AVELAR CANSANCAO DE VASCONCELOS"
+      ]
+    },
+    "AMBULATORIO ESPECIALIDADES": {
+      "chave": "AMBULATORIO ESPECIALIDADES",
+      "count": 365,
+      "liquido": 1253158.599999999,
+      "vantagem": 1839445.3899999969,
+      "desconto": 586286.7899999999,
+      "funcionarios": [
+        "AGDA ALVES SOARES",
+        "AMANDA APARECIDA DE ARAUJO BRAGA",
+        "ARNALDO ALVES DE MENDONCA",
+        "ARNALDO ALVES DE MENDONCA",
+        "CAIO LIMA DOS SANTOS"
+      ]
+    },
+    "CENTRO PATOL MEDICINA": {
+      "chave": "CENTRO PATOL MEDICINA",
+      "count": 854,
+      "liquido": 3290994.0300000026,
+      "vantagem": 4415918.600000005,
+      "desconto": 1124924.5700000005,
+      "funcionarios": [
+        "ALBA DE FATIMA ROCHA DE MENEZES",
+        "ALBENISE HELENA LUDUGERO",
+        "ALINE KEILA NASCIMENTO DA SILVA",
+        "ANA ROSE CARVALHO DE ARAUJO",
+        "ANIELZE PEREIRA DOS SANTOS"
+      ]
+    },
+    "CONTAS PAGAR": {
+      "chave": "CONTAS PAGAR",
+      "count": 110,
+      "liquido": 247127.28000000012,
+      "vantagem": 341676.8699999997,
+      "desconto": 94549.58999999997,
+      "funcionarios": [
+        "ALEC THOMAS LINS SANTOS",
+        "FERNANDA MAURICIO QUEIROZ",
+        "HUDSON WAGNER PIMENTEIRA THOMAZ",
+        "JARDEL GOMES DOS SANTOS",
+        "JHONY RIBEIRO DE FRANCA"
+      ]
+    },
+    "MATERNIDADE": {
+      "chave": "MATERNIDADE",
+      "count": 259,
+      "liquido": 1042501.4999999991,
+      "vantagem": 1601881.6499999997,
+      "desconto": 559380.1500000001,
+      "funcionarios": [
+        "ALESSANDRA VIANA ROLIM",
+        "ANA MARGARETHE FLOERING GONCALVES",
+        "ANA MARIA BUIQUE",
+        "ANDRE LUIZ GUEDES DE MELO",
+        "ANDREA ROGERIO DA ROCHA ARAUJO"
+      ]
+    },
+    "MATERN ESC SANTA": {
+      "chave": "MATERN ESC SANTA",
+      "count": 1440,
+      "liquido": 4480205.619999995,
+      "vantagem": 6017773.010000033,
+      "desconto": 1537567.3899999978,
+      "funcionarios": [
+        "ALESSANDRO CALDAS LINS",
+        "ALEXANDRA MARQUES LUZ DE QUEIROZ",
+        "ALINE DA SILVA TAVARES",
+        "AMANDA ARAUJO SOUZA",
+        "ANA CAROLINE TEIXEIRA DA COSTA GAMA LINS"
+      ]
+    },
+    "CENTRO DE TECNOLOGIA": {
+      "chave": "CENTRO DE TECNOLOGIA",
+      "count": 382,
+      "liquido": 1476801.8599999987,
+      "vantagem": 2050504.2299999995,
+      "desconto": 573702.3700000005,
+      "funcionarios": [
+        "ALESSANDRO DE MELO OMENA",
+        "ALEX MELO DA SILVA",
+        "ANDREW YAN SOLANO MARINHO",
+        "ANTONIA ADRIANA ALVES DE ALBUQUERQUE",
+        "BYRON LOUREIRO LANVERLY DE MELO JUNIOR"
+      ]
+    },
+    "TECNOLOGIA INFORM": {
+      "chave": "TECNOLOGIA INFORM",
+      "count": 110,
+      "liquido": 409355.7199999999,
+      "vantagem": 560402.7500000001,
+      "desconto": 151047.03000000006,
+      "funcionarios": [
+        "ALEX LEANDRO PONTES",
+        "ALEXANDRE JOSE BRAGA DA SILVA",
+        "CARLA FABIANA GOMES DE SOUZA",
+        "MICHAELL JOSE ARAUJO DE SOUZA",
+        "SERGIO LEITE TENORIO"
+      ]
+    },
+    "SAUDE BEM-EST": {
+      "chave": "SAUDE BEM-EST",
+      "count": 120,
+      "liquido": 385216.13000000024,
+      "vantagem": 606018.7500000001,
+      "desconto": 220802.6200000002,
+      "funcionarios": [
+        "ALEXANDRE ROGERIO DA ROCHA",
+        "CARLA CRISTIANA DE MISSIAS MEDEIROS",
+        "GILVANA MARIA VIEIRA XAVIER",
+        "GIVANILZE BASTOS DOS SANTOS",
+        "JUSSARA BARBOSA ATAIDE"
+      ]
+    },
+    "SUPERVISAO LOGISTICA": {
+      "chave": "SUPERVISAO LOGISTICA",
+      "count": 200,
+      "liquido": 483266.65000000055,
+      "vantagem": 657434.5800000007,
+      "desconto": 174167.9300000001,
+      "funcionarios": [
+        "ALICE DE MELO XAVIER DA SILVA",
+        "ANTONIO FERREIRA DA SILVA NETO",
+        "AUGUSTO CESAR MAIA MEDEIROS",
+        "CARLA REJANE DE MELO OLIVEIRA",
+        "CLAUDEVAN DO NASCIMENTO LINS"
+      ]
+    },
+    "COORDENADORIA CURSO": {
+      "chave": "COORDENADORIA CURSO",
+      "count": 14,
+      "liquido": 59782.67,
+      "vantagem": 91538.8,
+      "desconto": 31756.13,
+      "funcionarios": [
+        "ALINE DE ARAUJO MARQUES MOUSINHO",
+        "ALINE DE ARAUJO MARQUES MOUSINHO",
+        "ANA ELIZABETH DOS SANTOS LINS",
+        "AUGUSTO CESAR ALVES DE OLIVEIRA",
+        "EDER DA SILVA ROCHA SANTOS"
+      ]
+    },
+    "DESENVOLVIMENTO PE": {
+      "chave": "DESENVOLVIMENTO PE",
+      "count": 50,
+      "liquido": 181110.05999999994,
+      "vantagem": 228290.76999999996,
+      "desconto": 47180.71,
+      "funcionarios": [
+        "ALINE LEMOS DE CARVALHO",
+        "GIVANCLEIDE DE OLIVEIRA SANTANA",
+        "KARINE REIS MATOS CIRIACO",
+        "LEOPOLDINA DA GRACA CORREIA",
+        "RAFFAEL GONCALVES MOTTA"
+      ]
+    },
+    "CENTRO ESPECIALIZADO REABILITACA": {
+      "chave": "CENTRO ESPECIALIZADO REABILITACA",
+      "count": 553,
+      "liquido": 2314343.7500000014,
+      "vantagem": 3215281.0699999942,
+      "desconto": 900937.3200000008,
+      "funcionarios": [
+        "ALINE TENORIO LINS CARNAUBA",
+        "ALYNNE ACIOLI SANTOS",
+        "ALYNNE ACIOLI SANTOS",
+        "ANA PAULA DOS SANTOS GONCALVES MACHADO",
+        "ANDRE DOS SANTOS RODRIGUES"
+      ]
+    },
+    "CENTRO EDUCACAO DISTANCIA": {
+      "chave": "CENTRO EDUCACAO DISTANCIA",
+      "count": 123,
+      "liquido": 517092.00000000023,
+      "vantagem": 756331.8999999997,
+      "desconto": 239239.9000000001,
+      "funcionarios": [
+        "ALYNNE ACIOLI SANTOS",
+        "ALYNNE ACIOLI SANTOS",
+        "ANA CAROLINA DA SILVA SANTOS",
+        "ANDELINE DE OLIVEIRA MOURA LOPES",
+        "CYNARA MARIA DA SILVA SANTOS"
+      ]
+    },
+    "RELACOES COMUNITARIAS": {
+      "chave": "RELACOES COMUNITARIAS",
+      "count": 20,
+      "liquido": 72052.64000000001,
+      "vantagem": 89683.18999999999,
+      "desconto": 17630.550000000003,
+      "funcionarios": [
+        "ANA CELME MEDEIROS CIRIACO",
+        "ROBERTA GOMES FERNANDES LINS DE ARAUJO",
+        "ANA CELME MEDEIROS CIRIACO",
+        "ROBERTA GOMES FERNANDES LINS DE ARAUJO",
+        "ANA CELME MEDEIROS CIRIACO"
+      ]
+    },
+    "CHEFIA BIBLIOTECA": {
+      "chave": "CHEFIA BIBLIOTECA",
+      "count": 73,
+      "liquido": 279955.7400000001,
+      "vantagem": 387206.53999999975,
+      "desconto": 107250.7999999999,
+      "funcionarios": [
+        "ANA LUZIA COSTA E SILVA CORTES",
+        "ANA PAULA MOURA DA SILVA",
+        "GABRIELA CRISPIM DA SILVA",
+        "GARDENIA DE CASTRO",
+        "ITAMAR SAYAO ARANHA FALCAO DE AZEVEDO"
+      ]
+    },
+    "ASSESSORIA COMUNICACAO": {
+      "chave": "ASSESSORIA COMUNICACAO",
+      "count": 50,
+      "liquido": 148611.4,
+      "vantagem": 178813.59999999998,
+      "desconto": 30202.199999999975,
+      "funcionarios": [
+        "ANA PATRICIA CAVALCANTE BARROS",
+        "DANIELLE CANDIDO DA SILVA NASCIMENTO",
+        "DAYSE NATHALY DE ALMEIDA VALENCA",
+        "LEONARLLY RICITELLY NUNES DE ARAUJO DA SILVA",
+        "PEDRO HENRIQUE DANTAS DA SILVA"
+      ]
+    },
+    "GESTAO ACADEM": {
+      "chave": "GESTAO ACADEM",
+      "count": 49,
+      "liquido": 77783.27999999998,
+      "vantagem": 116833.95000000001,
+      "desconto": 39050.670000000006,
+      "funcionarios": [
+        "ANDRE COSTA GOIS",
+        "ERALDO DO NASCIMENTO",
+        "JOSE CARLOS DE LIMA JUNIOR",
+        "JOSE DOS SANTOS OLIVEIRA",
+        "JULIO CESAR MOURA DE LIMA"
+      ]
+    },
+    "FINANCAS CONTABILID": {
+      "chave": "FINANCAS CONTABILID",
+      "count": 80,
+      "liquido": 286706.54000000004,
+      "vantagem": 410519.1,
+      "desconto": 123812.55999999997,
+      "funcionarios": [
+        "BONIFACIO FERREIRA COLATINO",
+        "CICERO LIMA DE MELO",
+        "MAELI DOS SANTOS SANTANA",
+        "MARIANA FERREIRA NUNES",
+        "MARIO HENRIQUE BASTO DE LIMA"
+      ]
+    },
+    "PROCEDIMENTOS LICITAT": {
+      "chave": "PROCEDIMENTOS LICITAT",
+      "count": 40,
+      "liquido": 150470.46999999997,
+      "vantagem": 198307.29000000007,
+      "desconto": 47836.820000000014,
+      "funcionarios": [
+        "BRUNO DA SILVA BANDEIRA",
+        "DELLANE DE MIRANDA FREITAS MAMEDE",
+        "SERGIO CARLOS DO REGO NASCIMENTO",
+        "WANDESSON DE SOUZA SILVA",
+        "BRUNO DA SILVA BANDEIRA"
+      ]
+    },
+    "PESSOAS ACAD": {
+      "chave": "PESSOAS ACAD",
+      "count": 30,
+      "liquido": 104954.71999999997,
+      "vantagem": 128665.67999999996,
+      "desconto": 23710.96,
+      "funcionarios": [
+        "CARLA PATRICIA FERREIRA DA SILVA LIMA",
+        "MARIA ESTEFANIA TENORIO DE HOLANDA CABRAL COSTA",
+        "TAYNAN FERNANDES DE OLIVEIRA TOURINHO",
+        "CARLA PATRICIA FERREIRA DA SILVA LIMA",
+        "MARIA ESTEFANIA TENORIO DE HOLANDA CABRAL COSTA"
+      ]
+    },
+    "- EDUCACAO": {
+      "chave": "- EDUCACAO",
+      "count": 62,
+      "liquido": 245457.17999999996,
+      "vantagem": 340254.71,
+      "desconto": 94797.52999999998,
+      "funcionarios": [
+        "CARLOS AUGUSTO DE OLIVEIRA CAVALCANTE",
+        "DENISE CORREIA FERREIRA BERTONI",
+        "ELUZA VITORIANA PIMENTEL PEREIRA",
+        "JOSE HERMANE FIRMINO NETO",
+        "JOSEMIR DE ALMEIDA LIMA"
+      ]
+    },
+    "GOVERNANCA TRANSPAR": {
+      "chave": "GOVERNANCA TRANSPAR",
+      "count": 20,
+      "liquido": 57752.659999999996,
+      "vantagem": 68713.30000000002,
+      "desconto": 10960.64,
+      "funcionarios": [
+        "CAUE ASSIS DE MOURA",
+        "SVETLANA MARIA WANDERLEI DE BARROS",
+        "CAUE ASSIS DE MOURA",
+        "SVETLANA MARIA WANDERLEI DE BARROS",
+        "CAUE ASSIS DE MOURA"
+      ]
+    },
+    "FORCA TRAB": {
+      "chave": "FORCA TRAB",
+      "count": 150,
+      "liquido": 392806.1599999999,
+      "vantagem": 505335.7899999991,
+      "desconto": 112529.62999999998,
+      "funcionarios": [
+        "CLEA LUZIA DOS SANTOS GUEDES",
+        "EVERTON VASCONCELOS CEZAR",
+        "FERNANDA FEITOSA ARAUJO SILVA",
+        "FRANCIELLE MARIA FERREIRA DANTAS",
+        "JACKELINE CRISTIANE DA SILVA"
+      ]
+    },
+    "ASSESSORIA CERIMONIAL": {
+      "chave": "ASSESSORIA CERIMONIAL",
+      "count": 10,
+      "liquido": 35128.55,
+      "vantagem": 40001.17,
+      "desconto": 4872.620000000001,
+      "funcionarios": [
+        "DAVID SILVA DE LIMA",
+        "DAVID SILVA DE LIMA",
+        "DAVID SILVA DE LIMA",
+        "DAVID SILVA DE LIMA",
+        "DAVID SILVA DE LIMA"
+      ]
+    },
+    "CONTROLADORIA INTERNA": {
+      "chave": "CONTROLADORIA INTERNA",
+      "count": 50,
+      "liquido": 143085.68,
+      "vantagem": 201051.40000000002,
+      "desconto": 57965.71999999999,
+      "funcionarios": [
+        "DENISE DE QUEIROZ PEREIRA ALVES",
+        "LIDIA SILVA DE BARROS LIMA",
+        "LIVIA ANDRESA BRASIL FIGUEIROA",
+        "MARIA LUCIA FRANCISCO DE ALMEIDA SANTOS",
+        "THIAGO JOSE CAVALCANTE DOS SANTOS"
+      ]
+    },
+    "PLANEJAMENTO ORCAME": {
+      "chave": "PLANEJAMENTO ORCAME",
+      "count": 60,
+      "liquido": 130190.32000000002,
+      "vantagem": 170602.6899999999,
+      "desconto": 40412.370000000024,
+      "funcionarios": [
+        "ERICA MARIA MARTINS SANTOS",
+        "FRANCISCO PEREIRA LIMA JUNIOR",
+        "GUIOMAR ALVES GOES",
+        "KISSINGER GETULIO RUFINO BEZERRA",
+        "LARISSA CAVALCANTI DE OMENA"
+      ]
+    },
+    "OUVIDORIA": {
+      "chave": "OUVIDORIA",
+      "count": 20,
+      "liquido": 52588.430000000015,
+      "vantagem": 64201.78999999998,
+      "desconto": 11613.360000000002,
+      "funcionarios": [
+        "FERNANDA BEZERRA",
+        "LEILANE CRISTINA DE ARAUJO SILVA",
+        "FERNANDA BEZERRA",
+        "LEILANE CRISTINA DE ARAUJO SILVA",
+        "FERNANDA BEZERRA"
+      ]
+    },
+    "ASSIST PSICOPEDAG": {
+      "chave": "ASSIST PSICOPEDAG",
+      "count": 17,
+      "liquido": 69665.53,
+      "vantagem": 112537.46000000002,
+      "desconto": 42871.93,
+      "funcionarios": [
+        "GEDALIA MENDES DE SOUZA",
+        "KATIA REGINA DOS SANTOS SILVA",
+        "GEDALIA MENDES DE SOUZA",
+        "KATIA REGINA DOS SANTOS SILVA",
+        "GEDALIA MENDES DE SOUZA"
+      ]
+    },
+    "POLITICAS ESTUDANTIS": {
+      "chave": "POLITICAS ESTUDANTIS",
+      "count": 10,
+      "liquido": 28378.750000000004,
+      "vantagem": 31098.039999999997,
+      "desconto": 2719.2900000000004,
+      "funcionarios": [
+        "IVANA LIMA MOURA",
+        "IVANA LIMA MOURA",
+        "IVANA LIMA MOURA",
+        "IVANA LIMA MOURA",
+        "IVANA LIMA MOURA"
+      ]
+    },
+    "CONTROLADORIA ACADEMI": {
+      "chave": "CONTROLADORIA ACADEMI",
+      "count": 49,
+      "liquido": 113456.17999999998,
+      "vantagem": 159250.85,
+      "desconto": 45794.66999999999,
+      "funcionarios": [
+        "JACILENE DOS SANTOS SILVA",
+        "JONAS MARQUES PEREIRA",
+        "JOSE LINO DA HORA",
+        "JOSE PAULO GONCALVES DE LIMA",
+        "JACILENE DOS SANTOS SILVA"
+      ]
+    },
+    "FIN CONT": {
+      "chave": "FIN CONT",
+      "count": 40,
+      "liquido": 113946.83999999998,
+      "vantagem": 148323.06,
+      "desconto": 34376.22,
+      "funcionarios": [
+        "JEANDERSON FERREIRA DE OLIVEIRA",
+        "JULIANA DE SOUZA GOMES",
+        "REYNALD KELVYN DE ALMEIDA LESSA",
+        "TEREZA CRISTINA MOREIRA LIMA",
+        "JEANDERSON FERREIRA DE OLIVEIRA"
+      ]
+    },
+    "ASSESSORIA TECNICA": {
+      "chave": "ASSESSORIA TECNICA",
+      "count": 80,
+      "liquido": 296813.04999999993,
+      "vantagem": 385531.91999999975,
+      "desconto": 88718.86999999998,
+      "funcionarios": [
+        "KATIUCIA LEITE DOS SANTOS",
+        "LEILSON MARCOS GRANGEIRO DOS SANTOS",
+        "MAISA GOMES BRANDAO",
+        "MARIA CAROLINA GOMES RAMALHO DE FREITAS",
+        "MARILIA SOARES DE SALLES"
+      ]
+    },
+    "LATO SE": {
+      "chave": "LATO SE",
+      "count": 10,
+      "liquido": 48165.579999999994,
+      "vantagem": 62757.24999999999,
+      "desconto": 14591.670000000002,
+      "funcionarios": [
+        "LUCIANO BAIRROS DA SILVA",
+        "LUCIANO BAIRROS DA SILVA",
+        "LUCIANO BAIRROS DA SILVA",
+        "LUCIANO BAIRROS DA SILVA",
+        "LUCIANO BAIRROS DA SILVA"
+      ]
+    },
+    "COORDENADORIA JURIDICA": {
+      "chave": "COORDENADORIA JURIDICA",
+      "count": 50,
+      "liquido": 322193.75,
+      "vantagem": 473289.54000000004,
+      "desconto": 151095.78999999998,
+      "funcionarios": [
+        "LUIZ DUERNO BARBOSA DE CARVALHO",
+        "MARGARIDA MARIA DO CASAL MELO",
+        "PATRICIA DOS SANTOS",
+        "RAFAEL DELGADO DA SILVA",
+        "WILLIAMS PACIFICO ARAUJO DOS SANTOS"
+      ]
+    },
+    "SUPERVISAO EXTENSAO": {
+      "chave": "SUPERVISAO EXTENSAO",
+      "count": 10,
+      "liquido": 14466.730000000001,
+      "vantagem": 25694.399999999998,
+      "desconto": 11227.67,
+      "funcionarios": [
+        "ROBERTA ALVES SILVA",
+        "ROBERTA ALVES SILVA",
+        "ROBERTA ALVES SILVA",
+        "ROBERTA ALVES SILVA",
+        "ROBERTA ALVES SILVA"
+      ]
+    },
+    "ASSISTENCIA ESTUDANTI": {
+      "chave": "ASSISTENCIA ESTUDANTI",
+      "count": 10,
+      "liquido": 46209.12999999999,
+      "vantagem": 66796.98,
+      "desconto": 20587.850000000006,
+      "funcionarios": [
+        "ROSEANE LIMA DA SILVA RAPOSO",
+        "ROSEANE LIMA DA SILVA RAPOSO",
+        "ROSEANE LIMA DA SILVA RAPOSO",
+        "ROSEANE LIMA DA SILVA RAPOSO",
+        "ROSEANE LIMA DA SILVA RAPOSO"
+      ]
+    },
+    "SEM LOTAÇÃO": {
+      "chave": "SEM LOTAÇÃO",
+      "count": 10,
+      "liquido": 109378881.14999999,
+      "vantagem": 154876193.64,
+      "desconto": 45497312.489999995,
+      "funcionarios": [
+        "*Totais*",
+        "*Totais*",
+        "*Totais*",
+        "*Totais*",
+        "*Totais*"
+      ]
+    },
+    "SUPERVISAO PESQUISA": {
+      "chave": "SUPERVISAO PESQUISA",
+      "count": 3,
+      "liquido": 6368.73,
+      "vantagem": 8136.549999999999,
+      "desconto": 1767.8200000000002,
+      "funcionarios": [
+        "MADERLENE BEZERRA DO NASCIMENTO FILHA",
+        "MADERLENE BEZERRA DO NASCIMENTO FILHA",
+        "MADERLENE BEZERRA DO NASCIMENTO FILHA"
+      ]
+    }
+  },
+  "vinculos": {
+    "ESTATUTARIO CIVIL": {
+      "chave": "ESTATUTARIO CIVIL",
+      "count": 23527,
+      "liquido": 97379431.4799998,
+      "vantagem": 140023185.1300025,
+      "desconto": 42643753.6499999,
+      "funcionarios": [
+        "ADAILTON ISNAL",
+        "ADAILTON SANTOS SILVA",
+        "ADALBERTO INACIO SILVA DOS SANTOS",
+        "ADEHILDE MARIA SANTOS KESSELS",
+        "ADEILDO DA SILVA RIJO"
+      ]
+    },
+    "CARGO COMISSIONADO": {
+      "chave": "CARGO COMISSIONADO",
+      "count": 310,
+      "liquido": 818383.3199999975,
+      "vantagem": 946728.2599999993,
+      "desconto": 128344.94000000002,
+      "funcionarios": [
+        "ADALBERTO BANDEIRA DE MELO NETO",
+        "ADELSON DA SILVA",
+        "AGDA ALVES SOARES",
+        "ALEX LEANDRO PONTES",
+        "ANA MARIA JATOBA CORREIA RAMIREZ"
+      ]
+    },
+    "CONTR.TEMPORARIO - PSS": {
+      "chave": "CONTR.TEMPORARIO - PSS",
+      "count": 1903,
+      "liquido": 4518714.609999998,
+      "vantagem": 5277102.680000083,
+      "desconto": 758388.0700000029,
+      "funcionarios": [
+        "ADAUTO JUSTINO DOS SANTOS",
+        "ADRIANA ROSENDO DE LIMA",
+        "ALAN ANSELMO DA SILVA",
+        "ALESSANDRA SANTOS CAVALCANTE",
+        "ALINE DA SILVA TAVARES"
+      ]
+    },
+    "ESTAT CIVIL - POS RPC": {
+      "chave": "ESTAT CIVIL - POS RPC",
+      "count": 933,
+      "liquido": 4364450.460000002,
+      "vantagem": 6056671.490000005,
+      "desconto": 1692221.0300000007,
+      "funcionarios": [
+        "ADRIANA PIMENTEL AZEVEDO",
+        "ALDA TEIXEIRA SANTOS",
+        "ALEXSANDRA NUNES DE ASSUNCAO",
+        "AMANDA ALVES DA SILVA LYRA",
+        "AMANDA CRISTINE FERREIRA DOS SANTOS"
+      ]
+    },
+    "RESIDENCIA MEDICA": {
+      "chave": "RESIDENCIA MEDICA",
+      "count": 505,
+      "liquido": 1853241.119999993,
+      "vantagem": 2051128.7000000179,
+      "desconto": 197887.58000000124,
+      "funcionarios": [
+        "ALICE NUNES DE BARROS",
+        "ANA BEATRIZ DA COSTA ALVES",
+        "ANA CLAUDIA PEREIRA DA SILVA",
+        "ANA LAURA SILVA MONTI",
+        "ANA LETICIA DA CONCEICAO ROCHA"
+      ]
+    },
+    "FUNC PREF SM CAMPOS-AL": {
+      "chave": "FUNC PREF SM CAMPOS-AL",
+      "count": 10,
+      "liquido": 92340.96,
+      "vantagem": 124419.01,
+      "desconto": 32078.050000000003,
+      "funcionarios": [
+        "BARBARA HELENA BERNARDES CABRAL",
+        "BARBARA HELENA BERNARDES CABRAL",
+        "BARBARA HELENA BERNARDES CABRAL",
+        "BARBARA HELENA BERNARDES CABRAL",
+        "BARBARA HELENA BERNARDES CABRAL"
+      ]
+    },
+    "CONTRATO TEMPORARIO": {
+      "chave": "CONTRATO TEMPORARIO",
+      "count": 137,
+      "liquido": 271328.4799999999,
+      "vantagem": 296288.58999999985,
+      "desconto": 24960.10999999996,
+      "funcionarios": [
+        "BERNADETE MARIA DA SILVA",
+        "EDJANE BARBOSA DO NASCIMENTO OLIVEIRA",
+        "GIVALDO CORREIA CARDOSO",
+        "IRACILDA AGAPITO OLIVEIRA",
+        "JOSE RAIMUNDO DOS SANTOS"
+      ]
+    },
+    "FUNC GOV PERNAMBUCO": {
+      "chave": "FUNC GOV PERNAMBUCO",
+      "count": 10,
+      "liquido": 19220.04,
+      "vantagem": 22303.699999999997,
+      "desconto": 3083.66,
+      "funcionarios": [
+        "FRANCIMAR GADELHA XAVIER MARTINS",
+        "FRANCIMAR GADELHA XAVIER MARTINS",
+        "FRANCIMAR GADELHA XAVIER MARTINS",
+        "FRANCIMAR GADELHA XAVIER MARTINS",
+        "FRANCIMAR GADELHA XAVIER MARTINS"
+      ]
+    },
+    "FUNC PREF ARACAJU-SE": {
+      "chave": "FUNC PREF ARACAJU-SE",
+      "count": 10,
+      "liquido": 23224.49,
+      "vantagem": 31426.300000000007,
+      "desconto": 8201.81,
+      "funcionarios": [
+        "KATIUSCIA VIANA DA SILVA",
+        "KATIUSCIA VIANA DA SILVA",
+        "KATIUSCIA VIANA DA SILVA",
+        "KATIUSCIA VIANA DA SILVA",
+        "KATIUSCIA VIANA DA SILVA"
+      ]
+    },
+    "FUNC PREF JUNDIA-AL": {
+      "chave": "FUNC PREF JUNDIA-AL",
+      "count": 10,
+      "liquido": 25521.200000000004,
+      "vantagem": 27063.000000000004,
+      "desconto": 1541.8000000000004,
+      "funcionarios": [
+        "MARIA DO CARMO PEREIRA DE SOUZA",
+        "MARIA DO CARMO PEREIRA DE SOUZA",
+        "MARIA DO CARMO PEREIRA DE SOUZA",
+        "MARIA DO CARMO PEREIRA DE SOUZA",
+        "MARIA DO CARMO PEREIRA DE SOUZA"
+      ]
+    },
+    "SEM VÍNCULO": {
+      "chave": "SEM VÍNCULO",
+      "count": 10,
+      "liquido": 109378881.14999999,
+      "vantagem": 154876193.64,
+      "desconto": 45497312.489999995,
+      "funcionarios": [
+        "*Totais*",
+        "*Totais*",
+        "*Totais*",
+        "*Totais*",
+        "*Totais*"
+      ]
+    },
+    "FUNC PREF MACEIO-AL": {
+      "chave": "FUNC PREF MACEIO-AL",
+      "count": 4,
+      "liquido": 13024.990000000002,
+      "vantagem": 19876.78,
+      "desconto": 6851.79,
+      "funcionarios": [
+        "MYCHELLA BIANCA ALVIM DE LIMA",
+        "MYCHELLA BIANCA ALVIM DE LIMA",
+        "MYCHELLA BIANCA ALVIM DE LIMA",
+        "MYCHELLA BIANCA ALVIM DE LIMA"
+      ]
+    }
+  },
+  "situacoes": {
+    "ATIVO": {
+      "chave": "ATIVO",
+      "count": 26813,
+      "liquido": 107615873.55000345,
+      "vantagem": 152361186.20000124,
+      "desconto": 44745312.64999988,
+      "funcionarios": [
+        "ADAILTON ISNAL",
+        "ADAILTON SANTOS SILVA",
+        "ADALBERTO BANDEIRA DE MELO NETO",
+        "ADALBERTO INACIO SILVA DOS SANTOS",
+        "ADAUTO JUSTINO DOS SANTOS"
+      ]
+    },
+    "LICENCA COM REMUNERACAO": {
+      "chave": "LICENCA COM REMUNERACAO",
+      "count": 431,
+      "liquido": 1317839.4799999993,
+      "vantagem": 1903002.800000002,
+      "desconto": 585163.3199999996,
+      "funcionarios": [
+        "ADRIANA PIMENTEL AZEVEDO",
+        "ALAMO DE MIRANDA MOTTA",
+        "ANA PAULA DE SOUZA E PINTO",
+        "ANDREIA MOREIRA DE ALMEIDA ALVES",
+        "CARLOS ALBERTO DE MACEDO"
+      ]
+    },
+    "AGUARDANDO ATO EXONERACAO": {
+      "chave": "AGUARDANDO ATO EXONERACAO",
+      "count": 5,
+      "liquido": 2596.11,
+      "vantagem": 3395.73,
+      "desconto": 799.62,
+      "funcionarios": [
+        "CARLOS EDUARDO MACHADO BRANDAO",
+        "JULIANA DE MORAIS CALHEIROS",
+        "VANIA DEBORA FRANCA RESENDE BULHOES",
+        "GERALDO MAGELLA TEIXEIRA",
+        "KARLA MEDEIROS BELEM"
+      ]
+    },
+    "CESSAO COM ONUS": {
+      "chave": "CESSAO COM ONUS",
+      "count": 75,
+      "liquido": 366920.6400000001,
+      "vantagem": 508339.49999999994,
+      "desconto": 141418.86,
+      "funcionarios": [
+        "CELIO FERNANDO DE SOUSA RODRIGUES",
+        "KERLE DAYANA TAVARES DE LUCENA",
+        "LARISSA MONTENEGRO DE ARAUJO FEIJO",
+        "MARGARIDA MARIA DO CASAL MELO",
+        "MARIA KELLY SILVA OLIVEIRA"
+      ]
+    },
+    "AFASTAMENTO COM ONUS": {
+      "chave": "AFASTAMENTO COM ONUS",
+      "count": 18,
+      "liquido": 61605.09000000001,
+      "vantagem": 83639.27000000002,
+      "desconto": 22034.179999999997,
+      "funcionarios": [
+        "JACKELLINE MARIA BARBOSA ALMEIDA",
+        "JOSE AILTON GOMES DA SILVA",
+        "JOSE CARLOS ANGELO DA SILVA",
+        "JACKELLINE MARIA BARBOSA ALMEIDA",
+        "JOSE AILTON GOMES DA SILVA"
+      ]
+    },
+    "SEM SITUAÇÃO": {
+      "chave": "SEM SITUAÇÃO",
+      "count": 10,
+      "liquido": 109378881.14999999,
+      "vantagem": 154876193.64,
+      "desconto": 45497312.489999995,
+      "funcionarios": [
+        "*Totais*",
+        "*Totais*",
+        "*Totais*",
+        "*Totais*",
+        "*Totais*"
+      ]
+    },
+    "RESCISAO/DEMISSAO": {
+      "chave": "RESCISAO/DEMISSAO",
+      "count": 13,
+      "liquido": 8795.48,
+      "vantagem": 11070.559999999996,
+      "desconto": 2275.08,
+      "funcionarios": [
+        "SANDRA VERONICA ARAUJO DOS SANTOS",
+        "ANA CLAUDIA PEREIRA DA SILVA",
+        "BEATRIZ FERNANDES BREDA",
+        "CHRISTIANNI SABINO COELHO MARINHO FALCAO",
+        "CLEIDE DE SOUSA ARAUJO"
+      ]
+    },
+    "BENEFICIO INSS": {
+      "chave": "BENEFICIO INSS",
+      "count": 1,
+      "liquido": 877.83,
+      "vantagem": 949.0,
+      "desconto": 71.17,
+      "funcionarios": [
+        "VIVIANE MARIA DE LIMA NASCIMENTO"
+      ]
+    },
+    "AGUARDANDO ATO VACANCIA": {
+      "chave": "AGUARDANDO ATO VACANCIA",
+      "count": 1,
+      "liquido": 715.16,
+      "vantagem": 804.26,
+      "desconto": 89.1,
+      "funcionarios": [
+        "DAISY SANTOS"
+      ]
+    },
+    "AUXILIO MATERNIDADE": {
+      "chave": "AUXILIO MATERNIDADE",
+      "count": 2,
+      "liquido": 3657.8100000000004,
+      "vantagem": 3806.32,
+      "desconto": 148.51,
+      "funcionarios": [
+        "MARIA VALDILENE DA SILVA",
+        "MARIA VALDILENE DA SILVA"
+      ]
+    }
+  },
+  "funcao_nivel": {
+    "ENFERMEIRO||UTFSUX3C40": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX3C40",
+      "count": 1,
+      "liquido": 4494.86,
+      "vantagem": 9197.66,
+      "desconto": 4702.8
+    },
+    "MOTORISTA||UXMEUX2B30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX2B30",
+      "count": 20,
+      "liquido": 45016.560000000005,
+      "vantagem": 62417.299999999996,
+      "desconto": 17400.739999999998
+    },
+    "EM BRANCO||NÃO INFORMADO": {
+      "funcao": "EM BRANCO",
+      "nivel": "NÃO INFORMADO",
+      "count": 310,
+      "liquido": 818383.3199999975,
+      "vantagem": 946728.2599999993,
+      "desconto": 128344.94000000002
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX3C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX3C30",
+      "count": 596,
+      "liquido": 1936310.419999996,
+      "vantagem": 2654270.100000003,
+      "desconto": 717959.6800000006
+    },
+    "ARTIFICE||ASEUA30": {
+      "funcao": "ARTIFICE",
+      "nivel": "ASEUA30",
+      "count": 947,
+      "liquido": 1737209.9499999874,
+      "vantagem": 1894290.7799999681,
+      "desconto": 157080.8300000009
+    },
+    "MEDICO||MEDSUP1D24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1D24",
+      "count": 10,
+      "liquido": 55805.33,
+      "vantagem": 80698.95,
+      "desconto": 24893.619999999995
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMEX3B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMEX3B30",
+      "count": 40,
+      "liquido": 144072.16000000003,
+      "vantagem": 185142.12000000008,
+      "desconto": 41069.95999999999
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSUX2B30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSUX2B30",
+      "count": 157,
+      "liquido": 701816.8199999994,
+      "vantagem": 1037266.9600000021,
+      "desconto": 335450.13999999984
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMUX3C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMUX3C30",
+      "count": 30,
+      "liquido": 98742.63999999997,
+      "vantagem": 126165.37000000002,
+      "desconto": 27422.729999999996
+    },
+    "TECNICO DE ENFERMAGEM||UAFMEX1B30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMEX1B30",
+      "count": 330,
+      "liquido": 873509.6599999998,
+      "vantagem": 1234378.4300000004,
+      "desconto": 360868.77000000014
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX3B30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX3B30",
+      "count": 1115,
+      "liquido": 3094901.979999983,
+      "vantagem": 3996024.3200000133,
+      "desconto": 901122.3400000018
+    },
+    "ASSISTENTE SOCIAL||UTFSUX2B30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX2B30",
+      "count": 57,
+      "liquido": 334894.68000000005,
+      "vantagem": 455159.6200000001,
+      "desconto": 120264.94000000005
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX3B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX3B30",
+      "count": 319,
+      "liquido": 980296.6099999999,
+      "vantagem": 1355800.4399999978,
+      "desconto": 375503.8299999992
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX2A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX2A30",
+      "count": 63,
+      "liquido": 174352.97,
+      "vantagem": 237035.81999999995,
+      "desconto": 62682.850000000006
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX1B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX1B30",
+      "count": 474,
+      "liquido": 1181928.8899999987,
+      "vantagem": 1653385.3899999964,
+      "desconto": 471456.50000000047
+    },
+    "ENFERMEIRO||UTFSEX2B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX2B30",
+      "count": 287,
+      "liquido": 1633289.6099999985,
+      "vantagem": 2477705.790000002,
+      "desconto": 844416.1800000004
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX1C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX1C30",
+      "count": 408,
+      "liquido": 1199561.02,
+      "vantagem": 1568851.8500000003,
+      "desconto": 369290.82999999984
+    },
+    "PROFESSOR ADJUNTO||UCMSNP3A40": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSNP3A40",
+      "count": 142,
+      "liquido": 1048081.9099999996,
+      "vantagem": 1582244.740000001,
+      "desconto": 534162.8300000001
+    },
+    "PROFESSOR ASSISTENTE||UCMSNP2C40": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSNP2C40",
+      "count": 82,
+      "liquido": 614189.4199999999,
+      "vantagem": 923778.47,
+      "desconto": 309589.05000000005
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX2C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX2C30",
+      "count": 174,
+      "liquido": 549876.7500000002,
+      "vantagem": 735497.6599999996,
+      "desconto": 185620.9099999999
+    },
+    "ENFERMEIRO||UTFSUX1B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX1B30",
+      "count": 34,
+      "liquido": 179836.69999999998,
+      "vantagem": 247144.42000000004,
+      "desconto": 67307.72
+    },
+    "ENFERMEIRO||UTFSEX1C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX1C30",
+      "count": 18,
+      "liquido": 101198.79999999999,
+      "vantagem": 146812.72,
+      "desconto": 45613.92
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX1A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX1A30",
+      "count": 325,
+      "liquido": 716462.2799999999,
+      "vantagem": 1071405.1900000013,
+      "desconto": 354942.9099999998
+    },
+    "PSICOLOGO||UTFSUX2A30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX2A30",
+      "count": 70,
+      "liquido": 330719.0299999999,
+      "vantagem": 472122.65999999986,
+      "desconto": 141403.63000000006
+    },
+    "ENFERMEIRO||UTFSUX2B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX2B30",
+      "count": 215,
+      "liquido": 1211239.3699999992,
+      "vantagem": 1652588.069999999,
+      "desconto": 441348.70000000007
+    },
+    "ENFERMEIRO||UTFSUX2C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX2C30",
+      "count": 79,
+      "liquido": 366201.7800000002,
+      "vantagem": 598981.64,
+      "desconto": 232779.85999999987
+    },
+    "PROFESSOR ADJUNTO||UCMSDP3C40": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSDP3C40",
+      "count": 159,
+      "liquido": 2064406.129999999,
+      "vantagem": 3183929.479999996,
+      "desconto": 1119523.3500000006
+    },
+    "ARTIFICE||UXMEEX3B30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX3B30",
+      "count": 165,
+      "liquido": 457426.4699999994,
+      "vantagem": 588050.5800000002,
+      "desconto": 130624.11000000012
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX3B30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX3B30",
+      "count": 338,
+      "liquido": 1021988.4899999994,
+      "vantagem": 1324044.3499999952,
+      "desconto": 302055.8600000002
+    },
+    "TECNICO LABORATORIO||UAFMEX3C30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX3C30",
+      "count": 79,
+      "liquido": 274386.84,
+      "vantagem": 356227.6400000002,
+      "desconto": 81840.80000000005
+    },
+    "MEDICO||MEDSEP1A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1A24",
+      "count": 471,
+      "liquido": 2704838.6900000027,
+      "vantagem": 4229459.54000001,
+      "desconto": 1524620.850000001
+    },
+    "MEDICO||MEDSUP1B24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1B24",
+      "count": 93,
+      "liquido": 434872.91000000003,
+      "vantagem": 707785.4500000004,
+      "desconto": 272912.53999999986
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX1B30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX1B30",
+      "count": 327,
+      "liquido": 739282.7999999995,
+      "vantagem": 958504.3600000042,
+      "desconto": 219221.55999999994
+    },
+    "ASSISTENTE SOCIAL||STFSUX2C30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "STFSUX2C30",
+      "count": 10,
+      "liquido": 53308.81999999999,
+      "vantagem": 69961.0,
+      "desconto": 16652.18
+    },
+    "TECNICO DE DESENVOLVIMENTO SOCIAL||UTMSUX2E40": {
+      "funcao": "TECNICO DE DESENVOLVIMENTO SOCIAL",
+      "nivel": "UTMSUX2E40",
+      "count": 10,
+      "liquido": 79049.5,
+      "vantagem": 110138.09,
+      "desconto": 31088.59
+    },
+    "MEDICO||MEDSUP1A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1A24",
+      "count": 383,
+      "liquido": 2045273.0299999998,
+      "vantagem": 2958370.5699999994,
+      "desconto": 913097.539999999
+    },
+    "MEDICO||MEDSEP2B24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2B24",
+      "count": 183,
+      "liquido": 1275989.970000001,
+      "vantagem": 1965717.2700000014,
+      "desconto": 689727.2999999999
+    },
+    "ARTIFICE||ASEEA30": {
+      "funcao": "ARTIFICE",
+      "nivel": "ASEEA30",
+      "count": 500,
+      "liquido": 1041275.7399999957,
+      "vantagem": 1137905.02,
+      "desconto": 96629.27999999966
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX3E30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX3E30",
+      "count": 80,
+      "liquido": 311524.02999999997,
+      "vantagem": 403967.0699999999,
+      "desconto": 92443.04000000002
+    },
+    "TECNICO LABORATORIO||UAFMEX2B30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX2B30",
+      "count": 63,
+      "liquido": 152348.4199999999,
+      "vantagem": 239928.4300000001,
+      "desconto": 87580.01000000002
+    },
+    "PROFESSOR ADJUNTO||UCMSNP3C20": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSNP3C20",
+      "count": 241,
+      "liquido": 1145889.2200000002,
+      "vantagem": 1612402.7099999993,
+      "desconto": 466513.4900000002
+    },
+    "NUTRICIONISTA||UTFSEX2C30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX2C30",
+      "count": 30,
+      "liquido": 149839.15,
+      "vantagem": 221925.64999999997,
+      "desconto": 72086.5
+    },
+    "NUTRICIONISTA||STFSEX2B30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "STFSEX2B30",
+      "count": 11,
+      "liquido": 56088.7,
+      "vantagem": 81055.24999999999,
+      "desconto": 24966.55
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX1D30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX1D30",
+      "count": 10,
+      "liquido": 24739.63,
+      "vantagem": 43264.63999999999,
+      "desconto": 18525.01
+    },
+    "TECNICO LABORATORIO||UAFMEX1A30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX1A30",
+      "count": 110,
+      "liquido": 294193.76,
+      "vantagem": 381404.1299999998,
+      "desconto": 87210.37000000001
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX1E40": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX1E40",
+      "count": 10,
+      "liquido": 76775.26000000001,
+      "vantagem": 110607.6,
+      "desconto": 33832.340000000004
+    },
+    "PROFESSOR ADJUNTO||UCMSNP3C40": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSNP3C40",
+      "count": 135,
+      "liquido": 1187458.7499999995,
+      "vantagem": 1790442.0399999984,
+      "desconto": 602983.2899999995
+    },
+    "NUTRICIONISTA||UTFSUX2E40": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX2E40",
+      "count": 20,
+      "liquido": 189871.24000000002,
+      "vantagem": 265937.34,
+      "desconto": 76066.09999999998
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX3B30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX3B30",
+      "count": 297,
+      "liquido": 905590.3700000005,
+      "vantagem": 1190932.740000001,
+      "desconto": 285342.3699999999
+    },
+    "ENFERMEIRO||STFSEX1B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "STFSEX1B30",
+      "count": 10,
+      "liquido": 62179.92,
+      "vantagem": 82315.93000000002,
+      "desconto": 20136.010000000002
+    },
+    "ENFERMEIRO||UTFSEX1A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX1A30",
+      "count": 137,
+      "liquido": 651189.4399999998,
+      "vantagem": 937590.089999999,
+      "desconto": 286400.65000000014
+    },
+    "PROFESSOR ASSISTENTE||UCMSNP2A20": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSNP2A20",
+      "count": 165,
+      "liquido": 566324.7199999997,
+      "vantagem": 766308.9599999991,
+      "desconto": 199984.24000000025
+    },
+    "PROFESSOR ADJUNTO||UCMSNP3B40": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSNP3B40",
+      "count": 125,
+      "liquido": 999731.98,
+      "vantagem": 1549746.0099999995,
+      "desconto": 550014.0299999997
+    },
+    "PROFESSOR ASSISTENTE||UCMSNP2B20": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSNP2B20",
+      "count": 242,
+      "liquido": 826634.86,
+      "vantagem": 1248924.0600000005,
+      "desconto": 422289.2000000009
+    },
+    "NUTRICIONISTA||UTFSUX3B30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX3B30",
+      "count": 29,
+      "liquido": 156909.98999999993,
+      "vantagem": 235300.86000000004,
+      "desconto": 78390.87
+    },
+    "PROFESSOR ADJUNTO||UCMSNP3A20": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSNP3A20",
+      "count": 151,
+      "liquido": 726955.6299999998,
+      "vantagem": 1014225.6299999992,
+      "desconto": 287269.99999999994
+    },
+    "ASSISTENTE SOCIAL||ASSUA30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "ASSUA30",
+      "count": 24,
+      "liquido": 85878.56999999999,
+      "vantagem": 110413.12000000001,
+      "desconto": 24534.55
+    },
+    "ENFERMEIRO||UTFSEX3B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX3B30",
+      "count": 166,
+      "liquido": 1090066.5900000003,
+      "vantagem": 1560343.320000001,
+      "desconto": 470276.73
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX2B30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX2B30",
+      "count": 60,
+      "liquido": 177462.58000000007,
+      "vantagem": 213906.73000000004,
+      "desconto": 36444.15
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX1A30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX1A30",
+      "count": 49,
+      "liquido": 108634.17000000003,
+      "vantagem": 141149.93000000005,
+      "desconto": 32515.759999999995
+    },
+    "TECNICO DE RADIOLOGIA||UAFMEX1B30": {
+      "funcao": "TECNICO DE RADIOLOGIA",
+      "nivel": "UAFMEX1B30",
+      "count": 40,
+      "liquido": 96624.73999999998,
+      "vantagem": 141200.5300000001,
+      "desconto": 44575.79
+    },
+    "ANALISTA DE SISTEMAS||UTMSUX3A30": {
+      "funcao": "ANALISTA DE SISTEMAS",
+      "nivel": "UTMSUX3A30",
+      "count": 10,
+      "liquido": 42955.299999999996,
+      "vantagem": 62757.24999999999,
+      "desconto": 19801.949999999997
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX2A30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX2A30",
+      "count": 58,
+      "liquido": 121898.24000000003,
+      "vantagem": 154725.3800000001,
+      "desconto": 32827.14000000001
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX2B30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX2B30",
+      "count": 256,
+      "liquido": 674076.5999999993,
+      "vantagem": 827386.150000001,
+      "desconto": 153309.55
+    },
+    "FONOAUDIOLOGO||UTFSEX1A30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSEX1A30",
+      "count": 10,
+      "liquido": 52288.600000000006,
+      "vantagem": 68162.42,
+      "desconto": 15873.819999999998
+    },
+    "ENFERMEIRO||UTFSEX2D30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX2D30",
+      "count": 42,
+      "liquido": 266444.19000000006,
+      "vantagem": 399997.38000000006,
+      "desconto": 133553.18999999997
+    },
+    "RESIDENCIA DE ENFERMAGEM||ASRNA20": {
+      "funcao": "RESIDENCIA DE ENFERMAGEM",
+      "nivel": "ASRNA20",
+      "count": 230,
+      "liquido": 852800.4000000039,
+      "vantagem": 944400.6999999981,
+      "desconto": 91600.30000000044
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMEX3C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMEX3C30",
+      "count": 30,
+      "liquido": 96191.97000000002,
+      "vantagem": 143442.17,
+      "desconto": 47250.19999999998
+    },
+    "PROFESSOR AUXILIAR||ASSMX20": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "ASSMX20",
+      "count": 67,
+      "liquido": 188199.62,
+      "vantagem": 228856.41000000024,
+      "desconto": 40656.790000000015
+    },
+    "PROFESSOR AUXILIAR||UCMSNP1B20": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "UCMSNP1B20",
+      "count": 50,
+      "liquido": 127933.1,
+      "vantagem": 197492.87999999998,
+      "desconto": 69559.77999999998
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX2A30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX2A30",
+      "count": 57,
+      "liquido": 161756.30000000005,
+      "vantagem": 202198.9,
+      "desconto": 40442.599999999984
+    },
+    "RELACOES PUBLICAS||UTMSEX2C30": {
+      "funcao": "RELACOES PUBLICAS",
+      "nivel": "UTMSEX2C30",
+      "count": 13,
+      "liquido": 71369.18,
+      "vantagem": 98608.98999999999,
+      "desconto": 27239.80999999999
+    },
+    "TECNICO DE ENFERMAGEM||UAFMEX3B30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMEX3B30",
+      "count": 535,
+      "liquido": 1793807.93,
+      "vantagem": 2315799.0699999966,
+      "desconto": 521991.13999999914
+    },
+    "FONOAUDIOLOGO||UTFSUX4B30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSUX4B30",
+      "count": 20,
+      "liquido": 112246.92999999996,
+      "vantagem": 149976.65,
+      "desconto": 37729.719999999994
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSUX2B30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSUX2B30",
+      "count": 49,
+      "liquido": 224574.05,
+      "vantagem": 346229.4600000002,
+      "desconto": 121655.41
+    },
+    "MOTORISTA||UXMEUX2A30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX2A30",
+      "count": 20,
+      "liquido": 45262.69,
+      "vantagem": 58339.390000000014,
+      "desconto": 13076.7
+    },
+    "FISIOTERAPEUTA||UTFSUX2B30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX2B30",
+      "count": 100,
+      "liquido": 491688.3399999999,
+      "vantagem": 742370.6100000003,
+      "desconto": 250682.26999999996
+    },
+    "PROFESSOR TITULAR||UCMSDP4C40": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSDP4C40",
+      "count": 83,
+      "liquido": 1316657.9099999997,
+      "vantagem": 2059431.6700000016,
+      "desconto": 742773.7600000001
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX1A30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX1A30",
+      "count": 225,
+      "liquido": 548322.5900000002,
+      "vantagem": 749109.2899999998,
+      "desconto": 200786.69999999992
+    },
+    "PROFESSOR ASSISTENTE||UCMSNP2C20": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSNP2C20",
+      "count": 192,
+      "liquido": 759041.1900000004,
+      "vantagem": 1074155.8399999996,
+      "desconto": 315114.65
+    },
+    "PSICOLOGO||UTFSUX3D30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX3D30",
+      "count": 15,
+      "liquido": 55498.079999999994,
+      "vantagem": 80014.25,
+      "desconto": 24516.17
+    },
+    "ASSISTENTE DE ADMINISTRACAO||PNMMNS3E30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "PNMMNS3E30",
+      "count": 10,
+      "liquido": 27325.29,
+      "vantagem": 54900.45999999999,
+      "desconto": 27575.17
+    },
+    "ASSISTENTE SOCIAL||UTFSUX2A30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX2A30",
+      "count": 68,
+      "liquido": 309657.1699999999,
+      "vantagem": 481460.78,
+      "desconto": 171803.61
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX3C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX3C30",
+      "count": 232,
+      "liquido": 714828.9699999997,
+      "vantagem": 947580.749999999,
+      "desconto": 232751.7800000001
+    },
+    "ARTIFICE||UXMEEX1A30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX1A30",
+      "count": 26,
+      "liquido": 46160.060000000005,
+      "vantagem": 64319.82000000003,
+      "desconto": 18159.760000000002
+    },
+    "ASSISTENTE SOCIAL||UTFSUX1A30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX1A30",
+      "count": 25,
+      "liquido": 126305.14999999998,
+      "vantagem": 160410.59000000003,
+      "desconto": 34105.44
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSUX1A30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSUX1A30",
+      "count": 4,
+      "liquido": 12707.59,
+      "vantagem": 23831.76,
+      "desconto": 11124.17
+    },
+    "ENFERMEIRO||UTFSEX2A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX2A30",
+      "count": 180,
+      "liquido": 1005496.59,
+      "vantagem": 1477483.950000001,
+      "desconto": 471987.36000000016
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEUX1B30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEUX1B30",
+      "count": 99,
+      "liquido": 185376.2800000001,
+      "vantagem": 255045.70999999993,
+      "desconto": 69669.42999999996
+    },
+    "RESIDENCIA MEDICA||ASRNA20": {
+      "funcao": "RESIDENCIA MEDICA",
+      "nivel": "ASRNA20",
+      "count": 244,
+      "liquido": 881739.3900000041,
+      "vantagem": 975606.8799999977,
+      "desconto": 93867.49000000046
+    },
+    "PROFESSOR ASSISTENTE||UCMSNP2B40": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSNP2B40",
+      "count": 81,
+      "liquido": 514209.3000000004,
+      "vantagem": 859281.979999999,
+      "desconto": 345072.6800000001
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX1B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX1B30",
+      "count": 314,
+      "liquido": 758565.8000000007,
+      "vantagem": 1061520.230000001,
+      "desconto": 302954.43000000017
+    },
+    "PROFESSOR TITULAR||UCMSNP4B40": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSNP4B40",
+      "count": 40,
+      "liquido": 335724.13,
+      "vantagem": 514625.0599999999,
+      "desconto": 178900.93
+    },
+    "ARTIFICE||UXMEEX2B30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX2B30",
+      "count": 150,
+      "liquido": 413951.37999999983,
+      "vantagem": 491963.00999999937,
+      "desconto": 78011.62999999999
+    },
+    "ENFERMEIRO||UTFSEX4B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX4B30",
+      "count": 17,
+      "liquido": 93158.20000000001,
+      "vantagem": 163862.71000000002,
+      "desconto": 70704.51000000001
+    },
+    "RESIDENTE MULTIPROFISSIONAL||ASRNA20": {
+      "funcao": "RESIDENTE MULTIPROFISSIONAL",
+      "nivel": "ASRNA20",
+      "count": 3,
+      "liquido": 11236.84,
+      "vantagem": 12044.52,
+      "desconto": 807.6800000000001
+    },
+    "MEDICO||MEDSUP2C24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP2C24",
+      "count": 67,
+      "liquido": 404642.04999999993,
+      "vantagem": 637431.0899999999,
+      "desconto": 232789.03999999998
+    },
+    "ODONTOLOGO||UTFSUX1B30": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSUX1B30",
+      "count": 4,
+      "liquido": 18710.96,
+      "vantagem": 23926.28,
+      "desconto": 5215.32
+    },
+    "ENFERMEIRO||UTFSEX2C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX2C30",
+      "count": 208,
+      "liquido": 1134911.58,
+      "vantagem": 1788046.2800000014,
+      "desconto": 653134.7
+    },
+    "ENFERMEIRO||UTFSUX1A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX1A30",
+      "count": 115,
+      "liquido": 480509.03000000026,
+      "vantagem": 761306.6800000002,
+      "desconto": 280797.6499999999
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX2B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX2B30",
+      "count": 164,
+      "liquido": 443200.0499999999,
+      "vantagem": 624655.3700000007,
+      "desconto": 181455.32
+    },
+    "FISIOTERAPEUTA||UTFSUX1B30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX1B30",
+      "count": 10,
+      "liquido": 57379.53,
+      "vantagem": 74518.85999999999,
+      "desconto": 17139.329999999998
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX2A30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX2A30",
+      "count": 20,
+      "liquido": 42462.08999999999,
+      "vantagem": 59636.689999999995,
+      "desconto": 17174.600000000006
+    },
+    "ENFERMEIRO||UTFSEX2B24": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX2B24",
+      "count": 10,
+      "liquido": 43530.96000000001,
+      "vantagem": 70656.27,
+      "desconto": 27125.309999999994
+    },
+    "PROFESSOR ASSISTENTE||UCMSNP2A40": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSNP2A40",
+      "count": 84,
+      "liquido": 508072.4199999997,
+      "vantagem": 788708.3400000007,
+      "desconto": 280635.92000000016
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX1C30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX1C30",
+      "count": 10,
+      "liquido": 28708.850000000002,
+      "vantagem": 38341.92,
+      "desconto": 9633.069999999998
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX1C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX1C30",
+      "count": 290,
+      "liquido": 783840.3500000002,
+      "vantagem": 1058656.8600000017,
+      "desconto": 274816.5099999998
+    },
+    "PSICOLOGO||UTFSUX2D30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX2D30",
+      "count": 10,
+      "liquido": 45811.54000000001,
+      "vantagem": 68981.9,
+      "desconto": 23170.359999999993
+    },
+    "TECNICO LABORATORIO||UAFMEX2C30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX2C30",
+      "count": 1,
+      "liquido": 3040.05,
+      "vantagem": 3898.47,
+      "desconto": 858.42
+    },
+    "NUTRICIONISTA||UTFSUX2B30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX2B30",
+      "count": 50,
+      "liquido": 278034.87,
+      "vantagem": 388560.85000000003,
+      "desconto": 110525.98
+    },
+    "MEDICO||MEDSEP2C40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2C40",
+      "count": 68,
+      "liquido": 861089.5800000002,
+      "vantagem": 1281343.9200000002,
+      "desconto": 420254.3400000002
+    },
+    "PROFESSOR ADJUNTO||UCMSNP3B20": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSNP3B20",
+      "count": 93,
+      "liquido": 446557.6500000002,
+      "vantagem": 580144.3099999996,
+      "desconto": 133586.6600000001
+    },
+    "MEDICO||MEDSUP2A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP2A24",
+      "count": 93,
+      "liquido": 573825.5899999999,
+      "vantagem": 845995.4300000004,
+      "desconto": 272169.8400000001
+    },
+    "TECNICO DE ENFERMAGEM||UAFMEX1A30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMEX1A30",
+      "count": 303,
+      "liquido": 746664.340000001,
+      "vantagem": 1023668.2700000006,
+      "desconto": 277003.9299999997
+    },
+    "FISIOTERAPEUTA||UTFSEX3C30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSEX3C30",
+      "count": 61,
+      "liquido": 414277.3400000001,
+      "vantagem": 596424.55,
+      "desconto": 182147.21
+    },
+    "MEDICO||MEDSUP3A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP3A24",
+      "count": 20,
+      "liquido": 113358.53,
+      "vantagem": 180494.68999999997,
+      "desconto": 67136.16
+    },
+    "PSICOLOGO||UTFSUX2B30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX2B30",
+      "count": 60,
+      "liquido": 310642.63999999996,
+      "vantagem": 404124.76,
+      "desconto": 93482.11999999998
+    },
+    "TECNICO EM ASSUNTOS EDUCACIONAL||UTMSUX2B30": {
+      "funcao": "TECNICO EM ASSUNTOS EDUCACIONAL",
+      "nivel": "UTMSUX2B30",
+      "count": 10,
+      "liquido": 40756.670000000006,
+      "vantagem": 63016.26999999999,
+      "desconto": 22259.6
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX3C30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX3C30",
+      "count": 106,
+      "liquido": 341308.76999999996,
+      "vantagem": 419306.73999999964,
+      "desconto": 77997.96999999999
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX1B30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX1B30",
+      "count": 153,
+      "liquido": 363083.16999999987,
+      "vantagem": 527340.1100000001,
+      "desconto": 164256.93999999997
+    },
+    "FISIOTERAPEUTA||UTFSUX4C20": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX4C20",
+      "count": 22,
+      "liquido": 57268.38000000001,
+      "vantagem": 84649.96000000002,
+      "desconto": 27381.58
+    },
+    "MEDICO||MEDSEP1B30": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1B30",
+      "count": 10,
+      "liquido": 80737.97,
+      "vantagem": 113530.93999999997,
+      "desconto": 32792.97
+    },
+    "SECRETARIA EXECUTIVA||UTMSUX2B30": {
+      "funcao": "SECRETARIA EXECUTIVA",
+      "nivel": "UTMSUX2B30",
+      "count": 20,
+      "liquido": 78408.60000000002,
+      "vantagem": 132917.99000000002,
+      "desconto": 54509.39000000002
+    },
+    "NUTRICIONISTA||UTFSEX3B30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX3B30",
+      "count": 20,
+      "liquido": 108773.76000000002,
+      "vantagem": 172885.7,
+      "desconto": 64111.94
+    },
+    "ARTIFICE||UXMEUX1A30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX1A30",
+      "count": 40,
+      "liquido": 66132.81000000001,
+      "vantagem": 85575.11000000004,
+      "desconto": 19442.299999999996
+    },
+    "ARTIFICE||UXMEUX3A30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX3A30",
+      "count": 124,
+      "liquido": 305502.19999999995,
+      "vantagem": 382767.8000000002,
+      "desconto": 77265.60000000003
+    },
+    "TECNICO LABORATORIO||UAFMEX3B30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX3B30",
+      "count": 159,
+      "liquido": 545595.1199999999,
+      "vantagem": 679100.9099999993,
+      "desconto": 133505.78999999992
+    },
+    "BIOMEDICO||UTFSEX2B30": {
+      "funcao": "BIOMEDICO",
+      "nivel": "UTFSEX2B30",
+      "count": 42,
+      "liquido": 260807.6,
+      "vantagem": 390518.8500000001,
+      "desconto": 129711.24999999996
+    },
+    "ARTIFICE||UXMEEX3A30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX3A30",
+      "count": 60,
+      "liquido": 145616.24000000005,
+      "vantagem": 193132.53000000006,
+      "desconto": 47516.28999999999
+    },
+    "MEDICO||MEDSUP4B24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP4B24",
+      "count": 10,
+      "liquido": 73981.01999999999,
+      "vantagem": 102543.51000000001,
+      "desconto": 28562.49
+    },
+    "MOTORISTA||UXMEUX3A30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX3A30",
+      "count": 30,
+      "liquido": 77430.06,
+      "vantagem": 99769.18000000001,
+      "desconto": 22339.12
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX1A30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX1A30",
+      "count": 336,
+      "liquido": 669917.1499999997,
+      "vantagem": 913935.4499999976,
+      "desconto": 244018.30000000066
+    },
+    "PROFESSOR TITULAR||UCMSNP4A20": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSNP4A20",
+      "count": 25,
+      "liquido": 127566.91,
+      "vantagem": 167119.3,
+      "desconto": 39552.39000000001
+    },
+    "MEDICO||MEDSUP3C24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP3C24",
+      "count": 41,
+      "liquido": 260527.9199999999,
+      "vantagem": 405345.27000000014,
+      "desconto": 144817.34999999998
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX2A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX2A30",
+      "count": 30,
+      "liquido": 73817.65000000001,
+      "vantagem": 103749.66999999998,
+      "desconto": 29932.020000000004
+    },
+    "FARMACEUTICO||UTFSUX1B30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSUX1B30",
+      "count": 10,
+      "liquido": 38277.55,
+      "vantagem": 74667.95,
+      "desconto": 36390.4
+    },
+    "ENFERMEIRO||UTFSUX1C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX1C30",
+      "count": 10,
+      "liquido": 33032.4,
+      "vantagem": 60818.01,
+      "desconto": 27785.610000000004
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSEX2C30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSEX2C30",
+      "count": 31,
+      "liquido": 169162.08000000002,
+      "vantagem": 242329.08,
+      "desconto": 73166.99999999999
+    },
+    "ARTIFICE||UXMEUX2A30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX2A30",
+      "count": 53,
+      "liquido": 108258.15000000001,
+      "vantagem": 146002.08999999997,
+      "desconto": 37743.939999999995
+    },
+    "MEDICO||MEDSUP2B24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP2B24",
+      "count": 96,
+      "liquido": 642050.55,
+      "vantagem": 976527.8500000013,
+      "desconto": 334477.3000000001
+    },
+    "MEDICO||MEDSEP1B40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1B40",
+      "count": 40,
+      "liquido": 397315.97,
+      "vantagem": 616360.6,
+      "desconto": 219044.62999999998
+    },
+    "PESQUISADOR DE INFORMACOES SOCIAIS||UTMSEX1C30": {
+      "funcao": "PESQUISADOR DE INFORMACOES SOCIAIS",
+      "nivel": "UTMSEX1C30",
+      "count": 10,
+      "liquido": 57816.2,
+      "vantagem": 79311.28000000001,
+      "desconto": 21495.08
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX1C30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX1C30",
+      "count": 40,
+      "liquido": 109982.17000000001,
+      "vantagem": 144223.75,
+      "desconto": 34241.579999999994
+    },
+    "MEDICO||MEDSEP2A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2A24",
+      "count": 150,
+      "liquido": 1002383.4399999996,
+      "vantagem": 1529971.0699999982,
+      "desconto": 527587.63
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMNX2A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMNX2A30",
+      "count": 11,
+      "liquido": 22766.16,
+      "vantagem": 34153.84,
+      "desconto": 11387.68
+    },
+    "ENFERMEIRO||UTFSUX2A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX2A30",
+      "count": 122,
+      "liquido": 651561.7600000002,
+      "vantagem": 896497.3099999999,
+      "desconto": 244935.55000000002
+    },
+    "MEDICO||MEDSEP2B20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2B20",
+      "count": 15,
+      "liquido": 90332.23000000001,
+      "vantagem": 127993.96000000002,
+      "desconto": 37661.73
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX3D30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX3D30",
+      "count": 47,
+      "liquido": 165172.04000000004,
+      "vantagem": 219945.74999999997,
+      "desconto": 54773.710000000036
+    },
+    "TECNICO DE ENFERMAGEM||UAFMEX2B30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMEX2B30",
+      "count": 121,
+      "liquido": 338364.90000000026,
+      "vantagem": 477866.5200000002,
+      "desconto": 139501.61999999994
+    },
+    "FONOAUDIOLOGO||UTFSUX1A30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSUX1A30",
+      "count": 10,
+      "liquido": 43532.84,
+      "vantagem": 54623.60999999999,
+      "desconto": 11090.769999999999
+    },
+    "PROFESSOR AUXILIAR||UCMSNP1C40": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "UCMSNP1C40",
+      "count": 28,
+      "liquido": 180283.15000000002,
+      "vantagem": 254519.01000000004,
+      "desconto": 74235.86
+    },
+    "MOTORISTA||ASEEA30": {
+      "funcao": "MOTORISTA",
+      "nivel": "ASEEA30",
+      "count": 20,
+      "liquido": 42567.579999999994,
+      "vantagem": 46827.670000000006,
+      "desconto": 4260.090000000001
+    },
+    "FISIOTERAPEUTA||UTFSUX3B30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX3B30",
+      "count": 109,
+      "liquido": 573960.0599999999,
+      "vantagem": 853432.9699999997,
+      "desconto": 279472.91000000003
+    },
+    "TECNICO LABORATORIO||UAFMUX2B30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMUX2B30",
+      "count": 10,
+      "liquido": 23229.090000000004,
+      "vantagem": 30963.75,
+      "desconto": 7734.660000000002
+    },
+    "PROFESSOR AUXILIAR||UCMSNP1A20": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "UCMSNP1A20",
+      "count": 188,
+      "liquido": 481740.7399999995,
+      "vantagem": 712364.5700000002,
+      "desconto": 230623.83000000007
+    },
+    "FISIOTERAPEUTA||UTFSEX2B30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSEX2B30",
+      "count": 41,
+      "liquido": 255645.99000000002,
+      "vantagem": 355253.3300000001,
+      "desconto": 99607.34000000003
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMEX2A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMEX2A30",
+      "count": 10,
+      "liquido": 29752.690000000002,
+      "vantagem": 36335.479999999996,
+      "desconto": 6582.790000000001
+    },
+    "ENFERMEIRO||UTFSUX2D20": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX2D20",
+      "count": 10,
+      "liquido": 45382.38,
+      "vantagem": 57524.47,
+      "desconto": 12142.09
+    },
+    "ARTIFICE||UXMEUX2B30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX2B30",
+      "count": 70,
+      "liquido": 147552.53999999998,
+      "vantagem": 217478.68999999997,
+      "desconto": 69926.15
+    },
+    "COZINHEIRO||UXMEEX1A30": {
+      "funcao": "COZINHEIRO",
+      "nivel": "UXMEEX1A30",
+      "count": 10,
+      "liquido": 14832.289999999999,
+      "vantagem": 26726.370000000003,
+      "desconto": 11894.08
+    },
+    "AGENTE ADMINISTRATIVO||UAMMEX1D30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMEX1D30",
+      "count": 10,
+      "liquido": 29785.68,
+      "vantagem": 39595.21000000001,
+      "desconto": 9809.529999999999
+    },
+    "MEDICO||MEDSUP4A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP4A24",
+      "count": 40,
+      "liquido": 252394.78000000003,
+      "vantagem": 381611.55000000005,
+      "desconto": 129216.76999999997
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX1A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX1A30",
+      "count": 209,
+      "liquido": 443796.90000000014,
+      "vantagem": 654051.4399999988,
+      "desconto": 210254.54000000015
+    },
+    "AUXILIAR DE LABORATORIO||UXFEEX3A30": {
+      "funcao": "AUXILIAR DE LABORATORIO",
+      "nivel": "UXFEEX3A30",
+      "count": 30,
+      "liquido": 63946.78000000001,
+      "vantagem": 103075.83,
+      "desconto": 39129.049999999996
+    },
+    "ARTIFICE||UXMEUX2C30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX2C30",
+      "count": 16,
+      "liquido": 25927.539999999997,
+      "vantagem": 45925.24,
+      "desconto": 19997.7
+    },
+    "ARTIFICE||UXMEUX3B30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX3B30",
+      "count": 135,
+      "liquido": 349468.8899999999,
+      "vantagem": 460337.1100000003,
+      "desconto": 110868.21999999997
+    },
+    "MEDICO||MEDSEP2C24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2C24",
+      "count": 94,
+      "liquido": 746761.5399999998,
+      "vantagem": 1072533.2899999998,
+      "desconto": 325771.7500000001
+    },
+    "BIOMEDICO||UTFSEX3B30": {
+      "funcao": "BIOMEDICO",
+      "nivel": "UTFSEX3B30",
+      "count": 28,
+      "liquido": 165036.72000000003,
+      "vantagem": 264959.68,
+      "desconto": 99922.96000000004
+    },
+    "MEDICO||MEDSUP3C20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP3C20",
+      "count": 11,
+      "liquido": 50695.229999999996,
+      "vantagem": 77343.75,
+      "desconto": 26648.52
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX3C30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX3C30",
+      "count": 39,
+      "liquido": 107726.51999999999,
+      "vantagem": 151859.89999999997,
+      "desconto": 44133.380000000005
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX3B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX3B30",
+      "count": 132,
+      "liquido": 358070.9399999999,
+      "vantagem": 513032.1799999996,
+      "desconto": 154961.24
+    },
+    "PSICOLOGO||UTFSUX2C30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX2C30",
+      "count": 51,
+      "liquido": 252325.8300000001,
+      "vantagem": 385653.73000000004,
+      "desconto": 133327.89999999997
+    },
+    "MEDICO||MEDSEP2A40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2A40",
+      "count": 41,
+      "liquido": 384951.97,
+      "vantagem": 695649.1899999997,
+      "desconto": 310697.2200000001
+    },
+    "MEDICO||0000999": {
+      "funcao": "MEDICO",
+      "nivel": "0000999",
+      "count": 14,
+      "liquido": 105365.95,
+      "vantagem": 144295.78999999998,
+      "desconto": 38929.840000000004
+    },
+    "ENFERMEIRO||UTFSEX3A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX3A30",
+      "count": 38,
+      "liquido": 229843.34000000008,
+      "vantagem": 318709.22,
+      "desconto": 88865.87999999998
+    },
+    "AGENTE ADMINISTRATIVO||UAMMUX1D30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMUX1D30",
+      "count": 50,
+      "liquido": 144192.30999999997,
+      "vantagem": 208323.38999999998,
+      "desconto": 64131.08
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX1E30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX1E30",
+      "count": 50,
+      "liquido": 141660.60000000003,
+      "vantagem": 202468.96000000008,
+      "desconto": 60808.36
+    },
+    "ATENDENTE DE ENFERMAGEM||UXFEUX1E30": {
+      "funcao": "ATENDENTE DE ENFERMAGEM",
+      "nivel": "UXFEUX1E30",
+      "count": 10,
+      "liquido": 33525.2,
+      "vantagem": 38672.06,
+      "desconto": 5146.860000000001
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEEX1B30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEEX1B30",
+      "count": 24,
+      "liquido": 48464.48000000001,
+      "vantagem": 61145.39000000003,
+      "desconto": 12680.910000000002
+    },
+    "MEDICO||MEDSEP1B24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1B24",
+      "count": 83,
+      "liquido": 495378.8599999998,
+      "vantagem": 779418.1600000001,
+      "desconto": 284039.3000000002
+    },
+    "TECNICO DE RADIOLOGIA||UAFMEX1A30": {
+      "funcao": "TECNICO DE RADIOLOGIA",
+      "nivel": "UAFMEX1A30",
+      "count": 20,
+      "liquido": 35800.46,
+      "vantagem": 55183.549999999996,
+      "desconto": 19383.09
+    },
+    "AUXILIAR DE SERVICOS DE SAUDE||ASEUA30": {
+      "funcao": "AUXILIAR DE SERVICOS DE SAUDE",
+      "nivel": "ASEUA30",
+      "count": 17,
+      "liquido": 39467.14000000001,
+      "vantagem": 43499.16,
+      "desconto": 4032.02
+    },
+    "NUTRICIONISTA||UTFSUX2C40": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX2C40",
+      "count": 10,
+      "liquido": 80416.39,
+      "vantagem": 112096.12,
+      "desconto": 31679.730000000003
+    },
+    "FISIOTERAPEUTA||STFSEX1B30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "STFSEX1B30",
+      "count": 12,
+      "liquido": 42799.53000000001,
+      "vantagem": 73180.54000000001,
+      "desconto": 30381.009999999995
+    },
+    "CONTADOR||UTMSUX2B30": {
+      "funcao": "CONTADOR",
+      "nivel": "UTMSUX2B30",
+      "count": 30,
+      "liquido": 119721.42000000006,
+      "vantagem": 185172.4000000001,
+      "desconto": 65450.979999999974
+    },
+    "MEDICO||MEDSUP1A20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1A20",
+      "count": 114,
+      "liquido": 470357.4300000001,
+      "vantagem": 681780.2900000003,
+      "desconto": 211422.86000000004
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX3D30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX3D30",
+      "count": 40,
+      "liquido": 140272.79,
+      "vantagem": 168670.87999999998,
+      "desconto": 28398.089999999997
+    },
+    "FARMACEUTICO||UTFSEX2C30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX2C30",
+      "count": 10,
+      "liquido": 54977.270000000004,
+      "vantagem": 93539.77,
+      "desconto": 38562.5
+    },
+    "PSICOLOGO||UTFSUX1A30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX1A30",
+      "count": 43,
+      "liquido": 138121.29999999996,
+      "vantagem": 250987.00000000006,
+      "desconto": 112865.69999999997
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX3A30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX3A30",
+      "count": 178,
+      "liquido": 454754.65999999986,
+      "vantagem": 565796.9200000012,
+      "desconto": 111042.26000000018
+    },
+    "FISIOTERAPEUTA||UTFSUX1A30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX1A30",
+      "count": 40,
+      "liquido": 169549.02000000008,
+      "vantagem": 231445.83000000005,
+      "desconto": 61896.810000000005
+    },
+    "FISIOTERAPEUTA||ASSEA30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "ASSEA30",
+      "count": 48,
+      "liquido": 235635.17999999993,
+      "vantagem": 325190.61,
+      "desconto": 89555.42999999996
+    },
+    "ENFERMEIRO||UTFSUX3A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX3A30",
+      "count": 81,
+      "liquido": 445560.1799999999,
+      "vantagem": 613296.3200000001,
+      "desconto": 167736.13999999998
+    },
+    "AUXILIAR DE LABORATORIO||UXFEEX3C30": {
+      "funcao": "AUXILIAR DE LABORATORIO",
+      "nivel": "UXFEEX3C30",
+      "count": 20,
+      "liquido": 57597.029999999984,
+      "vantagem": 82286.94,
+      "desconto": 24689.91
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSEX3B30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSEX3B30",
+      "count": 10,
+      "liquido": 41998.36,
+      "vantagem": 87454.16,
+      "desconto": 45455.799999999996
+    },
+    "NUTRICIONISTA||UTFSUX2A30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX2A30",
+      "count": 18,
+      "liquido": 83058.01999999999,
+      "vantagem": 129603.1,
+      "desconto": 46545.080000000016
+    },
+    "ANALISTA DE SISTEMAS||UTMSUX3B30": {
+      "funcao": "ANALISTA DE SISTEMAS",
+      "nivel": "UTMSUX3B30",
+      "count": 10,
+      "liquido": 45201.380000000005,
+      "vantagem": 66522.75,
+      "desconto": 21321.370000000003
+    },
+    "FARMACEUTICO||UTFSEX2B30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX2B30",
+      "count": 20,
+      "liquido": 103323.91000000002,
+      "vantagem": 174677.29,
+      "desconto": 71353.37999999999
+    },
+    "MEDICO||MEDSEP2B40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2B40",
+      "count": 27,
+      "liquido": 286423.48000000004,
+      "vantagem": 437674.47,
+      "desconto": 151250.98999999996
+    },
+    "ODONTOLOGO||UTFSUX1A20": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSUX1A20",
+      "count": 10,
+      "liquido": 29804.23000000001,
+      "vantagem": 35250.85,
+      "desconto": 5446.619999999999
+    },
+    "MOTORISTA||ASEUA30": {
+      "funcao": "MOTORISTA",
+      "nivel": "ASEUA30",
+      "count": 70,
+      "liquido": 124985.87999999992,
+      "vantagem": 141508.6100000001,
+      "desconto": 16522.730000000007
+    },
+    "MEDICO||MEDSUP1C24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1C24",
+      "count": 31,
+      "liquido": 166177.4,
+      "vantagem": 243750.8599999999,
+      "desconto": 77573.46000000002
+    },
+    "ODONTOLOGO||UTFSUX2C40": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSUX2C40",
+      "count": 10,
+      "liquido": 79637.12000000001,
+      "vantagem": 111945.37000000001,
+      "desconto": 32308.249999999996
+    },
+    "ANALISTA DE SISTEMAS||UTMSEX2B30": {
+      "funcao": "ANALISTA DE SISTEMAS",
+      "nivel": "UTMSEX2B30",
+      "count": 10,
+      "liquido": 54532.43,
+      "vantagem": 72578.90999999999,
+      "desconto": 18046.480000000003
+    },
+    "FARMACEUTICO||UTFSEX2A30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX2A30",
+      "count": 10,
+      "liquido": 60509.89,
+      "vantagem": 80267.50999999998,
+      "desconto": 19757.620000000003
+    },
+    "AUXILIAR LABORATORIO||UXFEEX3B30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEEX3B30",
+      "count": 10,
+      "liquido": 25725.0,
+      "vantagem": 35603.630000000005,
+      "desconto": 9878.630000000001
+    },
+    "PESQUISADOR DE INFORMACOES SOCIAIS||UTMSUX2D40": {
+      "funcao": "PESQUISADOR DE INFORMACOES SOCIAIS",
+      "nivel": "UTMSUX2D40",
+      "count": 10,
+      "liquido": 65840.27,
+      "vantagem": 120765.81,
+      "desconto": 54925.54
+    },
+    "ENFERMEIRO||UTFSEX3D30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX3D30",
+      "count": 27,
+      "liquido": 154228.75000000003,
+      "vantagem": 272053.88999999996,
+      "desconto": 117825.14000000003
+    },
+    "FONOAUDIOLOGO||UTFSEX2C30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSEX2C30",
+      "count": 10,
+      "liquido": 60970.03,
+      "vantagem": 80843.43,
+      "desconto": 19873.4
+    },
+    "PROFESSOR AUXILIAR||UCMSNP1A40": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "UCMSNP1A40",
+      "count": 35,
+      "liquido": 176552.80000000005,
+      "vantagem": 282683.75000000006,
+      "desconto": 106130.95
+    },
+    "ASSESSOR DE ADMINISTRACAO||UTMSUX1C40": {
+      "funcao": "ASSESSOR DE ADMINISTRACAO",
+      "nivel": "UTMSUX1C40",
+      "count": 10,
+      "liquido": 67052.87,
+      "vantagem": 92553.81000000001,
+      "desconto": 25500.940000000002
+    },
+    "NUTRICIONISTA||UTFSUX2C30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX2C30",
+      "count": 51,
+      "liquido": 252492.57000000007,
+      "vantagem": 397577.27000000014,
+      "desconto": 145084.7
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX3C30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX3C30",
+      "count": 89,
+      "liquido": 254597.5,
+      "vantagem": 325869.90000000014,
+      "desconto": 71272.40000000007
+    },
+    "TECNICO EM CONTABILIDADE||UAMMUX1D30": {
+      "funcao": "TECNICO EM CONTABILIDADE",
+      "nivel": "UAMMUX1D30",
+      "count": 3,
+      "liquido": 8776.35,
+      "vantagem": 11550.759999999998,
+      "desconto": 2774.41
+    },
+    "CONTADOR||ASSUA30": {
+      "funcao": "CONTADOR",
+      "nivel": "ASSUA30",
+      "count": 10,
+      "liquido": 44750.8,
+      "vantagem": 54623.61,
+      "desconto": 9872.809999999998
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMUX1C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMUX1C30",
+      "count": 30,
+      "liquido": 63552.640000000014,
+      "vantagem": 93235.72999999998,
+      "desconto": 29683.090000000004
+    },
+    "FISIOTERAPEUTA||UTFSUX3C30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX3C30",
+      "count": 24,
+      "liquido": 119513.61999999998,
+      "vantagem": 181844.66,
+      "desconto": 62331.03999999999
+    },
+    "ECONOMISTA||UTMSEX2D40": {
+      "funcao": "ECONOMISTA",
+      "nivel": "UTMSEX2D40",
+      "count": 20,
+      "liquido": 173573.24,
+      "vantagem": 243924.06000000006,
+      "desconto": 70350.81999999999
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSUX3D30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSUX3D30",
+      "count": 8,
+      "liquido": 49845.409999999996,
+      "vantagem": 67117.12999999999,
+      "desconto": 17271.72
+    },
+    "PSICOLOGO||UTFSEX2C40": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSEX2C40",
+      "count": 10,
+      "liquido": 71106.18000000001,
+      "vantagem": 99550.44999999998,
+      "desconto": 28444.270000000008
+    },
+    "ENFERMEIRO||UTFSEX2E30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX2E30",
+      "count": 10,
+      "liquido": 72483.31000000001,
+      "vantagem": 117676.15000000001,
+      "desconto": 45192.84
+    },
+    "TECNICO LABORATORIO||UAFMEX3A30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX3A30",
+      "count": 74,
+      "liquido": 245608.51999999987,
+      "vantagem": 305212.60000000003,
+      "desconto": 59604.07999999999
+    },
+    "MEDICO||MEDSEP1A20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1A20",
+      "count": 60,
+      "liquido": 327710.3300000001,
+      "vantagem": 435952.1,
+      "desconto": 108241.77000000003
+    },
+    "AUXILIAR LABORATORIO||UXFEEX3C30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEEX3C30",
+      "count": 13,
+      "liquido": 41170.34,
+      "vantagem": 47678.67,
+      "desconto": 6508.330000000001
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEEX1E30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEEX1E30",
+      "count": 10,
+      "liquido": 26226.92,
+      "vantagem": 39302.84,
+      "desconto": 13075.920000000002
+    },
+    "AUXILIAR ADMINISTRATIVO||UAMMUX1E30": {
+      "funcao": "AUXILIAR ADMINISTRATIVO",
+      "nivel": "UAMMUX1E30",
+      "count": 20,
+      "liquido": 54165.329999999994,
+      "vantagem": 73057.73,
+      "desconto": 18892.399999999998
+    },
+    "TECNICO DE ENFERMAGEM||UAFMEX3A30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMEX3A30",
+      "count": 52,
+      "liquido": 167071.69,
+      "vantagem": 212872.03999999992,
+      "desconto": 45800.34999999999
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX1D30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX1D30",
+      "count": 62,
+      "liquido": 152527.85999999996,
+      "vantagem": 196530.1,
+      "desconto": 44002.24000000001
+    },
+    "TECNICO DE ENFERMAGEM||UAFMEX3C30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMEX3C30",
+      "count": 70,
+      "liquido": 227848.99000000005,
+      "vantagem": 312689.8499999999,
+      "desconto": 84840.86000000002
+    },
+    "COZINHEIRO NIVEL III||UXMEEX1B30": {
+      "funcao": "COZINHEIRO NIVEL III",
+      "nivel": "UXMEEX1B30",
+      "count": 10,
+      "liquido": 11537.900000000001,
+      "vantagem": 25084.839999999997,
+      "desconto": 13546.94
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX2C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX2C30",
+      "count": 76,
+      "liquido": 236858.6,
+      "vantagem": 295359.3599999999,
+      "desconto": 58500.76
+    },
+    "PROFESSOR TITULAR||UCMSNP4C40": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSNP4C40",
+      "count": 132,
+      "liquido": 1360599.5699999998,
+      "vantagem": 2107962.1500000022,
+      "desconto": 747362.5799999995
+    },
+    "ENFERMEIRO||UTFSEX3C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX3C30",
+      "count": 95,
+      "liquido": 575633.1800000003,
+      "vantagem": 844246.4800000006,
+      "desconto": 268613.30000000005
+    },
+    "NUTRICIONISTA||UTFSEX2B30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX2B30",
+      "count": 53,
+      "liquido": 296638.98000000004,
+      "vantagem": 435349.2200000001,
+      "desconto": 138710.24
+    },
+    "FISIOTERAPEUTA||UTFSEX3B30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSEX3B30",
+      "count": 87,
+      "liquido": 524581.23,
+      "vantagem": 760354.9200000004,
+      "desconto": 235773.69
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX3D30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX3D30",
+      "count": 36,
+      "liquido": 129527.09999999998,
+      "vantagem": 163427.06999999998,
+      "desconto": 33899.97
+    },
+    "MEDICO||MEDSEP3A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP3A24",
+      "count": 47,
+      "liquido": 390020.31000000006,
+      "vantagem": 550767.2800000003,
+      "desconto": 160746.97000000003
+    },
+    "MEDICO||MEDSEP4A24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP4A24",
+      "count": 10,
+      "liquido": 76026.67,
+      "vantagem": 106138.20000000003,
+      "desconto": 30111.53
+    },
+    "MEDICO||MSSEA30": {
+      "funcao": "MEDICO",
+      "nivel": "MSSEA30",
+      "count": 10,
+      "liquido": 74600.22,
+      "vantagem": 99948.96,
+      "desconto": 25348.739999999998
+    },
+    "JORNALISTA||UTMSUX4A30": {
+      "funcao": "JORNALISTA",
+      "nivel": "UTMSUX4A30",
+      "count": 10,
+      "liquido": 50864.57,
+      "vantagem": 66743.59999999999,
+      "desconto": 15879.03
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSUX4B30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSUX4B30",
+      "count": 10,
+      "liquido": 47467.24,
+      "vantagem": 86389.2,
+      "desconto": 38921.95999999999
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSUX3B30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSUX3B30",
+      "count": 40,
+      "liquido": 189147.67000000004,
+      "vantagem": 282955.5300000002,
+      "desconto": 93807.86000000003
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX2C30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX2C30",
+      "count": 13,
+      "liquido": 36216.19,
+      "vantagem": 46935.38000000001,
+      "desconto": 10719.189999999999
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX1B30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX1B30",
+      "count": 43,
+      "liquido": 94695.42000000001,
+      "vantagem": 133661.69999999998,
+      "desconto": 38966.280000000006
+    },
+    "PROFESSOR ADJUNTO||UCMSDP3B40": {
+      "funcao": "PROFESSOR ADJUNTO",
+      "nivel": "UCMSDP3B40",
+      "count": 10,
+      "liquido": 128192.40000000001,
+      "vantagem": 188163.19000000003,
+      "desconto": 59970.79
+    },
+    "TECNICO LABORATORIO||UAFMEX1B30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX1B30",
+      "count": 68,
+      "liquido": 191369.9899999999,
+      "vantagem": 256858.35000000003,
+      "desconto": 65488.359999999964
+    },
+    "PSICOLOGO||UTFSUX3B30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX3B30",
+      "count": 20,
+      "liquido": 116976.37,
+      "vantagem": 167541.32,
+      "desconto": 50564.950000000004
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSUX1B30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSUX1B30",
+      "count": 38,
+      "liquido": 174150.51999999993,
+      "vantagem": 232992.5899999999,
+      "desconto": 58842.07000000001
+    },
+    "NUTRICIONISTA||STFSUX3B30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "STFSUX3B30",
+      "count": 5,
+      "liquido": 27783.33,
+      "vantagem": 36671.75,
+      "desconto": 8888.42
+    },
+    "PROFESSOR AUXILIAR||UCMSNP1C20": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "UCMSNP1C20",
+      "count": 73,
+      "liquido": 293897.92,
+      "vantagem": 391467.1800000001,
+      "desconto": 97569.26
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEUX1C30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEUX1C30",
+      "count": 77,
+      "liquido": 162851.2199999999,
+      "vantagem": 229993.20999999988,
+      "desconto": 67141.98999999999
+    },
+    "MEDICO||MEDSUP1C40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1C40",
+      "count": 2,
+      "liquido": 17984.2,
+      "vantagem": 26103.26,
+      "desconto": 8119.06
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSUX3C30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSUX3C30",
+      "count": 20,
+      "liquido": 113865.52999999997,
+      "vantagem": 151566.8,
+      "desconto": 37701.27
+    },
+    "PSICOLOGO||UTFSEX2B30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSEX2B30",
+      "count": 10,
+      "liquido": 61300.369999999995,
+      "vantagem": 86481.73000000001,
+      "desconto": 25181.36
+    },
+    "BIOMEDICO||UTFSUX2B30": {
+      "funcao": "BIOMEDICO",
+      "nivel": "UTFSUX2B30",
+      "count": 10,
+      "liquido": 48111.850000000006,
+      "vantagem": 68561.31999999999,
+      "desconto": 20449.47
+    },
+    "AUXILIAR DE FISIOTEREPIA||SXFEUX1D30": {
+      "funcao": "AUXILIAR DE FISIOTEREPIA",
+      "nivel": "SXFEUX1D30",
+      "count": 10,
+      "liquido": 29973.569999999996,
+      "vantagem": 33362.57,
+      "desconto": 3389.0000000000005
+    },
+    "MOTORISTA||UXMEUX2C30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX2C30",
+      "count": 20,
+      "liquido": 60296.829999999994,
+      "vantagem": 67608.83999999998,
+      "desconto": 7312.010000000003
+    },
+    "PSICOLOGO||UTFSEX1B40": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSEX1B40",
+      "count": 10,
+      "liquido": 67211.70999999999,
+      "vantagem": 93382.15,
+      "desconto": 26170.440000000002
+    },
+    "PSICOLOGO||UTFSUX3E40": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX3E40",
+      "count": 10,
+      "liquido": 57549.880000000005,
+      "vantagem": 105713.44999999998,
+      "desconto": 48163.56999999999
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX1E30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX1E30",
+      "count": 20,
+      "liquido": 80118.97,
+      "vantagem": 96194.37,
+      "desconto": 16075.400000000001
+    },
+    "PSICOLOGO||UTFSEX2C30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSEX2C30",
+      "count": 109,
+      "liquido": 604592.0100000005,
+      "vantagem": 863781.03,
+      "desconto": 259189.02
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMEX3A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMEX3A30",
+      "count": 31,
+      "liquido": 90962.79999999999,
+      "vantagem": 119930.60000000003,
+      "desconto": 28967.799999999996
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||ASEUA30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "ASEUA30",
+      "count": 60,
+      "liquido": 116934.99999999991,
+      "vantagem": 127376.51000000008,
+      "desconto": 10441.510000000002
+    },
+    "FISIOTERAPEUTA||UTFSEX2C30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSEX2C30",
+      "count": 20,
+      "liquido": 130909.07000000002,
+      "vantagem": 178182.80999999997,
+      "desconto": 47273.73999999999
+    },
+    "ENFERMEIRO||UTFSEX1B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX1B30",
+      "count": 52,
+      "liquido": 276260.0999999999,
+      "vantagem": 391977.02,
+      "desconto": 115716.92000000006
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX1D30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX1D30",
+      "count": 27,
+      "liquido": 65388.7,
+      "vantagem": 96570.48999999999,
+      "desconto": 31181.79
+    },
+    "MEDICO||MEDSEP1B20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1B20",
+      "count": 15,
+      "liquido": 50965.39,
+      "vantagem": 75808.09999999999,
+      "desconto": 24842.710000000003
+    },
+    "MOTORISTA||UXMEEX2A30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEEX2A30",
+      "count": 10,
+      "liquido": 30295.010000000002,
+      "vantagem": 35714.96,
+      "desconto": 5419.950000000001
+    },
+    "MOTORISTA||UXMEEX3C30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEEX3C30",
+      "count": 10,
+      "liquido": 29332.1,
+      "vantagem": 42081.15,
+      "desconto": 12749.049999999997
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX3A30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX3A30",
+      "count": 30,
+      "liquido": 86890.32,
+      "vantagem": 103592.44000000008,
+      "desconto": 16702.12
+    },
+    "BIOMEDICO||STFSEX2C30": {
+      "funcao": "BIOMEDICO",
+      "nivel": "STFSEX2C30",
+      "count": 3,
+      "liquido": 16915.26,
+      "vantagem": 24193.38,
+      "desconto": 7278.119999999999
+    },
+    "MOTORISTA||UXMEUX3C30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX3C30",
+      "count": 30,
+      "liquido": 94381.34000000001,
+      "vantagem": 115681.90000000001,
+      "desconto": 21300.559999999994
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX3A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX3A30",
+      "count": 96,
+      "liquido": 275604.60000000003,
+      "vantagem": 372672.9899999998,
+      "desconto": 97068.39
+    },
+    "TECNICO DE RADIOLOGIA||UAFMEX3C30": {
+      "funcao": "TECNICO DE RADIOLOGIA",
+      "nivel": "UAFMEX3C30",
+      "count": 10,
+      "liquido": 28321.380000000005,
+      "vantagem": 38485.79,
+      "desconto": 10164.410000000002
+    },
+    "PSICOLOGO||ASSUA20": {
+      "funcao": "PSICOLOGO",
+      "nivel": "ASSUA20",
+      "count": 21,
+      "liquido": 58351.09000000001,
+      "vantagem": 71392.18000000001,
+      "desconto": 13041.09
+    },
+    "ASSISTENTE SOCIAL||UTFSEX2D40": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSEX2D40",
+      "count": 10,
+      "liquido": 101187.76999999999,
+      "vantagem": 143730.11,
+      "desconto": 42542.340000000004
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX1C30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX1C30",
+      "count": 37,
+      "liquido": 87348.58000000003,
+      "vantagem": 129385.86999999998,
+      "desconto": 42037.28999999999
+    },
+    "ASSISTENTE SOCIAL||UTFSEX1B30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSEX1B30",
+      "count": 20,
+      "liquido": 86777.22,
+      "vantagem": 139100.03000000003,
+      "desconto": 52322.81
+    },
+    "ARTIFICE||UXMEUX3C30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX3C30",
+      "count": 10,
+      "liquido": 21739.550000000003,
+      "vantagem": 25278.600000000002,
+      "desconto": 3539.05
+    },
+    "BIOQUIMICO||ASSEA24": {
+      "funcao": "BIOQUIMICO",
+      "nivel": "ASSEA24",
+      "count": 40,
+      "liquido": 180182.94999999998,
+      "vantagem": 222065.50000000006,
+      "desconto": 41882.55
+    },
+    "RELACOES PUBLICAS||UTMSUX3C30": {
+      "funcao": "RELACOES PUBLICAS",
+      "nivel": "UTMSUX3C30",
+      "count": 1,
+      "liquido": 5049.73,
+      "vantagem": 7628.31,
+      "desconto": 2578.58
+    },
+    "BIOQUIMICO||UTFSEX2B30": {
+      "funcao": "BIOQUIMICO",
+      "nivel": "UTFSEX2B30",
+      "count": 70,
+      "liquido": 415180.60000000003,
+      "vantagem": 603264.9099999999,
+      "desconto": 188084.31000000006
+    },
+    "AUXILIAR LABORATORIO||UXFEUX2B30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEUX2B30",
+      "count": 10,
+      "liquido": 27116.510000000002,
+      "vantagem": 30895.559999999998,
+      "desconto": 3779.0500000000006
+    },
+    "MEDICO||MEDSUP2C40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP2C40",
+      "count": 18,
+      "liquido": 187508.07,
+      "vantagem": 277459.52,
+      "desconto": 89951.45
+    },
+    "PSICOLOGO||UTFSEX2D30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSEX2D30",
+      "count": 30,
+      "liquido": 194159.59999999998,
+      "vantagem": 279989.41000000015,
+      "desconto": 85829.81
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSUX2C30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSUX2C30",
+      "count": 61,
+      "liquido": 344064.6800000001,
+      "vantagem": 464518.82999999996,
+      "desconto": 120454.14999999994
+    },
+    "ENFERMEIRO||UTFSUX3E40": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX3E40",
+      "count": 1,
+      "liquido": 6454.63,
+      "vantagem": 11822.27,
+      "desconto": 5367.64
+    },
+    "ASSISTENTE SOCIAL||UTFSEX2C30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSEX2C30",
+      "count": 67,
+      "liquido": 412872.9099999999,
+      "vantagem": 595806.3000000003,
+      "desconto": 182933.39000000004
+    },
+    "MEDICO||MEDSEP2C20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2C20",
+      "count": 30,
+      "liquido": 199833.27999999997,
+      "vantagem": 277079.8299999999,
+      "desconto": 77246.54999999999
+    },
+    "ASSISTENTE SOCIAL||UTFSEX2B30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSEX2B30",
+      "count": 32,
+      "liquido": 179052.80000000002,
+      "vantagem": 254342.50000000006,
+      "desconto": 75289.7
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSEX2B30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSEX2B30",
+      "count": 30,
+      "liquido": 137798.81,
+      "vantagem": 221092.20000000004,
+      "desconto": 83293.39
+    },
+    "BIOMEDICO||ASSEA24": {
+      "funcao": "BIOMEDICO",
+      "nivel": "ASSEA24",
+      "count": 30,
+      "liquido": 112565.39999999997,
+      "vantagem": 149876.25999999995,
+      "desconto": 37310.86000000001
+    },
+    "FARMACEUTICO||UTFSUX3B30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSUX3B30",
+      "count": 20,
+      "liquido": 123343.61000000003,
+      "vantagem": 164236.66999999995,
+      "desconto": 40893.06
+    },
+    "BIOQUIMICO||UTFSEX3B30": {
+      "funcao": "BIOQUIMICO",
+      "nivel": "UTFSEX3B30",
+      "count": 30,
+      "liquido": 208980.37999999998,
+      "vantagem": 287368.00999999995,
+      "desconto": 78387.62999999999
+    },
+    "TECNICO LABORATORIO||UAFMUX3B30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMUX3B30",
+      "count": 10,
+      "liquido": 29274.75,
+      "vantagem": 33533.25000000001,
+      "desconto": 4258.500000000001
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX2D30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX2D30",
+      "count": 12,
+      "liquido": 27572.409999999996,
+      "vantagem": 36751.25000000001,
+      "desconto": 9178.84
+    },
+    "MEDICO||MEDSUP3B24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP3B24",
+      "count": 21,
+      "liquido": 141486.80999999994,
+      "vantagem": 198089.71999999997,
+      "desconto": 56602.91000000001
+    },
+    "TECNICO LABORATORIO||UAFMEX2A30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX2A30",
+      "count": 10,
+      "liquido": 26010.15,
+      "vantagem": 40258.47,
+      "desconto": 14248.32
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX2B30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX2B30",
+      "count": 84,
+      "liquido": 217168.82000000004,
+      "vantagem": 307306.8599999999,
+      "desconto": 90138.04000000002
+    },
+    "TECNICO LABORATORIO||UAFMUX3A30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMUX3A30",
+      "count": 16,
+      "liquido": 34995.439999999995,
+      "vantagem": 45522.88999999999,
+      "desconto": 10527.45
+    },
+    "NUTRICIONISTA||STFSEX1C30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "STFSEX1C30",
+      "count": 10,
+      "liquido": 56801.10999999999,
+      "vantagem": 76059.21,
+      "desconto": 19258.100000000002
+    },
+    "PROFESSOR ASSISTENTE||UCMSDP2C40": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSDP2C40",
+      "count": 11,
+      "liquido": 123584.79999999999,
+      "vantagem": 181158.81999999995,
+      "desconto": 57574.01999999998
+    },
+    "AGENTE ADMINISTRATIVO||UAMMUX3E30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMUX3E30",
+      "count": 20,
+      "liquido": 45760.93,
+      "vantagem": 71917.55,
+      "desconto": 26156.620000000006
+    },
+    "AUXILIAR DE LABORATORIO||UXFEEX1B30": {
+      "funcao": "AUXILIAR DE LABORATORIO",
+      "nivel": "UXFEEX1B30",
+      "count": 10,
+      "liquido": 20337.999999999996,
+      "vantagem": 24454.57,
+      "desconto": 4116.57
+    },
+    "MEDICO||MEDSNP1A20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSNP1A20",
+      "count": 10,
+      "liquido": 30526.050000000003,
+      "vantagem": 45248.509999999995,
+      "desconto": 14722.46
+    },
+    "ASSISTENTE SOCIAL||UTFSUX3B30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX3B30",
+      "count": 10,
+      "liquido": 52082.899999999994,
+      "vantagem": 68687.67,
+      "desconto": 16604.77
+    },
+    "MEDICO VETERINARIO||MEVSNP1C40": {
+      "funcao": "MEDICO VETERINARIO",
+      "nivel": "MEVSNP1C40",
+      "count": 10,
+      "liquido": 37942.59,
+      "vantagem": 56141.74000000001,
+      "desconto": 18199.149999999998
+    },
+    "FONOAUDIOLOGO||GVPE03": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "GVPE03",
+      "count": 10,
+      "liquido": 19220.04,
+      "vantagem": 22303.699999999997,
+      "desconto": 3083.66
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||SXMEUX1C30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "SXMEUX1C30",
+      "count": 20,
+      "liquido": 55747.90999999999,
+      "vantagem": 61951.37000000003,
+      "desconto": 6203.460000000001
+    },
+    "AUXILIAR LABORATORIO||UXFEEX3A30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEEX3A30",
+      "count": 17,
+      "liquido": 42081.03999999999,
+      "vantagem": 60914.830000000016,
+      "desconto": 18833.789999999997
+    },
+    "ODONTOLOGO||UTFSEX1A20": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSEX1A20",
+      "count": 10,
+      "liquido": 21967.75,
+      "vantagem": 40532.950000000004,
+      "desconto": 18565.2
+    },
+    "ARTIFICE||UXMEEX2A30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX2A30",
+      "count": 10,
+      "liquido": 28466.03,
+      "vantagem": 32127.42,
+      "desconto": 3661.39
+    },
+    "BIBLIOTECARIO||UTMSUX2B30": {
+      "funcao": "BIBLIOTECARIO",
+      "nivel": "UTMSUX2B30",
+      "count": 10,
+      "liquido": 49119.600000000006,
+      "vantagem": 63112.2,
+      "desconto": 13992.6
+    },
+    "BIBLIOTECARIO||UTMSUX3B30": {
+      "funcao": "BIBLIOTECARIO",
+      "nivel": "UTMSUX3B30",
+      "count": 10,
+      "liquido": 57785.33000000001,
+      "vantagem": 75114.75,
+      "desconto": 17329.42
+    },
+    "TECNICO EM PLANEJAMENTO||UTMSUX1D20": {
+      "funcao": "TECNICO EM PLANEJAMENTO",
+      "nivel": "UTMSUX1D20",
+      "count": 6,
+      "liquido": 20800.179999999997,
+      "vantagem": 25285.84,
+      "desconto": 4485.66
+    },
+    "MOTORISTA||UXMEUX1C30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX1C30",
+      "count": 16,
+      "liquido": 43276.960000000014,
+      "vantagem": 48917.490000000005,
+      "desconto": 5640.530000000001
+    },
+    "ATENDENTE DE ENFERMAGEM||UXFEUX1D30": {
+      "funcao": "ATENDENTE DE ENFERMAGEM",
+      "nivel": "UXFEUX1D30",
+      "count": 40,
+      "liquido": 83800.63999999998,
+      "vantagem": 123800.12000000007,
+      "desconto": 39999.479999999996
+    },
+    "FARMACEUTICO||UTFSEX3A30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX3A30",
+      "count": 10,
+      "liquido": 59368.520000000004,
+      "vantagem": 82983.04000000001,
+      "desconto": 23614.52
+    },
+    "FARMACEUTICO||UTFSEX4A30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX4A30",
+      "count": 10,
+      "liquido": 66266.44,
+      "vantagem": 90045.70000000001,
+      "desconto": 23779.26
+    },
+    "TECNICO DE RADIOLOGIA||UAFMEX3B30": {
+      "funcao": "TECNICO DE RADIOLOGIA",
+      "nivel": "UAFMEX3B30",
+      "count": 20,
+      "liquido": 68706.19,
+      "vantagem": 85311.12,
+      "desconto": 16604.93
+    },
+    "ENFERMEIRO||UTFSUX3B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX3B30",
+      "count": 56,
+      "liquido": 299301.8999999999,
+      "vantagem": 443317.68,
+      "desconto": 144015.77999999997
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX1E30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX1E30",
+      "count": 30,
+      "liquido": 87290.58000000003,
+      "vantagem": 114418.77000000003,
+      "desconto": 27128.190000000006
+    },
+    "AUXILIAR ADMINISTRATIVO||UAMMEX3D30": {
+      "funcao": "AUXILIAR ADMINISTRATIVO",
+      "nivel": "UAMMEX3D30",
+      "count": 9,
+      "liquido": 26552.890000000003,
+      "vantagem": 31357.37,
+      "desconto": 4804.4800000000005
+    },
+    "AUXILIAR ADMINISTRATIVO||UAMMEX1C30": {
+      "funcao": "AUXILIAR ADMINISTRATIVO",
+      "nivel": "UAMMEX1C30",
+      "count": 30,
+      "liquido": 50404.80000000001,
+      "vantagem": 95001.12999999999,
+      "desconto": 44596.329999999994
+    },
+    "ATENDENTE DE ENFERMAGEM||UXFEUX1C30": {
+      "funcao": "ATENDENTE DE ENFERMAGEM",
+      "nivel": "UXFEUX1C30",
+      "count": 40,
+      "liquido": 80500.49,
+      "vantagem": 108573.14999999994,
+      "desconto": 28072.66000000001
+    },
+    "ARTIFICE||UXMEEX1D30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX1D30",
+      "count": 40,
+      "liquido": 113686.58000000002,
+      "vantagem": 145025.3,
+      "desconto": 31338.72000000001
+    },
+    "TECNICO DE ENFERMAGEM||UAMMUX2A30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAMMUX2A30",
+      "count": 10,
+      "liquido": 16039.64,
+      "vantagem": 30469.7,
+      "desconto": 14430.059999999998
+    },
+    "ENFERMEIRO||UTFSUX4A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX4A30",
+      "count": 2,
+      "liquido": 12303.79,
+      "vantagem": 16460.85,
+      "desconto": 4157.06
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMEX1C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMEX1C30",
+      "count": 3,
+      "liquido": 8965.92,
+      "vantagem": 10452.68,
+      "desconto": 1486.76
+    },
+    "TECNICO DE ENFERMAGEM||UAFMEX2A30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMEX2A30",
+      "count": 40,
+      "liquido": 108490.83,
+      "vantagem": 146511.1,
+      "desconto": 38020.270000000004
+    },
+    "MEDICO||MEDSUP1C20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1C20",
+      "count": 13,
+      "liquido": 36680.36,
+      "vantagem": 52807.28,
+      "desconto": 16126.920000000002
+    },
+    "MEDICO||MEDSEP2D20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2D20",
+      "count": 16,
+      "liquido": 70848.81,
+      "vantagem": 109337.36999999998,
+      "desconto": 38488.56
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX2A30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX2A30",
+      "count": 10,
+      "liquido": 46557.99,
+      "vantagem": 67410.54999999999,
+      "desconto": 20852.56
+    },
+    "NUTRICIONISTA||UTFSEX3A30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX3A30",
+      "count": 10,
+      "liquido": 37232.619999999995,
+      "vantagem": 89461.72,
+      "desconto": 52229.100000000006
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEUX1D30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEUX1D30",
+      "count": 10,
+      "liquido": 21793.949999999997,
+      "vantagem": 27414.25,
+      "desconto": 5620.300000000001
+    },
+    "AGENTE ADMINISTRATIVO||UAMMUX1E30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMUX1E30",
+      "count": 10,
+      "liquido": 31922.01,
+      "vantagem": 40435.8,
+      "desconto": 8513.789999999999
+    },
+    "NUTRICIONISTA||UTFSEX1A30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX1A30",
+      "count": 31,
+      "liquido": 135598.47999999998,
+      "vantagem": 208375.05000000002,
+      "desconto": 72776.56999999999
+    },
+    "PROFESSOR ASSISTENTE||ASSMA20": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "ASSMA20",
+      "count": 10,
+      "liquido": 33013.82999999999,
+      "vantagem": 45047.52999999999,
+      "desconto": 12033.7
+    },
+    "AUXILIAR ADMINISTRATIVO||UAMMUX1D30": {
+      "funcao": "AUXILIAR ADMINISTRATIVO",
+      "nivel": "UAMMUX1D30",
+      "count": 40,
+      "liquido": 104775.05,
+      "vantagem": 146338.73,
+      "desconto": 41563.68
+    },
+    "ENFERMEIRO||STFSEX2C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "STFSEX2C30",
+      "count": 10,
+      "liquido": 55968.89000000001,
+      "vantagem": 82382.69,
+      "desconto": 26413.8
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMUX1E30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMUX1E30",
+      "count": 3,
+      "liquido": 10028.259999999998,
+      "vantagem": 11787.45,
+      "desconto": 1759.19
+    },
+    "BIOQUIMICO||UTFSEX2A30": {
+      "funcao": "BIOQUIMICO",
+      "nivel": "UTFSEX2A30",
+      "count": 20,
+      "liquido": 116248.04999999997,
+      "vantagem": 160072.16,
+      "desconto": 43824.10999999999
+    },
+    "PSICOLOGO||UTFSUX2E40": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX2E40",
+      "count": 10,
+      "liquido": 68754.79000000001,
+      "vantagem": 97178.25000000001,
+      "desconto": 28423.459999999995
+    },
+    "ASSISTENTE DE ADMINISTRACAO||ASMUA30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "ASMUA30",
+      "count": 10,
+      "liquido": 23266.54,
+      "vantagem": 25497.77,
+      "desconto": 2231.23
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSUX2A30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSUX2A30",
+      "count": 15,
+      "liquido": 69063.92,
+      "vantagem": 89400.10000000002,
+      "desconto": 20336.18
+    },
+    "MEDICO||MEDSEP2A20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2A20",
+      "count": 5,
+      "liquido": 28014.15,
+      "vantagem": 41194.3,
+      "desconto": 13180.15
+    },
+    "TECNICO DE RADIOLOGIA||AMUA24J": {
+      "funcao": "TECNICO DE RADIOLOGIA",
+      "nivel": "AMUA24J",
+      "count": 10,
+      "liquido": 21105.31,
+      "vantagem": 33562.05,
+      "desconto": 12456.74
+    },
+    "ASSISTENTE SOCIAL||UTFSEX2E40": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSEX2E40",
+      "count": 20,
+      "liquido": 186887.97,
+      "vantagem": 277183.39999999997,
+      "desconto": 90295.42999999998
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEEX2E30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEEX2E30",
+      "count": 10,
+      "liquido": 28485.22,
+      "vantagem": 38695.61,
+      "desconto": 10210.39
+    },
+    "ARTIFICE||UXMEEX3C30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX3C30",
+      "count": 37,
+      "liquido": 107115.19000000003,
+      "vantagem": 137728.50999999998,
+      "desconto": 30613.31999999999
+    },
+    "AUXILIAR DE NECROPSIA||UAFMUX3B30": {
+      "funcao": "AUXILIAR DE NECROPSIA",
+      "nivel": "UAFMUX3B30",
+      "count": 20,
+      "liquido": 63811.86,
+      "vantagem": 82564.43000000002,
+      "desconto": 18752.570000000003
+    },
+    "ASSISTENTE SOCIAL||UTFSUX2C30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX2C30",
+      "count": 46,
+      "liquido": 212584.33000000005,
+      "vantagem": 342455.6099999999,
+      "desconto": 129871.28
+    },
+    "ODONTOLOGO||UTFSUX3C30": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSUX3C30",
+      "count": 1,
+      "liquido": 4958.1,
+      "vantagem": 7589.84,
+      "desconto": 2631.74
+    },
+    "ASSISTENTE SOCIAL||UTFSUX2C40": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX2C40",
+      "count": 10,
+      "liquido": 73182.32,
+      "vantagem": 100585.62,
+      "desconto": 27403.299999999996
+    },
+    "MEDICO||MEDSEP1A40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1A40",
+      "count": 28,
+      "liquido": 255332.21,
+      "vantagem": 416901.3999999999,
+      "desconto": 161569.19
+    },
+    "AUXILIAR DE NECROPSIA||UAFMUX2B30": {
+      "funcao": "AUXILIAR DE NECROPSIA",
+      "nivel": "UAFMUX2B30",
+      "count": 10,
+      "liquido": 33647.9,
+      "vantagem": 38600.670000000006,
+      "desconto": 4952.7699999999995
+    },
+    "TECNICO LABORATORIO||UAFMUX1A30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMUX1A30",
+      "count": 10,
+      "liquido": 25042.23,
+      "vantagem": 28194.440000000006,
+      "desconto": 3152.21
+    },
+    "ASSISTENTE SOCIAL||UTFSUX3C30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX3C30",
+      "count": 10,
+      "liquido": 32360.15,
+      "vantagem": 81396.04000000001,
+      "desconto": 49035.89000000001
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||SXMEEX1D30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "SXMEEX1D30",
+      "count": 13,
+      "liquido": 29849.81,
+      "vantagem": 46119.58,
+      "desconto": 16269.769999999999
+    },
+    "TECNICO EM ESTATISTICA||UAMMEX3E30": {
+      "funcao": "TECNICO EM ESTATISTICA",
+      "nivel": "UAMMEX3E30",
+      "count": 10,
+      "liquido": 41630.439999999995,
+      "vantagem": 50322.530000000006,
+      "desconto": 8692.089999999998
+    },
+    "JORNALISTA||UTMSUX2B30": {
+      "funcao": "JORNALISTA",
+      "nivel": "UTMSUX2B30",
+      "count": 10,
+      "liquido": 32214.48,
+      "vantagem": 61030.09999999999,
+      "desconto": 28815.620000000003
+    },
+    "PSICOLOGO||UTFSUX1B30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX1B30",
+      "count": 20,
+      "liquido": 74825.19,
+      "vantagem": 131211.83999999997,
+      "desconto": 56386.65000000001
+    },
+    "NUTRICIONISTA||UTFSEX3C30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX3C30",
+      "count": 3,
+      "liquido": 18617.489999999998,
+      "vantagem": 25297.199999999997,
+      "desconto": 6679.710000000001
+    },
+    "FARMACEUTICO||UTFSUX2A30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSUX2A30",
+      "count": 22,
+      "liquido": 113679.52999999997,
+      "vantagem": 158965.28,
+      "desconto": 45285.75
+    },
+    "AUXILIAR LABORATORIO||UXFEEX1B30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEEX1B30",
+      "count": 20,
+      "liquido": 41587.630000000005,
+      "vantagem": 56238.900000000016,
+      "desconto": 14651.27
+    },
+    "SOCIOLOGO||UTMSUX4C40": {
+      "funcao": "SOCIOLOGO",
+      "nivel": "UTMSUX4C40",
+      "count": 10,
+      "liquido": 68640.35,
+      "vantagem": 96839.3,
+      "desconto": 28198.94999999999
+    },
+    "ENGENHEIRO||ENASNP0D40": {
+      "funcao": "ENGENHEIRO",
+      "nivel": "ENASNP0D40",
+      "count": 10,
+      "liquido": 65337.77000000001,
+      "vantagem": 98421.1,
+      "desconto": 33083.33
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEEX1D30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEEX1D30",
+      "count": 50,
+      "liquido": 114566.08999999997,
+      "vantagem": 160524.54,
+      "desconto": 45958.45
+    },
+    "ARTIFICE||UXMEEX1B30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX1B30",
+      "count": 20,
+      "liquido": 51205.429999999986,
+      "vantagem": 59253.66,
+      "desconto": 8048.230000000001
+    },
+    "TECNICO EM CONTABILIDADE||UAMMEX3E30": {
+      "funcao": "TECNICO EM CONTABILIDADE",
+      "nivel": "UAMMEX3E30",
+      "count": 10,
+      "liquido": 35937.240000000005,
+      "vantagem": 55090.53999999999,
+      "desconto": 19153.300000000003
+    },
+    "MOTORISTA||UXMEUX1A30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX1A30",
+      "count": 10,
+      "liquido": 15618.600000000002,
+      "vantagem": 30009.679999999997,
+      "desconto": 14391.08
+    },
+    "ASSISTENTE DE ADMINISTRACAO||SAMMUX1C30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "SAMMUX1C30",
+      "count": 10,
+      "liquido": 21549.189999999995,
+      "vantagem": 25095.949999999997,
+      "desconto": 3546.76
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX1E30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX1E30",
+      "count": 6,
+      "liquido": 20469.949999999997,
+      "vantagem": 44044.020000000004,
+      "desconto": 23574.07
+    },
+    "OPER DE EQUIP MED E ASSEM||UXFEEX2C30": {
+      "funcao": "OPER DE EQUIP MED E ASSEM",
+      "nivel": "UXFEEX2C30",
+      "count": 20,
+      "liquido": 48047.39000000001,
+      "vantagem": 71067.94,
+      "desconto": 23020.550000000003
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX1D30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX1D30",
+      "count": 21,
+      "liquido": 57264.19000000001,
+      "vantagem": 83466.81999999999,
+      "desconto": 26202.63000000001
+    },
+    "AGENTE ADMINISTRATIVO||UAMMUX2E30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMUX2E30",
+      "count": 10,
+      "liquido": 24772.78,
+      "vantagem": 30663.800000000003,
+      "desconto": 5891.02
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||SXMEUX1D30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "SXMEUX1D30",
+      "count": 10,
+      "liquido": 24281.239999999998,
+      "vantagem": 34397.700000000004,
+      "desconto": 10116.46
+    },
+    "ARTIFICE ESPECIALIZADO||UAMMEX1C30": {
+      "funcao": "ARTIFICE ESPECIALIZADO",
+      "nivel": "UAMMEX1C30",
+      "count": 10,
+      "liquido": 22583.0,
+      "vantagem": 27236.050000000003,
+      "desconto": 4653.05
+    },
+    "MOTORISTA||UXMEEX3D30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEEX3D30",
+      "count": 20,
+      "liquido": 66315.01999999999,
+      "vantagem": 80659.81000000001,
+      "desconto": 14344.789999999997
+    },
+    "MEDICO||MEDSUP1B40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1B40",
+      "count": 10,
+      "liquido": 102365.21,
+      "vantagem": 147146.48,
+      "desconto": 44781.270000000004
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX3A30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX3A30",
+      "count": 10,
+      "liquido": 23495.6,
+      "vantagem": 40184.66,
+      "desconto": 16689.059999999998
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX3E30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX3E30",
+      "count": 20,
+      "liquido": 91280.40999999999,
+      "vantagem": 109678.72000000002,
+      "desconto": 18398.31
+    },
+    "ENFERMEIRO||STFSUX3C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "STFSUX3C30",
+      "count": 10,
+      "liquido": 52402.55999999999,
+      "vantagem": 75783.4,
+      "desconto": 23380.839999999997
+    },
+    "TECNICO LABORATORIO||UAFMUX1B30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMUX1B30",
+      "count": 10,
+      "liquido": 26215.520000000004,
+      "vantagem": 29559.520000000004,
+      "desconto": 3344.0
+    },
+    "COZINHEIRO NIVEL III||UXMEUX1C30": {
+      "funcao": "COZINHEIRO NIVEL III",
+      "nivel": "UXMEUX1C30",
+      "count": 10,
+      "liquido": 8932.23,
+      "vantagem": 21367.42,
+      "desconto": 12435.189999999999
+    },
+    "AGENTE ADMINISTRATIVO||UAMMUX3D30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMUX3D30",
+      "count": 10,
+      "liquido": 37172.32000000001,
+      "vantagem": 50361.64,
+      "desconto": 13189.320000000002
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSUX2A30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSUX2A30",
+      "count": 10,
+      "liquido": 48754.92999999999,
+      "vantagem": 62844.70000000001,
+      "desconto": 14089.77
+    },
+    "ODONTOLOGO||STFSUX2C30": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "STFSUX2C30",
+      "count": 10,
+      "liquido": 43253.29999999999,
+      "vantagem": 72347.78,
+      "desconto": 29094.480000000007
+    },
+    "MOTORISTA||UXMEEX3A30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEEX3A30",
+      "count": 10,
+      "liquido": 31209.120000000003,
+      "vantagem": 35261.670000000006,
+      "desconto": 4052.5499999999997
+    },
+    "FONOAUDIOLOGO||UTFSUX3B30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSUX3B30",
+      "count": 46,
+      "liquido": 255856.19,
+      "vantagem": 366891.2900000002,
+      "desconto": 111035.09999999996
+    },
+    "PSICOLOGO||STFSEX1C30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "STFSEX1C30",
+      "count": 10,
+      "liquido": 46928.78999999999,
+      "vantagem": 76449.54999999999,
+      "desconto": 29520.759999999995
+    },
+    "NUTRICIONISTA||UTFSUX1A30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX1A30",
+      "count": 1,
+      "liquido": 4186.62,
+      "vantagem": 5957.94,
+      "desconto": 1771.32
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX2B30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX2B30",
+      "count": 50,
+      "liquido": 280432.24,
+      "vantagem": 365046.59000000014,
+      "desconto": 84614.35000000002
+    },
+    "AUXILIAR DE LABORATORIO||UXFEEX1A30": {
+      "funcao": "AUXILIAR DE LABORATORIO",
+      "nivel": "UXFEEX1A30",
+      "count": 10,
+      "liquido": 28756.499999999996,
+      "vantagem": 32138.71,
+      "desconto": 3382.2099999999996
+    },
+    "FISIOTERAPEUTA||UTFSEX1A30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSEX1A30",
+      "count": 20,
+      "liquido": 69541.01000000001,
+      "vantagem": 147245.11999999997,
+      "desconto": 77704.11000000002
+    },
+    "NUTRICIONISTA||UTFSUX3C30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX3C30",
+      "count": 10,
+      "liquido": 54086.95999999999,
+      "vantagem": 78710.75,
+      "desconto": 24623.790000000008
+    },
+    "TECNICO EM ESTATISTICA||UAMMUX3C30": {
+      "funcao": "TECNICO EM ESTATISTICA",
+      "nivel": "UAMMUX3C30",
+      "count": 3,
+      "liquido": 10796.55,
+      "vantagem": 12383.43,
+      "desconto": 1586.88
+    },
+    "TERAPEUTA OCUPACIONAL||0000999": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "0000999",
+      "count": 10,
+      "liquido": 23224.49,
+      "vantagem": 31426.300000000007,
+      "desconto": 8201.81
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSEX2D30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSEX2D30",
+      "count": 10,
+      "liquido": 67133.83,
+      "vantagem": 91174.65,
+      "desconto": 24040.819999999992
+    },
+    "AUXILIAR DE NECROPSIA||UAFMUX1A30": {
+      "funcao": "AUXILIAR DE NECROPSIA",
+      "nivel": "UAFMUX1A30",
+      "count": 10,
+      "liquido": 31230.680000000004,
+      "vantagem": 34831.8,
+      "desconto": 3601.1200000000003
+    },
+    "ENFERMEIRO||UTFSUX4B30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX4B30",
+      "count": 20,
+      "liquido": 118431.93000000001,
+      "vantagem": 158977.43999999997,
+      "desconto": 40545.51
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX2C30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX2C30",
+      "count": 10,
+      "liquido": 48791.04000000001,
+      "vantagem": 64691.649999999994,
+      "desconto": 15900.609999999997
+    },
+    "ASSISTENTE SOCIAL||UTFSEX2D30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSEX2D30",
+      "count": 32,
+      "liquido": 164096.00000000003,
+      "vantagem": 277387.4000000001,
+      "desconto": 113291.39999999998
+    },
+    "ARTIFICE||UXMEEX2C30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX2C30",
+      "count": 12,
+      "liquido": 31314.350000000002,
+      "vantagem": 39429.18,
+      "desconto": 8114.83
+    },
+    "TECNICO EM PLANEJAMENTO||UTMSEX2E40": {
+      "funcao": "TECNICO EM PLANEJAMENTO",
+      "nivel": "UTMSEX2E40",
+      "count": 10,
+      "liquido": 74018.97,
+      "vantagem": 139745.99,
+      "desconto": 65727.02
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEEX1C30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEEX1C30",
+      "count": 21,
+      "liquido": 50944.099999999984,
+      "vantagem": 58020.89,
+      "desconto": 7076.790000000003
+    },
+    "TECNICO EM ESTATISTICA||UAMMEX3C30": {
+      "funcao": "TECNICO EM ESTATISTICA",
+      "nivel": "UAMMEX3C30",
+      "count": 10,
+      "liquido": 38617.119999999995,
+      "vantagem": 45718.24,
+      "desconto": 7101.12
+    },
+    "TECNICO EM PLANEJAMENTO||UTMSUX2E20": {
+      "funcao": "TECNICO EM PLANEJAMENTO",
+      "nivel": "UTMSUX2E20",
+      "count": 6,
+      "liquido": 26618.230000000003,
+      "vantagem": 33213.729999999996,
+      "desconto": 6595.499999999999
+    },
+    "PSICOLOGO||UTFSUX3A30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX3A30",
+      "count": 10,
+      "liquido": 48165.579999999994,
+      "vantagem": 62757.24999999999,
+      "desconto": 14591.670000000002
+    },
+    "TECNICO DE RADIOLOGIA||UAFMUX3B30": {
+      "funcao": "TECNICO DE RADIOLOGIA",
+      "nivel": "UAFMUX3B30",
+      "count": 20,
+      "liquido": 78475.58000000002,
+      "vantagem": 91538.56999999999,
+      "desconto": 13062.99
+    },
+    "TECNICO LABORATORIO||UAFMEX1D30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX1D30",
+      "count": 10,
+      "liquido": 26663.35,
+      "vantagem": 42521.92,
+      "desconto": 15858.570000000002
+    },
+    "ADVOGADO DE FUND 1 CLASSE||PAASNP0D40": {
+      "funcao": "ADVOGADO DE FUND 1 CLASSE",
+      "nivel": "PAASNP0D40",
+      "count": 20,
+      "liquido": 214230.61000000004,
+      "vantagem": 342523.50000000006,
+      "desconto": 128292.88999999998
+    },
+    "MEDICO||MEDSEP1C24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1C24",
+      "count": 28,
+      "liquido": 145497.04,
+      "vantagem": 276995.62,
+      "desconto": 131498.58000000002
+    },
+    "TECNICO LABORATORIO||UAFMUX1D30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMUX1D30",
+      "count": 6,
+      "liquido": 6002.500000000001,
+      "vantagem": 15499.86,
+      "desconto": 9497.36
+    },
+    "AUXILIAR LABORATORIO||UXFEUX3B30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEUX3B30",
+      "count": 10,
+      "liquido": 22605.91,
+      "vantagem": 28312.399999999994,
+      "desconto": 5706.490000000001
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMUX1A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMUX1A30",
+      "count": 45,
+      "liquido": 112016.86,
+      "vantagem": 155893.68999999994,
+      "desconto": 43876.83
+    },
+    "FARMACEUTICO||UTFSEX3C30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX3C30",
+      "count": 10,
+      "liquido": 73406.62,
+      "vantagem": 100139.19000000002,
+      "desconto": 26732.57
+    },
+    "ARTIFICE||UXMEEX1C30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEEX1C30",
+      "count": 7,
+      "liquido": 9028.68,
+      "vantagem": 16158.769999999999,
+      "desconto": 7130.09
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSEX2B30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSEX2B30",
+      "count": 10,
+      "liquido": 44297.649999999994,
+      "vantagem": 72578.90999999999,
+      "desconto": 28281.260000000002
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSUX1A30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSUX1A30",
+      "count": 10,
+      "liquido": 33582.43,
+      "vantagem": 58090.899999999994,
+      "desconto": 24508.47
+    },
+    "MEDICO||MEDSEP1E20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP1E20",
+      "count": 10,
+      "liquido": 51776.06,
+      "vantagem": 96202.86,
+      "desconto": 44426.799999999996
+    },
+    "MEDICO||MEDSUP2A20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP2A20",
+      "count": 10,
+      "liquido": 49425.12,
+      "vantagem": 70529.16000000002,
+      "desconto": 21104.04
+    },
+    "ASSESSOR DE ADMINISTRACAO||UTMSUX1E40": {
+      "funcao": "ASSESSOR DE ADMINISTRACAO",
+      "nivel": "UTMSUX1E40",
+      "count": 10,
+      "liquido": 64041.84,
+      "vantagem": 111444.26999999999,
+      "desconto": 47402.43
+    },
+    "MOTORISTA||UXMEUX1B30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEUX1B30",
+      "count": 10,
+      "liquido": 28066.35,
+      "vantagem": 30954.66999999999,
+      "desconto": 2888.32
+    },
+    "AUXILIAR DE LABORATORIO||UXFEEX3B30": {
+      "funcao": "AUXILIAR DE LABORATORIO",
+      "nivel": "UXFEEX3B30",
+      "count": 20,
+      "liquido": 55090.55000000001,
+      "vantagem": 73186.28,
+      "desconto": 18095.73
+    },
+    "ADMINISTRADOR||UTMSEX1B30": {
+      "funcao": "ADMINISTRADOR",
+      "nivel": "UTMSEX1B30",
+      "count": 10,
+      "liquido": 36000.840000000004,
+      "vantagem": 64389.45,
+      "desconto": 28388.610000000004
+    },
+    "ENFERMEIRO||UTFSUX2E30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX2E30",
+      "count": 10,
+      "liquido": 53644.34,
+      "vantagem": 73123.5,
+      "desconto": 19479.16
+    },
+    "AUXILIAR ADMINISTRATIVO||UAMMUX1B30": {
+      "funcao": "AUXILIAR ADMINISTRATIVO",
+      "nivel": "UAMMUX1B30",
+      "count": 20,
+      "liquido": 48984.36,
+      "vantagem": 62621.44000000001,
+      "desconto": 13637.079999999998
+    },
+    "COZINHEIRO NIVEL III||UXMEUX1B30": {
+      "funcao": "COZINHEIRO NIVEL III",
+      "nivel": "UXMEUX1B30",
+      "count": 10,
+      "liquido": 24315.04,
+      "vantagem": 28252.100000000002,
+      "desconto": 3937.06
+    },
+    "AUXILIAR ADMINISTRATIVO||ASEUA30": {
+      "funcao": "AUXILIAR ADMINISTRATIVO",
+      "nivel": "ASEUA30",
+      "count": 40,
+      "liquido": 72820.29999999997,
+      "vantagem": 79462.65000000005,
+      "desconto": 6642.350000000003
+    },
+    "ASSISTENTE SOCIAL||UTFSUX2E20": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX2E20",
+      "count": 10,
+      "liquido": 41968.21000000001,
+      "vantagem": 59078.05,
+      "desconto": 17109.84
+    },
+    "TECNICO DE ENFERMAGEM||SAFMEX1B30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "SAFMEX1B30",
+      "count": 10,
+      "liquido": 30684.840000000004,
+      "vantagem": 40116.35,
+      "desconto": 9431.51
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX3D30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX3D30",
+      "count": 20,
+      "liquido": 69414.3,
+      "vantagem": 89275.92999999998,
+      "desconto": 19861.63
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMUX2C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMUX2C30",
+      "count": 10,
+      "liquido": 31398.339999999997,
+      "vantagem": 41048.020000000004,
+      "desconto": 9649.68
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX2E30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX2E30",
+      "count": 6,
+      "liquido": 36765.630000000005,
+      "vantagem": 52739.67,
+      "desconto": 15974.04
+    },
+    "MEDICO||MEDSEP2D24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2D24",
+      "count": 10,
+      "liquido": 100708.57,
+      "vantagem": 146381.5,
+      "desconto": 45672.93000000001
+    },
+    "TECNICO EM SECRETARIADO||UAMMEX3E30": {
+      "funcao": "TECNICO EM SECRETARIADO",
+      "nivel": "UAMMEX3E30",
+      "count": 10,
+      "liquido": 33546.83,
+      "vantagem": 53754.780000000006,
+      "desconto": 20207.95
+    },
+    "AGENTE ADMINISTRATIVO||UAMMUX1C30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMUX1C30",
+      "count": 8,
+      "liquido": 14787.71,
+      "vantagem": 19691.350000000002,
+      "desconto": 4903.639999999999
+    },
+    "ASSISTENTE SOCIAL||0000999": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "0000999",
+      "count": 10,
+      "liquido": 25521.200000000004,
+      "vantagem": 27063.000000000004,
+      "desconto": 1541.8000000000004
+    },
+    "AUXILIAR DE ENFERMAGEM||UAFMUX2B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "UAFMUX2B30",
+      "count": 23,
+      "liquido": 55345.08000000001,
+      "vantagem": 71699.19999999998,
+      "desconto": 16354.12
+    },
+    "AUXILIAR DE SERVICOS DE SAUDE||UXFEEX3C30": {
+      "funcao": "AUXILIAR DE SERVICOS DE SAUDE",
+      "nivel": "UXFEEX3C30",
+      "count": 17,
+      "liquido": 40247.229999999996,
+      "vantagem": 64155.590000000004,
+      "desconto": 23908.359999999997
+    },
+    "OPER DE EQUIP MED E ASSEM||SXFEEX1C30": {
+      "funcao": "OPER DE EQUIP MED E ASSEM",
+      "nivel": "SXFEEX1C30",
+      "count": 10,
+      "liquido": 34327.380000000005,
+      "vantagem": 46622.56,
+      "desconto": 12295.180000000002
+    },
+    "NUTRICIONISTA||UTFSEX4A30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX4A30",
+      "count": 10,
+      "liquido": 61055.46000000001,
+      "vantagem": 82157.37,
+      "desconto": 21101.91
+    },
+    "AGENTE ADMINISTRATIVO||UAMMUX1B30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMUX1B30",
+      "count": 20,
+      "liquido": 54301.9,
+      "vantagem": 68450.0,
+      "desconto": 14148.099999999999
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMEX1E30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMEX1E30",
+      "count": 10,
+      "liquido": 20041.3,
+      "vantagem": 42368.350000000006,
+      "desconto": 22327.050000000003
+    },
+    "SOCIOLOGO||UTMSUX2D40": {
+      "funcao": "SOCIOLOGO",
+      "nivel": "UTMSUX2D40",
+      "count": 10,
+      "liquido": 66257.43000000001,
+      "vantagem": 91773.90000000001,
+      "desconto": 25516.469999999998
+    },
+    "MEDICO||MEDSEP3B20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP3B20",
+      "count": 20,
+      "liquido": 122746.12000000001,
+      "vantagem": 182653.84000000003,
+      "desconto": 59907.72
+    },
+    "ENFERMEIRO||UTFSUX3C30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX3C30",
+      "count": 10,
+      "liquido": 62504.47,
+      "vantagem": 90826.45999999999,
+      "desconto": 28321.989999999998
+    },
+    "ASSISTENTE SOCIAL||UTFSEX1E40": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSEX1E40",
+      "count": 20,
+      "liquido": 134029.27,
+      "vantagem": 213936.41000000003,
+      "desconto": 79907.13999999998
+    },
+    "ASSESSOR DE ADMINISTRACAO||UTMSUX1D30": {
+      "funcao": "ASSESSOR DE ADMINISTRACAO",
+      "nivel": "UTMSUX1D30",
+      "count": 1,
+      "liquido": 4789.02,
+      "vantagem": 6243.8,
+      "desconto": 1454.78
+    },
+    "AUXILIAR DE SERVICOS DE SAUDE||UXFEEX3B30": {
+      "funcao": "AUXILIAR DE SERVICOS DE SAUDE",
+      "nivel": "UXFEEX3B30",
+      "count": 3,
+      "liquido": 2745.54,
+      "vantagem": 7684.14,
+      "desconto": 4938.6
+    },
+    "AUXILIAR DE SERVICOS DE SAUDE||UXFEEX3D30": {
+      "funcao": "AUXILIAR DE SERVICOS DE SAUDE",
+      "nivel": "UXFEEX3D30",
+      "count": 10,
+      "liquido": 39635.42,
+      "vantagem": 46544.729999999996,
+      "desconto": 6909.31
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||ASEEA30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "ASEEA30",
+      "count": 10,
+      "liquido": 18839.5,
+      "vantagem": 20452.5,
+      "desconto": 1612.9999999999995
+    },
+    "ASSISTENTE DE ADMINISTRACAO||SAMMUX1B30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "SAMMUX1B30",
+      "count": 10,
+      "liquido": 29381.22,
+      "vantagem": 40068.2,
+      "desconto": 10686.980000000001
+    },
+    "BIOMEDICO||STFSNX1B30": {
+      "funcao": "BIOMEDICO",
+      "nivel": "STFSNX1B30",
+      "count": 10,
+      "liquido": 57745.55999999999,
+      "vantagem": 73456.05000000002,
+      "desconto": 15710.490000000002
+    },
+    "RESIDENCIA EM AUDIOLOGIA||ASRNA20": {
+      "funcao": "RESIDENCIA EM AUDIOLOGIA",
+      "nivel": "ASRNA20",
+      "count": 10,
+      "liquido": 37061.49,
+      "vantagem": 41060.899999999994,
+      "desconto": 3999.4099999999994
+    },
+    "ASSISTENTE SOCIAL||UTFSUX1C30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX1C30",
+      "count": 9,
+      "liquido": 46646.93,
+      "vantagem": 72370.41,
+      "desconto": 25723.479999999996
+    },
+    "FONOAUDIOLOGO||UTFSNX1A30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSNX1A30",
+      "count": 10,
+      "liquido": 31472.349999999995,
+      "vantagem": 47526.59999999999,
+      "desconto": 16054.250000000002
+    },
+    "AGENTE ADMINISTRATIVO||PNMMNS3C30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "PNMMNS3C30",
+      "count": 10,
+      "liquido": 34154.299999999996,
+      "vantagem": 39826.24999999999,
+      "desconto": 5671.950000000001
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX1B30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX1B30",
+      "count": 1,
+      "liquido": 2370.63,
+      "vantagem": 5467.06,
+      "desconto": 3096.43
+    },
+    "MOTORISTA||UXMEEX2C30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEEX2C30",
+      "count": 8,
+      "liquido": 14800.579999999998,
+      "vantagem": 24545.129999999994,
+      "desconto": 9744.55
+    },
+    "ADMINISTRADOR||UAMMUX2C30": {
+      "funcao": "ADMINISTRADOR",
+      "nivel": "UAMMUX2C30",
+      "count": 10,
+      "liquido": 54889.829999999994,
+      "vantagem": 72302.95,
+      "desconto": 17413.12
+    },
+    "ANALISTA DE SISTEMAS||UTMSUX1A30": {
+      "funcao": "ANALISTA DE SISTEMAS",
+      "nivel": "UTMSUX1A30",
+      "count": 19,
+      "liquido": 82020.89,
+      "vantagem": 112551.69000000003,
+      "desconto": 30530.800000000003
+    },
+    "FARMACEUTICO||UTFSUX2B30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSUX2B30",
+      "count": 20,
+      "liquido": 115923.72,
+      "vantagem": 157045.85,
+      "desconto": 41122.130000000005
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEUX1A30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEUX1A30",
+      "count": 10,
+      "liquido": 16357.989999999998,
+      "vantagem": 26204.449999999997,
+      "desconto": 9846.460000000001
+    },
+    "AGENTE ADMINISTRATIVO||UAMMEX3D30": {
+      "funcao": "AGENTE ADMINISTRATIVO",
+      "nivel": "UAMMEX3D30",
+      "count": 10,
+      "liquido": 25714.41,
+      "vantagem": 46197.97,
+      "desconto": 20483.559999999998
+    },
+    "ASSISTENTE SOCIAL||UTFSUX2D30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX2D30",
+      "count": 9,
+      "liquido": 61711.369999999995,
+      "vantagem": 82941.54999999999,
+      "desconto": 21230.179999999997
+    },
+    "ODONTOLOGO||UTFSEX1B20": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSEX1B20",
+      "count": 10,
+      "liquido": 25230.199999999997,
+      "vantagem": 46474.549999999996,
+      "desconto": 21244.350000000002
+    },
+    "PSICOLOGO||UTFSUX3C30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX3C30",
+      "count": 20,
+      "liquido": 110291.29000000001,
+      "vantagem": 169253.36,
+      "desconto": 58962.070000000014
+    },
+    "AUXILIAR LABORATORIO||UXFEEX2C30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEEX2C30",
+      "count": 7,
+      "liquido": 21467.62,
+      "vantagem": 24632.14,
+      "desconto": 3164.5199999999995
+    },
+    "AUXILIAR ADMINISTRATIVO||UAMMUX1C30": {
+      "funcao": "AUXILIAR ADMINISTRATIVO",
+      "nivel": "UAMMUX1C30",
+      "count": 10,
+      "liquido": 18781.510000000002,
+      "vantagem": 34029.4,
+      "desconto": 15247.890000000001
+    },
+    "NUTRICIONISTA||UTFSEX2D30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX2D30",
+      "count": 25,
+      "liquido": 154696.44,
+      "vantagem": 220612.78,
+      "desconto": 65916.33999999997
+    },
+    "MEDICO||MEDSUP1B20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1B20",
+      "count": 20,
+      "liquido": 109774.52,
+      "vantagem": 150916.65000000002,
+      "desconto": 41142.130000000005
+    },
+    "ODONTOLOGO||UTFSUX3B30": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSUX3B30",
+      "count": 10,
+      "liquido": 54709.34000000001,
+      "vantagem": 71792.1,
+      "desconto": 17082.76
+    },
+    "MEDICO||MEDSNP1B20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSNP1B20",
+      "count": 6,
+      "liquido": 15428.44,
+      "vantagem": 28360.19,
+      "desconto": 12931.75
+    },
+    "RESIDENCIA EM AUDIOLOGIA||AARNA20": {
+      "funcao": "RESIDENCIA EM AUDIOLOGIA",
+      "nivel": "AARNA20",
+      "count": 18,
+      "liquido": 70402.99999999999,
+      "vantagem": 78015.69999999997,
+      "desconto": 7612.699999999999
+    },
+    "FONOAUDIOLOGO||UTFSUX2B30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSUX2B30",
+      "count": 10,
+      "liquido": 50315.62,
+      "vantagem": 66299.45,
+      "desconto": 15983.829999999998
+    },
+    "ASSISTENTE SOCIAL||UTFSUX3A30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX3A30",
+      "count": 10,
+      "liquido": 55281.479999999996,
+      "vantagem": 72769.24,
+      "desconto": 17487.760000000002
+    },
+    "FISIOTERAPEUTA||UTFSUX2C30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX2C30",
+      "count": 10,
+      "liquido": 50103.92,
+      "vantagem": 72347.78,
+      "desconto": 22243.859999999997
+    },
+    "FISIOTERAPEUTA||UTFSEX4B30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSEX4B30",
+      "count": 10,
+      "liquido": 71327.36,
+      "vantagem": 97523.61,
+      "desconto": 26196.249999999996
+    },
+    "FARMACEUTICO||UTFSEX4B30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX4B30",
+      "count": 10,
+      "liquido": 71468.68,
+      "vantagem": 97144.92000000001,
+      "desconto": 25676.239999999998
+    },
+    "ADMINISTRADOR||UTMSEX2D30": {
+      "funcao": "ADMINISTRADOR",
+      "nivel": "UTMSEX2D30",
+      "count": 10,
+      "liquido": 66497.8,
+      "vantagem": 90297.37000000001,
+      "desconto": 23799.57
+    },
+    "PROFESSOR AUXILIAR||ASSMX40": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "ASSMX40",
+      "count": 76,
+      "liquido": 431170.8300000001,
+      "vantagem": 582866.1500000011,
+      "desconto": 151695.32
+    },
+    "ENFERMEIRO||UTFSUX2D40": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX2D40",
+      "count": 10,
+      "liquido": 62059.68000000001,
+      "vantagem": 115093.00999999998,
+      "desconto": 53033.33000000001
+    },
+    "MEDICO||MSSUA24": {
+      "funcao": "MEDICO",
+      "nivel": "MSSUA24",
+      "count": 10,
+      "liquido": 52572.73000000001,
+      "vantagem": 67611.5,
+      "desconto": 15038.769999999999
+    },
+    "TECNICO EM CONTABILIDADE||UAMMUX1C30": {
+      "funcao": "TECNICO EM CONTABILIDADE",
+      "nivel": "UAMMUX1C30",
+      "count": 10,
+      "liquido": 29280.210000000006,
+      "vantagem": 33319.25000000001,
+      "desconto": 4039.04
+    },
+    "MEDICO||MEDSEP3A20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP3A20",
+      "count": 10,
+      "liquido": 61542.88000000001,
+      "vantagem": 83640.70000000001,
+      "desconto": 22097.820000000003
+    },
+    "ASSISTENTE SOCIAL||UTFSUX1B40": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX1B40",
+      "count": 10,
+      "liquido": 62533.17,
+      "vantagem": 103695.34,
+      "desconto": 41162.170000000006
+    },
+    "TECNICO LABORATORIO||UAFMEX1C30": {
+      "funcao": "TECNICO LABORATORIO",
+      "nivel": "UAFMEX1C30",
+      "count": 10,
+      "liquido": 31757.979999999996,
+      "vantagem": 41528.310000000005,
+      "desconto": 9770.330000000002
+    },
+    "BIOQUIMICO||UTFSUX2A30": {
+      "funcao": "BIOQUIMICO",
+      "nivel": "UTFSUX2A30",
+      "count": 4,
+      "liquido": 17230.93,
+      "vantagem": 28005.78,
+      "desconto": 10774.85
+    },
+    "NUTRICIONISTA||UTFSUX3B20": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX3B20",
+      "count": 1,
+      "liquido": 5533.99,
+      "vantagem": 7003.46,
+      "desconto": 1469.47
+    },
+    "MOTORISTA||UXMEEX2B30": {
+      "funcao": "MOTORISTA",
+      "nivel": "UXMEEX2B30",
+      "count": 10,
+      "liquido": 31051.249999999996,
+      "vantagem": 34909.77,
+      "desconto": 3858.5199999999995
+    },
+    "FARMACEUTICO||UTFSUX1A30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSUX1A30",
+      "count": 8,
+      "liquido": 37799.58,
+      "vantagem": 48061.27,
+      "desconto": 10261.69
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMEX2C30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMEX2C30",
+      "count": 10,
+      "liquido": 32884.420000000006,
+      "vantagem": 44468.42,
+      "desconto": 11584.0
+    },
+    "ENFERMEIRO||UTFSEX2C24": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX2C24",
+      "count": 10,
+      "liquido": 46048.270000000004,
+      "vantagem": 65804.59999999999,
+      "desconto": 19756.329999999998
+    },
+    "NUTRICIONISTA||UTFSEX1B30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX1B30",
+      "count": 10,
+      "liquido": 55941.969999999994,
+      "vantagem": 80615.34,
+      "desconto": 24673.37
+    },
+    "OPER DE EQUIP MED E ASSEM||SXFEUX1C30": {
+      "funcao": "OPER DE EQUIP MED E ASSEM",
+      "nivel": "SXFEUX1C30",
+      "count": 10,
+      "liquido": 25024.05,
+      "vantagem": 37042.72,
+      "desconto": 12018.67
+    },
+    "TECNICO EM PLANEJAMENTO||ASSUA30": {
+      "funcao": "TECNICO EM PLANEJAMENTO",
+      "nivel": "ASSUA30",
+      "count": 10,
+      "liquido": 43444.31,
+      "vantagem": 52821.549999999996,
+      "desconto": 9377.239999999998
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMEX1A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMEX1A30",
+      "count": 10,
+      "liquido": 22637.75,
+      "vantagem": 36707.090000000004,
+      "desconto": 14069.34
+    },
+    "MEDICO||MEDSUP1A40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP1A40",
+      "count": 10,
+      "liquido": 61776.29,
+      "vantagem": 123611.3,
+      "desconto": 61835.009999999995
+    },
+    "MEDICO||MEDSUP2B20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP2B20",
+      "count": 15,
+      "liquido": 61295.11,
+      "vantagem": 102336.04999999999,
+      "desconto": 41040.93999999999
+    },
+    "CONTADOR||UTMSUX2A30": {
+      "funcao": "CONTADOR",
+      "nivel": "UTMSUX2A30",
+      "count": 10,
+      "liquido": 33364.64,
+      "vantagem": 57575.35000000001,
+      "desconto": 24210.709999999995
+    },
+    "GESTOR EM PLANEJAMENTO DE SAUDE||UTMSEX2B30": {
+      "funcao": "GESTOR EM PLANEJAMENTO DE SAUDE",
+      "nivel": "UTMSEX2B30",
+      "count": 10,
+      "liquido": 40281.909999999996,
+      "vantagem": 93497.09999999998,
+      "desconto": 53215.19000000001
+    },
+    "RELACOES PUBLICAS||UTMSUX2B30": {
+      "funcao": "RELACOES PUBLICAS",
+      "nivel": "UTMSUX2B30",
+      "count": 10,
+      "liquido": 34751.909999999996,
+      "vantagem": 63016.27,
+      "desconto": 28264.36
+    },
+    "MEDICO||MEDSEP3B24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP3B24",
+      "count": 31,
+      "liquido": 251769.49000000008,
+      "vantagem": 393040.0900000001,
+      "desconto": 141270.59999999998
+    },
+    "MEDICO||MEDSEP3C24": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP3C24",
+      "count": 18,
+      "liquido": 107247.63000000003,
+      "vantagem": 160938.94999999998,
+      "desconto": 53691.320000000014
+    },
+    "ASSISTENTE SOCIAL||UTFSUX1B30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX1B30",
+      "count": 7,
+      "liquido": 38083.5,
+      "vantagem": 49590.56,
+      "desconto": 11507.06
+    },
+    "ENFERMEIRO||UTFSUX2D30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSUX2D30",
+      "count": 3,
+      "liquido": 20390.61,
+      "vantagem": 29191.71,
+      "desconto": 8801.099999999999
+    },
+    "FISIOTERAPEUTA||UTFSEX2A30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSEX2A30",
+      "count": 10,
+      "liquido": 63671.04000000001,
+      "vantagem": 84837.45999999999,
+      "desconto": 21166.420000000002
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX2D30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX2D30",
+      "count": 6,
+      "liquido": 34862.75,
+      "vantagem": 48714.479999999996,
+      "desconto": 13851.73
+    },
+    "ARTIFICE||UXMEUX3D30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX3D30",
+      "count": 10,
+      "liquido": 23858.839999999997,
+      "vantagem": 27667.279999999995,
+      "desconto": 3808.44
+    },
+    "AUXILIAR LABORATORIO||UXFEEX1A30": {
+      "funcao": "AUXILIAR LABORATORIO",
+      "nivel": "UXFEEX1A30",
+      "count": 3,
+      "liquido": 6111.63,
+      "vantagem": 7534.59,
+      "desconto": 1422.96
+    },
+    "MEDICO||MEDSEP4D20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP4D20",
+      "count": 12,
+      "liquido": 68604.24,
+      "vantagem": 104672.84999999999,
+      "desconto": 36068.60999999999
+    },
+    "PSICOLOGO||UTFSUX2D40": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX2D40",
+      "count": 3,
+      "liquido": 12446.16,
+      "vantagem": 26881.29,
+      "desconto": 14435.130000000001
+    },
+    "ANALISTA DE SISTEMAS||UTMSUX2B30": {
+      "funcao": "ANALISTA DE SISTEMAS",
+      "nivel": "UTMSUX2B30",
+      "count": 20,
+      "liquido": 109974.54000000002,
+      "vantagem": 154921.0,
+      "desconto": 44946.45999999999
+    },
+    "MEDICO||MEDSEP2D40": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSEP2D40",
+      "count": 15,
+      "liquido": 211725.85,
+      "vantagem": 342582.57,
+      "desconto": 130856.72
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMUX1B30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMUX1B30",
+      "count": 10,
+      "liquido": 20364.94,
+      "vantagem": 32631.74,
+      "desconto": 12266.800000000001
+    },
+    "FARMACEUTICO||UTFSUX2C30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSUX2C30",
+      "count": 10,
+      "liquido": 52217.56000000001,
+      "vantagem": 75260.43000000001,
+      "desconto": 23042.87
+    },
+    "FARMACEUTICO||STFSEX2C30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "STFSEX2C30",
+      "count": 10,
+      "liquido": 59093.29000000001,
+      "vantagem": 85280.07999999999,
+      "desconto": 26186.790000000005
+    },
+    "PSICOLOGO||UTFSEX1A30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSEX1A30",
+      "count": 10,
+      "liquido": 57407.26000000001,
+      "vantagem": 75222.67,
+      "desconto": 17815.41
+    },
+    "ANALISTA DE SISTEMAS||UTMSUX1B30": {
+      "funcao": "ANALISTA DE SISTEMAS",
+      "nivel": "UTMSUX1B30",
+      "count": 10,
+      "liquido": 45267.84999999999,
+      "vantagem": 57813.070000000014,
+      "desconto": 12545.220000000001
+    },
+    "ENFERMEIRO||ASSEA24": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "ASSEA24",
+      "count": 10,
+      "liquido": 32309.930000000004,
+      "vantagem": 45857.22,
+      "desconto": 13547.29
+    },
+    "MEDICO||MEDSUP3A20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP3A20",
+      "count": 10,
+      "liquido": 56712.68,
+      "vantagem": 74656.71,
+      "desconto": 17944.03
+    },
+    "NUTRICIONISTA||UTFSUX4A30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSUX4A30",
+      "count": 10,
+      "liquido": 48760.92,
+      "vantagem": 64639.94999999999,
+      "desconto": 15879.03
+    },
+    "FONOAUDIOLOGO||UTFSEX3C30": {
+      "funcao": "FONOAUDIOLOGO",
+      "nivel": "UTFSEX3C30",
+      "count": 10,
+      "liquido": 64443.21,
+      "vantagem": 88136.45000000001,
+      "desconto": 23693.239999999998
+    },
+    "ARTIFICE||UXMEUX1B30": {
+      "funcao": "ARTIFICE",
+      "nivel": "UXMEUX1B30",
+      "count": 10,
+      "liquido": 18385.95,
+      "vantagem": 31615.130000000005,
+      "desconto": 13229.179999999998
+    },
+    "ENFERMEIRO||UTFSEX4A30": {
+      "funcao": "ENFERMEIRO",
+      "nivel": "UTFSEX4A30",
+      "count": 10,
+      "liquido": 66294.46,
+      "vantagem": 89819.83000000002,
+      "desconto": 23525.370000000003
+    },
+    "AUXILIAR DE SERVICOS DIVERSOS||UXMEUX3E30": {
+      "funcao": "AUXILIAR DE SERVICOS DIVERSOS",
+      "nivel": "UXMEUX3E30",
+      "count": 10,
+      "liquido": 22912.089999999997,
+      "vantagem": 37488.56,
+      "desconto": 14576.469999999998
+    },
+    "NÃO INFORMADO||NÃO INFORMADO": {
+      "funcao": "NÃO INFORMADO",
+      "nivel": "NÃO INFORMADO",
+      "count": 10,
+      "liquido": 109378881.14999999,
+      "vantagem": 154876193.64,
+      "desconto": 45497312.489999995
+    },
+    "RELACOES PUBLICAS||UTMSUX3D30": {
+      "funcao": "RELACOES PUBLICAS",
+      "nivel": "UTMSUX3D30",
+      "count": 9,
+      "liquido": 55530.219999999994,
+      "vantagem": 75708.54999999999,
+      "desconto": 20178.33
+    },
+    "ODONTOLOGO||UTFSEX3C30": {
+      "funcao": "ODONTOLOGO",
+      "nivel": "UTFSEX3C30",
+      "count": 9,
+      "liquido": 55338.75,
+      "vantagem": 75388.73000000001,
+      "desconto": 20049.98
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSEX1B30": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSEX1B30",
+      "count": 9,
+      "liquido": 32508.059999999998,
+      "vantagem": 58348.35999999999,
+      "desconto": 25840.3
+    },
+    "BIOMEDICO||STFSEX2D30": {
+      "funcao": "BIOMEDICO",
+      "nivel": "STFSEX2D30",
+      "count": 7,
+      "liquido": 45930.61,
+      "vantagem": 65832.67,
+      "desconto": 19902.059999999998
+    },
+    "NUTRICIONISTA||UTFSEX3D30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "UTFSEX3D30",
+      "count": 7,
+      "liquido": 49606.39,
+      "vantagem": 68897.60999999999,
+      "desconto": 19291.219999999998
+    },
+    "TECNICO EM ESTATISTICA||UAMMUX3D30": {
+      "funcao": "TECNICO EM ESTATISTICA",
+      "nivel": "UAMMUX3D30",
+      "count": 7,
+      "liquido": 28476.200000000004,
+      "vantagem": 33192.700000000004,
+      "desconto": 4716.5
+    },
+    "PROFESSOR TITULAR||UCMSNP4C20": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSNP4C20",
+      "count": 15,
+      "liquido": 95825.32,
+      "vantagem": 143775.33999999997,
+      "desconto": 47950.020000000004
+    },
+    "PSICOLOGO||UTFSUX4A30": {
+      "funcao": "PSICOLOGO",
+      "nivel": "UTFSUX4A30",
+      "count": 7,
+      "liquido": 39508.159999999996,
+      "vantagem": 54933.53,
+      "desconto": 15425.37
+    },
+    "RELACOES PUBLICAS||UTMSEX2D30": {
+      "funcao": "RELACOES PUBLICAS",
+      "nivel": "UTMSEX2D30",
+      "count": 7,
+      "liquido": 38801.450000000004,
+      "vantagem": 57212.259999999995,
+      "desconto": 18410.81
+    },
+    "FISIOTERAPEUTA||UTFSUX3D30": {
+      "funcao": "FISIOTERAPEUTA",
+      "nivel": "UTFSUX3D30",
+      "count": 7,
+      "liquido": 27268.97,
+      "vantagem": 57953.02,
+      "desconto": 30684.049999999996
+    },
+    "TERAPEUTA OCUPACIONAL||UTFSUX3A30": {
+      "funcao": "TERAPEUTA OCUPACIONAL",
+      "nivel": "UTFSUX3A30",
+      "count": 6,
+      "liquido": 28551.030000000002,
+      "vantagem": 47445.54,
+      "desconto": 18894.51
+    },
+    "FARMACEUTICO||UTFSEX1A30": {
+      "funcao": "FARMACEUTICO",
+      "nivel": "UTFSEX1A30",
+      "count": 6,
+      "liquido": 31761.079999999998,
+      "vantagem": 40539.89,
+      "desconto": 8778.810000000001
+    },
+    "BIOQUIMICO||UTFSUX3A30": {
+      "funcao": "BIOQUIMICO",
+      "nivel": "UTFSUX3A30",
+      "count": 6,
+      "liquido": 35554.770000000004,
+      "vantagem": 49723.520000000004,
+      "desconto": 14168.749999999998
+    },
+    "PROFESSOR TITULAR||UCMSNP4B20": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSNP4B20",
+      "count": 10,
+      "liquido": 56719.869999999995,
+      "vantagem": 76102.87,
+      "desconto": 19383.000000000004
+    },
+    "NUTRICIONISTA||STFSUX3C30": {
+      "funcao": "NUTRICIONISTA",
+      "nivel": "STFSUX3C30",
+      "count": 5,
+      "liquido": 31459.500000000004,
+      "vantagem": 42453.12,
+      "desconto": 10993.62
+    },
+    "ASSISTENTE DE ADMINISTRACAO||UAMMUX2C30": {
+      "funcao": "ASSISTENTE DE ADMINISTRACAO",
+      "nivel": "UAMMUX2C30",
+      "count": 5,
+      "liquido": 12460.150000000001,
+      "vantagem": 14508.38,
+      "desconto": 2048.23
+    },
+    "AUXILIAR DE ENFERMAGEM||SAFMUX3A30": {
+      "funcao": "AUXILIAR DE ENFERMAGEM",
+      "nivel": "SAFMUX3A30",
+      "count": 5,
+      "liquido": 16645.86,
+      "vantagem": 23471.550000000003,
+      "desconto": 6825.6900000000005
+    },
+    "PROFESSOR ASSISTENTE||UCMSDP2B40": {
+      "funcao": "PROFESSOR ASSISTENTE",
+      "nivel": "UCMSDP2B40",
+      "count": 7,
+      "liquido": 74925.98,
+      "vantagem": 121475.49,
+      "desconto": 46549.51
+    },
+    "TECNICO EM PLANEJAMENTO||UTMSUX1D40": {
+      "funcao": "TECNICO EM PLANEJAMENTO",
+      "nivel": "UTMSUX1D40",
+      "count": 1,
+      "liquido": 18980.12,
+      "vantagem": 34430.07,
+      "desconto": 15449.95
+    },
+    "PROFESSOR TITULAR||UCMSDP4B40": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSDP4B40",
+      "count": 4,
+      "liquido": 59237.2,
+      "vantagem": 88709.54999999999,
+      "desconto": 29472.35
+    },
+    "TECNICO EM PLANEJAMENTO||UTMSUX2E40": {
+      "funcao": "TECNICO EM PLANEJAMENTO",
+      "nivel": "UTMSUX2E40",
+      "count": 4,
+      "liquido": 45265.61,
+      "vantagem": 75039.64000000001,
+      "desconto": 29774.03
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX2E40": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX2E40",
+      "count": 4,
+      "liquido": 38064.64,
+      "vantagem": 62383.979999999996,
+      "desconto": 24319.339999999997
+    },
+    "PROFESSOR AUXILIAR||UCMSDP1C40": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "UCMSDP1C40",
+      "count": 4,
+      "liquido": 39291.03,
+      "vantagem": 60469.24,
+      "desconto": 21178.21
+    },
+    "TECNICO EM RECURSOS HUMANOS||UTMSUX2D40": {
+      "funcao": "TECNICO EM RECURSOS HUMANOS",
+      "nivel": "UTMSUX2D40",
+      "count": 4,
+      "liquido": 35753.93,
+      "vantagem": 57153.62,
+      "desconto": 21399.690000000002
+    },
+    "MEDICO||MEDSUP2C20": {
+      "funcao": "MEDICO",
+      "nivel": "MEDSUP2C20",
+      "count": 3,
+      "liquido": 24816.15,
+      "vantagem": 36397.79,
+      "desconto": 11581.64
+    },
+    "ASSISTENTE SOCIAL||UTFSUX1D30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX1D30",
+      "count": 3,
+      "liquido": 18912.18,
+      "vantagem": 28831.510000000002,
+      "desconto": 9919.33
+    },
+    "PROFESSOR AUXILIAR||UCMSNP1B40": {
+      "funcao": "PROFESSOR AUXILIAR",
+      "nivel": "UCMSNP1B40",
+      "count": 2,
+      "liquido": 11578.720000000001,
+      "vantagem": 23601.03,
+      "desconto": 12022.31
+    },
+    "TECNICO DE ENFERMAGEM||UAFMUX3D30": {
+      "funcao": "TECNICO DE ENFERMAGEM",
+      "nivel": "UAFMUX3D30",
+      "count": 1,
+      "liquido": 4199.43,
+      "vantagem": 5770.19,
+      "desconto": 1570.76
+    },
+    "PROFESSOR TITULAR||UCMSNP4A40": {
+      "funcao": "PROFESSOR TITULAR",
+      "nivel": "UCMSNP4A40",
+      "count": 1,
+      "liquido": 12002.85,
+      "vantagem": 17676.26,
+      "desconto": 5673.41
+    },
+    "ANALISTA DE SISTEMAS||UTMSUX2A30": {
+      "funcao": "ANALISTA DE SISTEMAS",
+      "nivel": "UTMSUX2A30",
+      "count": 1,
+      "liquido": 3689.42,
+      "vantagem": 6363.67,
+      "desconto": 2674.25
+    },
+    "ASSISTENTE SOCIAL||UTFSUX2E30": {
+      "funcao": "ASSISTENTE SOCIAL",
+      "nivel": "UTFSUX2E30",
+      "count": 1,
+      "liquido": 9360.49,
+      "vantagem": 13120.59,
+      "desconto": 3760.1
+    }
+  },
+  "top_salarios_liquido": [
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-08",
+      "liquido": 12190929.63
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-07",
+      "liquido": 11232656.12
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-10",
+      "liquido": 11226518.8
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-09",
+      "liquido": 11172298.12
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-06",
+      "liquido": 11094281.35
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-02",
+      "liquido": 10570021.58
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-05",
+      "liquido": 10506589.76
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-03",
+      "liquido": 10500940.48
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-04",
+      "liquido": 10471840.85
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-01",
+      "liquido": 10412804.46
+    },
+    {
+      "nome": "HENRIQUE DE OLIVEIRA COSTA",
+      "cpf": "78714907453",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-06",
+      "liquido": 26260.61
+    },
+    {
+      "nome": "VAGNER HERCULANO DE SOUZA",
+      "cpf": "00815166494",
+      "lotacao_normalizada": "CENTRO EDUCACAO DISTANCIA",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-07",
+      "liquido": 24225.64
+    },
+    {
+      "nome": "JULIANE CABRAL SILVA",
+      "cpf": "02237089507",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-06",
+      "liquido": 23895.43
+    },
+    {
+      "nome": "MARIA LUCELIA DA HORA SALES",
+      "cpf": "24070211420",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-06",
+      "liquido": 23454.69
+    },
+    {
+      "nome": "LUCIANE ALBUQUERQUE LUNA ALMEIDA",
+      "cpf": "21056315415",
+      "lotacao_normalizada": "REITORIA",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-07",
+      "liquido": 23235.18
+    },
+    {
+      "nome": "WALDEZ CAVALCANTE BEZERRA",
+      "cpf": "05950793420",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-08",
+      "liquido": 22994.56
+    },
+    {
+      "nome": "JULIANE CABRAL SILVA",
+      "cpf": "02237089507",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-10",
+      "liquido": 22430.88
+    },
+    {
+      "nome": "ILKA DO AMARAL SOARES",
+      "cpf": "02511055473",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS DA SAUDE",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-07",
+      "liquido": 21734.65
+    },
+    {
+      "nome": "KELLY CRISTINA LIRA DE ANDRADE",
+      "cpf": "04709213402",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS DA SAUDE",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-09",
+      "liquido": 21263.93
+    },
+    {
+      "nome": "ANGELA LIMA PERES",
+      "cpf": "46964053468",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-05",
+      "liquido": 21160.43
+    }
+  ],
+  "top_salarios_desconto": [
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-07",
+      "desconto": 4873820.73
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-10",
+      "desconto": 4833705.62
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-09",
+      "desconto": 4770921.75
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-06",
+      "desconto": 4756490.02
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-01",
+      "desconto": 4619928.45
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-04",
+      "desconto": 4511836.52
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-05",
+      "desconto": 4491116.95
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-03",
+      "desconto": 4457469.54
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-02",
+      "desconto": 4449635.01
+    },
+    {
+      "nome": "*Totais*",
+      "cpf": "",
+      "lotacao_normalizada": "",
+      "vinculo": "",
+      "situacao": "",
+      "competencia": "2025-08",
+      "desconto": 3732387.9
+    },
+    {
+      "nome": "LUCIANE ALBUQUERQUE LUNA ALMEIDA",
+      "cpf": "21056315415",
+      "lotacao_normalizada": "REITORIA",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-07",
+      "desconto": 17932.87
+    },
+    {
+      "nome": "GEDALIA MENDES DE SOUZA",
+      "cpf": "31929818491",
+      "lotacao_normalizada": "ASSIST PSICOPEDAG",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-07",
+      "desconto": 15449.95
+    },
+    {
+      "nome": "ILKA DO AMARAL SOARES",
+      "cpf": "02511055473",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS DA SAUDE",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-07",
+      "desconto": 14191.03
+    },
+    {
+      "nome": "RENATA CARDOSO COUTO",
+      "cpf": "96260017553",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS DA SAUDE",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-07",
+      "desconto": 13500.56
+    },
+    {
+      "nome": "JULIANE CABRAL SILVA",
+      "cpf": "02237089507",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-06",
+      "desconto": 12671.12
+    },
+    {
+      "nome": "MARIA LUCELIA DA HORA SALES",
+      "cpf": "24070211420",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-06",
+      "desconto": 12588.59
+    },
+    {
+      "nome": "WALDEZ CAVALCANTE BEZERRA",
+      "cpf": "05950793420",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-08",
+      "desconto": 12310.75
+    },
+    {
+      "nome": "ILKA DO AMARAL SOARES",
+      "cpf": "02511055473",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS DA SAUDE",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-09",
+      "desconto": 12260.77
+    },
+    {
+      "nome": "JOSE CLAUDIO DA SILVA",
+      "cpf": "04593797470",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-09",
+      "desconto": 12163.95
+    },
+    {
+      "nome": "JOSE CLAUDIO DA SILVA",
+      "cpf": "04593797470",
+      "lotacao_normalizada": "CENTRO DE CIENCIAS INTEGRADORAS",
+      "vinculo": "ESTATUTARIO CIVIL",
+      "situacao": "ATIVO",
+      "competencia": "2025-10",
+      "desconto": 12163.95
+    }
+  ]
+}
