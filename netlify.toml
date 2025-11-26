@@ -1,0 +1,6 @@
+[build]
+  # Comando de build para gerar o índice de arquivos
+  command = "npm run generate-index"
+  # Diretório de publicação
+  publish = "."
+

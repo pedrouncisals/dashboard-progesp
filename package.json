@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "generate-index": "node generate-files-index.js",
+    "prebuild": "npm run generate-index"
   },
   "keywords": [
     "dashboard",

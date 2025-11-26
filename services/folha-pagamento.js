@@ -8,16 +8,35 @@ import { mapearLotacao, obterLotacoesOriginais, obterSublotacoes } from '../util
 /**
  * Lista todos os arquivos JSON disponíveis dinamicamente
  * Descobre automaticamente todos os arquivos na pasta converted/
+ * Funciona tanto em ambiente com servidor (Express) quanto em ambiente estático (Netlify)
  * @returns {Promise<Array<string>>} Array com nomes dos arquivos
  */
 export async function listarArquivosJSON() {
   try {
+    // Tentar primeiro usar o arquivo de índice estático (para Netlify/ambiente estático)
+    try {
+      const response = await fetch('/converted/files.json');
+      if (response.ok) {
+        const arquivos = await response.json();
+        console.log(`📁 ${arquivos.length} arquivos JSON encontrados (arquivo de índice)`);
+        
+        if (arquivos.length === 0) {
+          console.warn('⚠️ Nenhum arquivo JSON encontrado. Verifique se a pasta converted/ contém arquivos.');
+        }
+        
+        return arquivos;
+      }
+    } catch (staticError) {
+      console.log('📝 Arquivo de índice não encontrado, tentando API do servidor...');
+    }
+    
+    // Fallback: tentar API do servidor (para desenvolvimento local)
     const response = await fetch('/api/converted/list');
     if (!response.ok) {
       throw new Error(`Erro ao listar arquivos: ${response.statusText}`);
     }
     const arquivos = await response.json();
-    console.log(`📁 ${arquivos.length} arquivos JSON encontrados dinamicamente`);
+    console.log(`📁 ${arquivos.length} arquivos JSON encontrados (API do servidor)`);
     
     if (arquivos.length === 0) {
       console.warn('⚠️ Nenhum arquivo JSON encontrado. Verifique se a pasta converted/ contém arquivos.');
@@ -26,7 +45,7 @@ export async function listarArquivosJSON() {
     return arquivos;
   } catch (error) {
     console.error('❌ Erro ao listar arquivos JSON:', error);
-    // Fallback: retornar array vazio se API falhar
+    // Fallback: retornar array vazio se ambos os métodos falharem
     // Isso permite que o sistema continue funcionando mesmo se a API não estiver disponível
     return [];
   }
