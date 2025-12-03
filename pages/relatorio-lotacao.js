@@ -3,7 +3,7 @@
  * Visão consolidada por unidade/lotação
  */
 
-import { formatarMoeda, formatarNumero } from '../utils/formatters.js';
+import { formatarMoeda, formatarNumero, extrairPeriodoDados } from '../utils/formatters.js';
 import { agregarPorLotacao } from '../services/folha-pagamento.js';
 import { showToast } from '../utils/feedback.js';
 
@@ -27,6 +27,9 @@ export function renderRelatorioLotacao(dados) {
   const lotacaoMaiorFolha = agregado[0] || { lotacao: 'N/A', liquido: 0 };
   const lotacaoMaisFuncionarios = [...agregado].sort((a, b) => b.count - a.count)[0] || { lotacao: 'N/A', count: 0 };
   
+  // Extrair período dos dados
+  const periodo = extrairPeriodoDados(dados);
+  
   const html = `
     <div class="row mb-4">
       <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
@@ -34,6 +37,9 @@ export function renderRelatorioLotacao(dados) {
           <h4 class="fw-bold mb-2">
             <i class="bi bi-building text-purple me-2"></i>
             Relatório por Lotação
+            ${periodo ? `<span class="badge bg-primary-subtle text-primary ms-2" style="font-size: 0.875rem; font-weight: 500;">
+              <i class="bi bi-calendar3 me-1"></i>${periodo}
+            </span>` : ''}
           </h4>
         </div>
         <div class="d-flex gap-2">
@@ -136,12 +142,18 @@ export function renderRelatorioLotacao(dados) {
       
       doc.setFontSize(18);
       doc.setFont(undefined, 'bold');
+      const periodoPDF = extrairPeriodoDados(dados);
       doc.text('Relatório por Lotação', 15, 20);
       
       doc.setFontSize(10);
       doc.setFont(undefined, 'normal');
       doc.text('UNCISAL - Universidade Estadual de Ciências da Saúde de Alagoas', 15, 28);
-      doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 34);
+      if (periodoPDF) {
+        doc.text(`Período: ${periodoPDF}`, 15, 34);
+        doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 40);
+      } else {
+        doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 34);
+      }
       
       const tableData = agregado.map(l => [
         l.lotacao || 'N/A',

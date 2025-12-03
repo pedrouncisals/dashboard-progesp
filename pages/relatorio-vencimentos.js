@@ -37,6 +37,7 @@ export function renderRelatorioVencimentos(dados) {
               <tr>
                 <th class="sortable">Nome</th>
                 <th>CPF</th>
+                <th>Matrícula</th>
                 <th>Lotação</th>
                 <th>Vínculo</th>
                 <th class="text-end sortable">Vantagem</th>
@@ -82,16 +83,50 @@ function renderTabelaVencimentos(dados) {
   const tbody = document.getElementById('tbody-vencimentos');
   
   if (dados.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="8" class="text-center">Nenhum registro encontrado</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="9" class="text-center">Nenhum registro encontrado</td></tr>';
     return;
   }
   
+  // Identificar pessoas com múltiplos vínculos (mesmo CPF, matrículas diferentes)
+  const cpfsComMultiplasMatriculas = new Set();
+  const cpfParaMatriculas = new Map();
+  
+  dados.forEach(r => {
+    if (r.cpf && r.cpf.trim() !== '') {
+      const cpf = r.cpf.trim();
+      if (!cpfParaMatriculas.has(cpf)) {
+        cpfParaMatriculas.set(cpf, new Set());
+      }
+      if (r.matricula && r.matricula.trim() !== '') {
+        cpfParaMatriculas.get(cpf).add(r.matricula.trim());
+      }
+    }
+  });
+  
+  cpfParaMatriculas.forEach((matriculas, cpf) => {
+    if (matriculas.size > 1) {
+      cpfsComMultiplasMatriculas.add(cpf);
+    }
+  });
+  
   tbody.innerHTML = dados.map(r => {
     const nome = r.nome && r.nome !== '*Totais*' ? r.nome : 'N/A';
+    const cpf = r.cpf && r.cpf.trim() !== '' ? r.cpf.trim() : '';
+    const matricula = r.matricula && r.matricula.trim() !== '' ? r.matricula.trim() : '-';
+    const temMultiplosVinculos = cpfsComMultiplasMatriculas.has(cpf);
+    
     return `
-      <tr>
-        <td style="color: var(--color-text-primary) !important;">${nome}</td>
-        <td style="color: var(--color-text-primary) !important;">${formatarCPF(r.cpf || '')}</td>
+      <tr ${temMultiplosVinculos ? 'style="background-color: rgba(13, 202, 240, 0.05) !important;"' : ''}>
+        <td style="color: var(--color-text-primary) !important;">
+          ${nome}
+          ${temMultiplosVinculos ? `<span class="badge bg-info-subtle text-info ms-2" style="font-size: 0.7rem;" title="Esta pessoa possui múltiplos vínculos">
+            <i class="bi bi-briefcase-fill"></i>
+          </span>` : ''}
+        </td>
+        <td style="color: var(--color-text-primary) !important;">${formatarCPF(cpf || '')}</td>
+        <td style="color: var(--color-text-primary) !important;">
+          <strong>${matricula}</strong>
+        </td>
         <td style="color: var(--color-text-primary) !important;">${r.lotacao_normalizada || '-'}</td>
         <td style="color: var(--color-text-secondary) !important;"><small>${r.vinculo || '-'}</small></td>
         <td class="text-end" style="color: var(--color-text-primary) !important;">${formatarMoeda(Number(r.vantagem) || 0)}</td>
@@ -111,6 +146,7 @@ function exportarVencimentosPDF(dados) {
   const colunas = [
     { header: 'Nome', accessor: r => r.nome },
     { header: 'CPF', accessor: r => formatarCPF(r.cpf) },
+    { header: 'Matrícula', accessor: r => r.matricula || '-' },
     { header: 'Lotação', accessor: r => r.lotacao_normalizada },
     { header: 'Vínculo', accessor: r => r.vinculo },
     { header: 'Vantagem', accessor: r => formatarMoeda(r.vantagem) },

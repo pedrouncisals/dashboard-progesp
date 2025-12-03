@@ -75,6 +75,41 @@ export function formatarCompetenciaCurta(competencia) {
 }
 
 /**
+ * Extrai o período (competências) dos dados para exibição
+ * @param {Array} dados - Array de registros
+ * @returns {string} Período formatado (ex: "Outubro/2025" ou "Janeiro/2025 - Dezembro/2025")
+ */
+export function extrairPeriodoDados(dados) {
+  if (!dados || dados.length === 0) {
+    return '';
+  }
+  
+  // Extrair competências únicas
+  const competencias = new Set();
+  dados.forEach(reg => {
+    if (reg.competencia) {
+      competencias.add(reg.competencia);
+    }
+  });
+  
+  if (competencias.size === 0) {
+    return '';
+  }
+  
+  const competenciasOrdenadas = Array.from(competencias).sort();
+  
+  if (competenciasOrdenadas.length === 1) {
+    // Um único mês
+    return formatarCompetencia(competenciasOrdenadas[0]);
+  } else {
+    // Múltiplos meses - mostrar intervalo
+    const primeira = formatarCompetencia(competenciasOrdenadas[0]);
+    const ultima = formatarCompetencia(competenciasOrdenadas[competenciasOrdenadas.length - 1]);
+    return `${primeira} - ${ultima}`;
+  }
+}
+
+/**
  * Formata valor como percentual
  * @param {number} valor - Valor decimal (ex: 15.5 = 15.5%)
  * @param {number} casas - Número de casas decimais

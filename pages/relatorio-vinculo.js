@@ -3,7 +3,7 @@
  * Comparação entre tipos de vínculo
  */
 
-import { formatarMoeda, formatarNumero } from '../utils/formatters.js';
+import { formatarMoeda, formatarNumero, extrairPeriodoDados } from '../utils/formatters.js';
 import { agregarPorVinculo } from '../services/folha-pagamento.js';
 import { showToast } from '../utils/feedback.js';
 
@@ -20,6 +20,9 @@ export function renderRelatorioVinculo(dados) {
   // Total de funcionários únicos (não registros)
   const totalFuncionarios = agregado.reduce((s, v) => s + v.funcionariosUnicos, 0);
   
+  // Extrair período dos dados
+  const periodo = extrairPeriodoDados(dados);
+  
   const html = `
     <div class="row mb-4">
       <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
@@ -27,6 +30,9 @@ export function renderRelatorioVinculo(dados) {
           <h4 class="fw-bold mb-2">
             <i class="bi bi-person-badge text-orange me-2"></i>
             Relatório por Vínculo
+            ${periodo ? `<span class="badge bg-primary-subtle text-primary ms-2" style="font-size: 0.875rem; font-weight: 500;">
+              <i class="bi bi-calendar3 me-1"></i>${periodo}
+            </span>` : ''}
           </h4>
         </div>
         <div class="d-flex gap-2">
@@ -109,6 +115,7 @@ export function renderRelatorioVinculo(dados) {
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF('p', 'mm', 'a4');
       
+      const periodoPDF = extrairPeriodoDados(dados);
       doc.setFontSize(18);
       doc.setFont(undefined, 'bold');
       doc.text('Relatório por Vínculo', 15, 20);
@@ -116,9 +123,14 @@ export function renderRelatorioVinculo(dados) {
       doc.setFontSize(10);
       doc.setFont(undefined, 'normal');
       doc.text('UNCISAL - Universidade Estadual de Ciências da Saúde de Alagoas', 15, 28);
-      doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 34);
+      if (periodoPDF) {
+        doc.text(`Período: ${periodoPDF}`, 15, 34);
+        doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 40);
+      } else {
+        doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 34);
+      }
       
-      let y = 45;
+      let y = periodoPDF ? 47 : 41;
       
       // Tabela de vínculos
       const tableData = agregado.map(v => [

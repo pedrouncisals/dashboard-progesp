@@ -382,6 +382,7 @@ function atualizarMetricas() {
   const stats = calcularEstatisticas(dadosFiltrados);
   
   document.getElementById('total-funcionarios').textContent = stats.totalFuncionarios.toLocaleString('pt-BR');
+  document.getElementById('total-vinculos').textContent = stats.totalVinculos.toLocaleString('pt-BR');
   document.getElementById('total-liquido').textContent = formatarMoeda(stats.totalLiquido);
   document.getElementById('total-vantagens').textContent = formatarMoeda(stats.totalVantagem);
   document.getElementById('total-descontos').textContent = formatarMoeda(stats.totalDesconto);
@@ -1129,23 +1130,28 @@ function atualizarBannerBuscaNome(buscaNome, dadosFiltrados) {
     return;
   }
   
-  // Calcular pessoas únicas encontradas
-  const pessoasUnicas = new Map(); // CPF -> { nome, registros }
+  // Calcular pessoas únicas encontradas com informações de vínculos
+  const pessoasUnicas = new Map(); // CPF -> { nome, registros, matriculas, competencias }
   
   dadosFiltrados.forEach(reg => {
     const cpf = reg.cpf && reg.cpf.trim() !== '' ? reg.cpf.trim() : null;
     const nome = reg.nome && reg.nome.trim() !== '' ? reg.nome.trim() : 'Sem nome';
+    const matricula = reg.matricula && reg.matricula.trim() !== '' ? reg.matricula.trim() : null;
     
     if (cpf) {
       if (!pessoasUnicas.has(cpf)) {
         pessoasUnicas.set(cpf, {
           nome: nome,
           registros: 0,
+          matriculas: new Set(),
           competencias: new Set()
         });
       }
       const pessoa = pessoasUnicas.get(cpf);
       pessoa.registros++;
+      if (matricula) {
+        pessoa.matriculas.add(matricula);
+      }
       if (reg.competencia) {
         pessoa.competencias.add(reg.competencia);
       }
@@ -1156,11 +1162,15 @@ function atualizarBannerBuscaNome(buscaNome, dadosFiltrados) {
         pessoasUnicas.set(chave, {
           nome: nome,
           registros: 0,
+          matriculas: new Set(),
           competencias: new Set()
         });
       }
       const pessoa = pessoasUnicas.get(chave);
       pessoa.registros++;
+      if (matricula) {
+        pessoa.matriculas.add(matricula);
+      }
       if (reg.competencia) {
         pessoa.competencias.add(reg.competencia);
       }
@@ -1209,12 +1219,23 @@ function atualizarBannerBuscaNome(buscaNome, dadosFiltrados) {
       
       pessoasParaMostrar.forEach(pessoa => {
         const competenciasTexto = Array.from(pessoa.competencias).sort().join(', ');
+        const matriculasArray = Array.from(pessoa.matriculas || new Set());
+        const temMultiplosVinculos = matriculasArray.length > 1;
+        const matriculasTexto = matriculasArray.length > 0 
+          ? `Matrícula${matriculasArray.length > 1 ? 's' : ''}: ${matriculasArray.join(', ')}`
+          : '';
+        
         html += `
           <li class="mb-1">
             <i class="bi bi-person-fill me-2 text-primary"></i>
             <strong>${pessoa.nome}</strong>
-            <span class="text-muted ms-2">
-              (${pessoa.registros} registro${pessoa.registros > 1 ? 's' : ''}${competenciasTexto ? ` - ${competenciasTexto}` : ''})
+            ${temMultiplosVinculos ? `<span class="badge bg-info-subtle text-info ms-2" style="font-size: 0.75rem;">
+              <i class="bi bi-briefcase-fill me-1"></i>${matriculasArray.length} vínculos
+            </span>` : ''}
+            <span class="text-muted ms-2 d-block small mt-1" style="padding-left: 1.75rem;">
+              ${matriculasTexto ? `${matriculasTexto}${competenciasTexto ? ' • ' : ''}` : ''}
+              ${competenciasTexto ? competenciasTexto : ''}
+              ${pessoa.registros > 1 ? ` • ${pessoa.registros} registro${pessoa.registros > 1 ? 's' : ''}` : ''}
             </span>
           </li>
         `;

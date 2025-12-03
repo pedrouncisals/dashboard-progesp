@@ -748,6 +748,7 @@ export function calcularEstatisticas(dados) {
   if (!dados || dados.length === 0) {
     return {
       totalFuncionarios: 0,
+      totalVinculos: 0,
       totalRegistros: 0,
       totalLiquido: 0,
       totalVantagem: 0,
@@ -761,16 +762,31 @@ export function calcularEstatisticas(dados) {
   
   // Contar funcionários únicos por CPF (ou nome+CPF se CPF não disponível)
   const funcionariosUnicos = new Set();
+  // Contar vínculos únicos por matrícula (cargos/vínculos ativos)
+  const vinculosUnicos = new Set();
+  
   dados.forEach(r => {
+    // Ignorar registros de totais
+    if (r.nome && (r.nome.includes('*Totais*') || r.nome.includes('TOTAL') || r.nome.includes('TOTAL GERAL'))) {
+      return;
+    }
+    
+    // Contar funcionários únicos por CPF
     if (r.cpf && r.cpf.trim() !== '') {
       funcionariosUnicos.add(r.cpf.trim());
     } else if (r.nome && r.nome.trim() !== '' && r.nome !== '*Totais*') {
       // Fallback: usar nome se CPF não disponível
       funcionariosUnicos.add(r.nome.trim());
     }
+    
+    // Contar vínculos únicos por matrícula
+    if (r.matricula && r.matricula.trim() !== '') {
+      vinculosUnicos.add(r.matricula.trim());
+    }
   });
   
-  const totalFuncionarios = funcionariosUnicos.size; // Funcionários únicos
+  const totalFuncionarios = funcionariosUnicos.size; // Funcionários únicos (pessoas)
+  const totalVinculos = vinculosUnicos.size; // Vínculos únicos (cargos/vínculos ativos)
   const totalRegistros = dados.length; // Total de registros (pode ter múltiplos meses)
   
   // Validar e somar valores, ignorando valores extremos
@@ -860,6 +876,7 @@ export function calcularEstatisticas(dados) {
   // Log para debug
   console.log('📊 Estatísticas calculadas:', {
     totalFuncionarios,
+    totalVinculos,
     totalRegistros,
     totalLiquido: totalLiquido.toFixed(2),
     totalVantagem: totalVantagem.toFixed(2),
@@ -875,6 +892,7 @@ export function calcularEstatisticas(dados) {
   if (liquidosValidos.length === 0) {
     return {
       totalFuncionarios,
+      totalVinculos,
       totalRegistros,
       totalLiquido,
       totalVantagem,
@@ -896,7 +914,8 @@ export function calcularEstatisticas(dados) {
   const menorLiquido = liquidosOrdenados[0]; // Primeiro elemento (menor)
   
   return {
-    totalFuncionarios, // Funcionários únicos
+    totalFuncionarios, // Funcionários únicos (pessoas por CPF)
+    totalVinculos,     // Vínculos únicos (cargos/vínculos ativos por matrícula)
     totalRegistros,    // Total de registros (múltiplos meses)
     totalLiquido,
     totalVantagem,

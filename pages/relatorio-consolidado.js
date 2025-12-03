@@ -3,7 +3,7 @@
  * Visão geral completa com todas as métricas
  */
 
-import { formatarMoeda, formatarNumero, formatarCompetencia } from '../utils/formatters.js';
+import { formatarMoeda, formatarNumero, formatarCompetencia, extrairPeriodoDados } from '../utils/formatters.js';
 import {
   calcularEstatisticas,
   agregarPorLotacao,
@@ -40,6 +40,9 @@ export function renderRelatorioConsolidado(dados) {
   // Total real de lotações (não apenas top 5)
   const totalLotacoes = todasLotacoes.length;
   
+  // Extrair período dos dados
+  const periodo = extrairPeriodoDados(dados);
+  
   const html = `
     <div class="row mb-4">
       <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
@@ -47,6 +50,9 @@ export function renderRelatorioConsolidado(dados) {
           <h4 class="fw-bold mb-2">
             <i class="bi bi-file-earmark-bar-graph-fill text-primary me-2"></i>
             Relatório Consolidado Geral
+            ${periodo ? `<span class="badge bg-primary-subtle text-primary ms-2" style="font-size: 0.875rem; font-weight: 500;">
+              <i class="bi bi-calendar3 me-1"></i>${periodo}
+            </span>` : ''}
           </h4>
           <p class="text-muted mb-0">Visão completa de todas as métricas e agregações da folha de pagamento</p>
         </div>
@@ -72,6 +78,22 @@ export function renderRelatorioConsolidado(dados) {
           </div>
           <div class="metric-value">${formatarNumero(stats.totalFuncionarios)}</div>
           <div class="metric-label">Total de Funcionários</div>
+          <div class="metric-trend">
+            <span class="text-muted small">Pessoas únicas (por CPF)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3 col-sm-6">
+        <div class="metric-card">
+          <div class="metric-icon text-info">
+            <i class="bi bi-briefcase-fill"></i>
+          </div>
+          <div class="metric-value">${formatarNumero(stats.totalVinculos || 0)}</div>
+          <div class="metric-label">Total de Vínculos</div>
+          <div class="metric-trend">
+            <span class="text-muted small">Cargos ativos (por matrícula)</span>
+          </div>
         </div>
       </div>
       
@@ -301,7 +323,7 @@ export function renderRelatorioConsolidado(dados) {
         <i class="bi bi-info-circle me-2 text-primary"></i>Resumo Geral
       </h6>
       <p class="mb-0">
-        Este relatório consolida os dados de <strong>${formatarNumero(stats.totalFuncionarios)}</strong> funcionários, 
+        Este relatório consolida os dados de <strong>${formatarNumero(stats.totalFuncionarios)}</strong> funcionários únicos (${formatarNumero(stats.totalVinculos || stats.totalFuncionarios)} vínculos ativos), 
         com uma folha total de <strong>${formatarMoeda(stats.totalLiquido)}</strong> 
         distribuídos em <strong>${totalLotacoes}</strong> lotações e 
         <strong>${porVinculo.length}</strong> tipos de vínculo diferentes.
@@ -325,10 +347,15 @@ export function renderRelatorioConsolidado(dados) {
       doc.setFontSize(10);
       doc.setFont(undefined, 'normal');
       doc.text('UNCISAL - Universidade Estadual de Ciências da Saúde de Alagoas', 15, 28);
-      doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 34);
+      if (periodo) {
+        doc.text(`Período: ${periodo}`, 15, 34);
+        doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 40);
+      } else {
+        doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 34);
+      }
       
       // Métricas principais
-      let y = 45;
+      let y = periodo ? 47 : 41;
       doc.setFontSize(12);
       doc.setFont(undefined, 'bold');
       doc.text('Métricas Principais', 15, y);
@@ -336,7 +363,7 @@ export function renderRelatorioConsolidado(dados) {
       
       doc.setFontSize(10);
       doc.setFont(undefined, 'normal');
-      doc.text(`Total de Funcionários: ${formatarNumero(stats.totalFuncionarios)}`, 15, y);
+      doc.text(`Total de Funcionários: ${formatarNumero(stats.totalFuncionarios)} (${formatarNumero(stats.totalVinculos || stats.totalFuncionarios)} vínculos)`, 15, y);
       y += 6;
       doc.text(`Folha Total (Líquido): ${formatarMoeda(stats.totalLiquido)}`, 15, y);
       y += 6;
