@@ -22,16 +22,31 @@ export function formatarMoeda(valor) {
 }
 
 /**
+ * Normaliza CPF removendo pontos e traços
+ * @param {string} cpf - CPF em qualquer formato
+ * @returns {string} CPF apenas com dígitos
+ */
+export function normalizarCPF(cpf) {
+  if (!cpf) return '';
+  return cpf.replace(/[^\d]/g, '').trim();
+}
+
+/**
  * Formata CPF com máscara
- * @param {string} cpf - CPF apenas com dígitos
+ * @param {string} cpf - CPF apenas com dígitos ou formatado
  * @returns {string} CPF formatado (ex: "123.456.789-01")
  */
 export function formatarCPF(cpf) {
-  if (!cpf || cpf.length !== 11) {
-    return cpf || '';
+  if (!cpf) return '';
+  
+  // Normalizar primeiro (remover pontos e traços)
+  const cpfNormalizado = normalizarCPF(cpf);
+  
+  if (cpfNormalizado.length !== 11) {
+    return cpf; // Retornar original se não tiver 11 dígitos
   }
   
-  return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+  return cpfNormalizado.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 }
 
 /**

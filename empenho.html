@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dashboard Servidores - UNCISAL | Análise de dados de folha de pagamento">
-  <title>Dashboard Servidores - UNCISAL</title>
+  <meta name="description" content="Dashboard Empenho - UNCISAL | Análise de dados de empenho">
+  <title>Dashboard Empenho - UNCISAL</title>
   
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cosmo/bootstrap.min.css">
@@ -42,23 +42,23 @@
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-4 mb-4">
           <div>
             <h1 class="fw-bold mb-3" style="font-size: 2.75rem; letter-spacing: -0.03em; line-height: 1.1; color: var(--color-text-primary);">
-              <i class="bi bi-people-fill text-primary me-3" style="font-size: 2.5rem;"></i>
-              Dashboard Servidores
+              <i class="bi bi-briefcase-fill text-info me-3" style="font-size: 2.5rem;"></i>
+              Dashboard Empenho
             </h1>
             <p class="text-muted mb-0" style="font-size: 1.125rem; font-weight: 400; line-height: 1.6;">
-              Análise completa e detalhada dos servidores da UNCISAL
+              Análise completa e detalhada dos empenhos da UNCISAL
             </p>
             <div class="mt-3">
-              <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2" style="font-size: 0.875rem; font-weight: 500;">
+              <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2" style="font-size: 0.875rem; font-weight: 500;">
                 <i class="bi bi-info-circle me-2"></i>
-                Os dados apresentados são extraídos das folhas de pagamento da instituição
+                Os dados apresentados são extraídos dos arquivos de empenho da instituição
               </span>
             </div>
           </div>
           <div class="d-flex gap-2 align-items-center">
-            <a href="/empenho.html" class="btn btn-outline-info">
-              <i class="bi bi-briefcase-fill me-2"></i>
-              Ver Empenhos
+            <a href="/" class="btn btn-outline-primary">
+              <i class="bi bi-people-fill me-2"></i>
+              Ver Servidores
             </a>
             <span class="badge badge-success" style="font-size: 0.875rem; padding: 0.625rem 1.25rem; border-radius: 50px; font-weight: 500;">
               <i class="bi bi-check-circle me-1"></i>
@@ -105,7 +105,7 @@
           <div class="metric-value" id="total-liquido">--</div>
           <div class="metric-label">Total Líquido</div>
           <div class="metric-trend">
-            <span class="text-muted small">Servidores</span>
+            <span class="text-muted small">Empenhos</span>
           </div>
         </div>
       </div>
@@ -166,22 +166,15 @@
           </div>
           
           <div class="col-md-2 col-sm-6">
-            <label class="form-label">Função</label>
+            <label class="form-label">Cargo</label>
             <select class="form-select" id="filtro-funcao">
-              <option value="">Todas</option>
+              <option value="">Todos</option>
             </select>
           </div>
           
           <div class="col-md-2 col-sm-6">
             <label class="form-label">Vínculo</label>
             <select class="form-select" id="filtro-vinculo">
-              <option value="">Todos</option>
-            </select>
-          </div>
-          
-          <div class="col-md-2 col-sm-6">
-            <label class="form-label">Nível</label>
-            <select class="form-select" id="filtro-nivel">
               <option value="">Todos</option>
             </select>
           </div>
@@ -194,9 +187,9 @@
           </div>
           
           <div class="col-md-2 col-sm-6">
-            <label class="form-label">Motivo Afastamento</label>
-            <select class="form-select" id="filtro-motivo-afastamento">
-              <option value="">Todos</option>
+            <label class="form-label">Área</label>
+            <select class="form-select" id="filtro-area">
+              <option value="">Todas</option>
             </select>
           </div>
           
@@ -216,197 +209,6 @@
             </button>
           </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Banner de Busca por Nome -->
-    <div id="banner-busca-nome" class="alert alert-info d-none mb-4 shadow-sm" role="alert" style="border-left: 4px solid #0dcaf0; background: linear-gradient(135deg, rgba(13, 202, 240, 0.1) 0%, rgba(13, 202, 240, 0.05) 100%);">
-      <div class="d-flex align-items-start justify-content-between flex-wrap gap-3">
-        <div class="flex-grow-1">
-          <h6 class="alert-heading mb-2 fw-semibold d-flex align-items-center">
-            <i class="bi bi-search me-2"></i>Busca por Nome Ativa
-          </h6>
-          <div id="banner-busca-conteudo">
-            <!-- Conteúdo será preenchido dinamicamente -->
-          </div>
-        </div>
-        <button type="button" class="btn btn-sm btn-outline-info" id="btn-limpar-busca-nome" title="Limpar busca">
-          <i class="bi bi-x-lg"></i>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Cards de Relatórios -->
-    <div class="row mb-5">
-      <div class="col-12">
-        <h2 class="fw-bold mb-2" style="font-size: 1.875rem; letter-spacing: -0.02em;">
-          <i class="bi bi-file-text me-2 text-primary"></i>Relatórios Disponíveis
-        </h2>
-        <p class="text-muted mb-4" style="font-size: 0.9375rem;">
-          Acesse análises detalhadas e específicas dos servidores da instituição
-        </p>
-      </div>
-    </div>
-    
-    <div class="row g-3 mb-4" id="relatorios-container">
-      <!-- Relatório 1: Vencimentos -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="vencimentos">
-          <div class="action-icon action-blue">
-            <i class="bi bi-calendar-check-fill"></i>
-          </div>
-          <div class="action-text">
-            <strong>Relatório de Vencimentos</strong>
-            <span>Lista completa de vencimentos do mês</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 2: Descontos -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="descontos">
-          <div class="action-icon action-red">
-            <i class="bi bi-arrow-down-circle-fill"></i>
-          </div>
-          <div class="action-text">
-            <strong>Relatório de Descontos</strong>
-            <span>Análise detalhada de descontos aplicados</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 3: Vantagens -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="vantagens">
-          <div class="action-icon action-green">
-            <i class="bi bi-arrow-up-circle-fill"></i>
-          </div>
-          <div class="action-text">
-            <strong>Relatório de Vantagens</strong>
-            <span>Análise de vantagens e proventos pagos</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 4: Por Lotação -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="lotacao">
-          <div class="action-icon action-purple">
-            <i class="bi bi-building"></i>
-          </div>
-          <div class="action-text">
-            <strong>Relatório por Lotação</strong>
-            <span>Visão consolidada por unidade/lotação</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 5: Por Vínculo -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="vinculo">
-          <div class="action-icon action-orange">
-            <i class="bi bi-person-badge"></i>
-          </div>
-          <div class="action-text">
-            <strong>Relatório por Vínculo</strong>
-            <span>Comparação entre tipos de vínculo</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 6: Ativos vs Afastados -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="ativos-afastados">
-          <div class="action-icon action-cyan">
-            <i class="bi bi-person-check-fill"></i>
-          </div>
-          <div class="action-text">
-            <strong>Ativos vs Afastados</strong>
-            <span>Análise da situação dos funcionários</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 7: Evolução Mensal -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="evolucao-mensal">
-          <div class="action-icon action-indigo">
-            <i class="bi bi-graph-up"></i>
-          </div>
-          <div class="action-text">
-            <strong>Evolução Mensal</strong>
-            <span>Comparação da folha entre meses</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 8: Top Salários -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="top-salarios">
-          <div class="action-icon action-pink">
-            <i class="bi bi-trophy-fill"></i>
-          </div>
-          <div class="action-text">
-            <strong>Top Salários</strong>
-            <span>Ranking dos maiores salários líquidos</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 9: Funções e Níveis -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="funcoes-niveis">
-          <div class="action-icon action-orange">
-            <i class="bi bi-briefcase-fill"></i>
-          </div>
-          <div class="action-text">
-            <strong>Funções e Níveis</strong>
-            <span>Análise por função e nível funcional</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
-      </div>
-      
-      <!-- Relatório 10: Consolidado Geral -->
-      <div class="col-12 col-md-6">
-        <a href="#" class="action-card text-decoration-none" data-relatorio="consolidado">
-          <div class="action-icon action-blue">
-            <i class="bi bi-file-earmark-bar-graph-fill"></i>
-          </div>
-          <div class="action-text">
-            <strong>Relatório Consolidado</strong>
-            <span>Visão geral completa com todas métricas</span>
-          </div>
-          <div class="action-arrow">
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </a>
       </div>
     </div>
     
@@ -430,7 +232,7 @@
             <h5 class="card-title mb-0">
               <i class="bi bi-pie-chart-fill me-2"></i>Distribuição por Lotação
             </h5>
-            <p class="text-muted small mb-0 mt-1">Funcionários por unidade</p>
+            <p class="text-muted small mb-0 mt-1">Empenhos por unidade</p>
           </div>
           <div class="card-body chart-container-medium">
             <canvas id="chart-lotacao"></canvas>
@@ -446,9 +248,6 @@
               <h5 class="card-title mb-0" style="font-size: 0.95rem;">
                 <i class="bi bi-graph-up me-1"></i>Evolução Mensal
               </h5>
-              <span class="badge" id="variacao-evolucao-mes" style="font-size: 0.65rem; padding: 0.2rem 0.4rem;">
-                <i class="bi bi-arrow-up"></i> Carregando...
-              </span>
             </div>
             <div class="btn-group btn-group-sm w-100 mt-1" role="group" id="toggle-evolucao-view">
               <button type="button" class="btn btn-outline-primary active" data-evolucao-view="ultimo">
@@ -481,6 +280,84 @@
             <canvas id="chart-top-salarios"></canvas>
           </div>
         </div>
+      </div>
+    </div>
+    
+    <!-- Cards de Relatórios -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="fw-bold mb-2" style="font-size: 1.875rem; letter-spacing: -0.02em;">
+          <i class="bi bi-file-text me-2 text-info"></i>Relatórios Disponíveis
+        </h2>
+        <p class="text-muted mb-4" style="font-size: 0.9375rem;">
+          Acesse análises detalhadas e específicas dos empenhos da instituição
+        </p>
+      </div>
+    </div>
+    
+    <div class="row g-3 mb-4" id="relatorios-container">
+      <!-- Relatório 1: Vencimentos -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="vencimentos-empenho">
+          <div class="action-icon action-blue">
+            <i class="bi bi-calendar-check-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório de Vencimentos</strong>
+            <span>Lista completa de vencimentos de empenho</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 2: Por Lotação -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="lotacao-empenho">
+          <div class="action-icon action-purple">
+            <i class="bi bi-building"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório por Lotação</strong>
+            <span>Visão consolidada por unidade/lotação</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 3: Top Salários -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="top-salarios-empenho">
+          <div class="action-icon action-pink">
+            <i class="bi bi-trophy-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Top Salários</strong>
+            <span>Ranking dos maiores salários líquidos</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Relatório 4: Consolidado Geral -->
+      <div class="col-12 col-md-6">
+        <a href="#" class="action-card text-decoration-none" data-relatorio="consolidado-empenho">
+          <div class="action-icon action-blue">
+            <i class="bi bi-file-earmark-bar-graph-fill"></i>
+          </div>
+          <div class="action-text">
+            <strong>Relatório Consolidado</strong>
+            <span>Visão geral completa com todas métricas</span>
+          </div>
+          <div class="action-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </a>
       </div>
     </div>
     
@@ -528,7 +405,6 @@
       }
       updateThemeIcon();
       
-      // Atualizar gráficos quando tema mudar
       if (window.dashboardCharts) {
         Object.values(window.dashboardCharts).forEach(chart => {
           if (chart && typeof chart.update === 'function') {
@@ -550,7 +426,7 @@
   </script>
   
   <!-- Main App Script (ES Module) -->
-  <script type="module" src="/pages/dashboard-folha.js"></script>
+  <script type="module" src="/pages/dashboard-empenho.js"></script>
   
 </body>
 </html>

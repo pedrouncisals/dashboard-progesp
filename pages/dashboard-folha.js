@@ -42,6 +42,17 @@ async function init() {
     initNavbar();
     initFooter();
     
+    // Destacar link ativo na navbar
+    const navLinkEmpenhos = document.getElementById('nav-link-empenhos');
+    const navLinkServidores = document.getElementById('nav-link-servidores');
+    if (navLinkServidores) {
+      navLinkServidores.style.opacity = '1';
+      navLinkServidores.style.fontWeight = '600';
+    }
+    if (navLinkEmpenhos) {
+      navLinkEmpenhos.style.opacity = '0.7';
+    }
+    
     showLoader('Carregando dados dos servidores...');
     
     // Carregar todos os dados

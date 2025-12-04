@@ -16,7 +16,7 @@ export function renderNavbar() {
               </div>
             </div>
             <div class="brand-text-ultra">
-              <div class="brand-title-ultra">Dashboard Servidores</div>
+              <div class="brand-title-ultra" id="navbar-title">Dashboard Servidores</div>
               <div class="brand-subtitle-ultra">UNCISAL • PROGESP Assessoria</div>
             </div>
           </a>
@@ -32,6 +32,14 @@ export function renderNavbar() {
           <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav-ultra">
               <div class="nav-info-group">
+                <a href="/" class="nav-info-badge nav-link-custom" id="nav-link-servidores" style="text-decoration: none; color: inherit; cursor: pointer;">
+                  <i class="bi bi-people-fill"></i>
+                  <span>Servidores</span>
+                </a>
+                <a href="/empenho.html" class="nav-info-badge nav-link-custom" id="nav-link-empenhos" style="text-decoration: none; color: inherit; cursor: pointer;">
+                  <i class="bi bi-briefcase-fill"></i>
+                  <span>Empenhos</span>
+                </a>
                 <div class="nav-info-badge" id="navbar-periodo">
                   <i class="bi bi-calendar-range"></i>
                   <span>Carregando...</span>
