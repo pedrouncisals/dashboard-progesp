@@ -120,6 +120,47 @@ export function filtrarEmpenho(dados, filtros) {
     );
   }
   
+  // Filtro por múltiplos vínculos - mostrar apenas pessoas com mais de 1 vínculo
+  if (filtros.multiplosVinculos) {
+    // Agrupar por CPF (ou nome se não tiver CPF) e contar vínculos únicos
+    const pessoasPorCpf = new Map();
+    
+    resultado.forEach(reg => {
+      const chave = reg.cpf && reg.cpf.trim() !== '' 
+        ? reg.cpf.trim() 
+        : (reg.nome && reg.nome.trim() !== '' ? reg.nome.trim() : null);
+      
+      if (!chave) return;
+      
+      if (!pessoasPorCpf.has(chave)) {
+        pessoasPorCpf.set(chave, {
+          nome: reg.nome,
+          cpf: reg.cpf,
+          vinculos: new Set()
+        });
+      }
+      
+      // Adicionar vínculo único (matrícula + vínculo)
+      const vinculoUnico = `${reg.matricula || ''}_${reg.vinculo || ''}`;
+      pessoasPorCpf.get(chave).vinculos.add(vinculoUnico);
+    });
+    
+    // Filtrar apenas pessoas com mais de 1 vínculo
+    const cpfsComMultiplosVinculos = new Set();
+    pessoasPorCpf.forEach((info, cpf) => {
+      if (info.vinculos.size > 1) {
+        cpfsComMultiplosVinculos.add(cpf);
+      }
+    });
+    
+    resultado = resultado.filter(r => {
+      const chave = r.cpf && r.cpf.trim() !== '' 
+        ? r.cpf.trim() 
+        : (r.nome && r.nome.trim() !== '' ? r.nome.trim() : null);
+      return chave && cpfsComMultiplosVinculos.has(chave);
+    });
+  }
+  
   return resultado;
 }
 

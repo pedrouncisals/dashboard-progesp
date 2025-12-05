@@ -3,7 +3,7 @@
  * Lista completa de funcionários com seus vencimentos
  */
 
-import { formatarMoeda, formatarCPF } from '../utils/formatters.js';
+import { formatarMoeda, formatarCPF, formatarCompetencia } from '../utils/formatters.js';
 import { Pagination } from '../utils/pagination.js';
 import { exportRelatorioPDF, exportarCSV } from '../utils/pdf.js';
 
@@ -35,6 +35,7 @@ export function renderRelatorioVencimentos(dados) {
           <table class="table table-custom">
             <thead>
               <tr>
+                <th>Mês</th>
                 <th class="sortable">Nome</th>
                 <th>CPF</th>
                 <th>Matrícula</th>
@@ -83,7 +84,7 @@ function renderTabelaVencimentos(dados) {
   const tbody = document.getElementById('tbody-vencimentos');
   
   if (dados.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="9" class="text-center">Nenhum registro encontrado</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="10" class="text-center">Nenhum registro encontrado</td></tr>';
     return;
   }
   
@@ -115,8 +116,11 @@ function renderTabelaVencimentos(dados) {
     const matricula = r.matricula && r.matricula.trim() !== '' ? r.matricula.trim() : '-';
     const temMultiplosVinculos = cpfsComMultiplasMatriculas.has(cpf);
     
+    const competencia = r.competencia ? formatarCompetencia(r.competencia) : '-';
+    
     return `
       <tr ${temMultiplosVinculos ? 'style="background-color: rgba(13, 202, 240, 0.05) !important;"' : ''}>
+        <td style="color: var(--color-text-secondary) !important;"><small>${competencia}</small></td>
         <td style="color: var(--color-text-primary) !important;">
           ${nome}
           ${temMultiplosVinculos ? `<span class="badge bg-info-subtle text-info ms-2" style="font-size: 0.7rem;" title="Esta pessoa possui múltiplos vínculos">
@@ -144,6 +148,7 @@ function renderTabelaVencimentos(dados) {
 
 function exportarVencimentosPDF(dados) {
   const colunas = [
+    { header: 'Mês', accessor: r => r.competencia ? formatarCompetencia(r.competencia) : '-' },
     { header: 'Nome', accessor: r => r.nome },
     { header: 'CPF', accessor: r => formatarCPF(r.cpf) },
     { header: 'Matrícula', accessor: r => r.matricula || '-' },
@@ -151,7 +156,8 @@ function exportarVencimentosPDF(dados) {
     { header: 'Vínculo', accessor: r => r.vinculo },
     { header: 'Vantagem', accessor: r => formatarMoeda(r.vantagem) },
     { header: 'Desconto', accessor: r => formatarMoeda(r.desconto) },
-    { header: 'Líquido', accessor: r => formatarMoeda(r.liquido) }
+    { header: 'Líquido', accessor: r => formatarMoeda(r.liquido) },
+    { header: 'Situação', accessor: r => r.situacao || '-' }
   ];
   
   exportRelatorioPDF('Relatório de Vencimentos', dados, colunas);
@@ -159,13 +165,16 @@ function exportarVencimentosPDF(dados) {
 
 function exportarVencimentosCSV(dados) {
   const colunas = [
+    { header: 'Mês', accessor: r => r.competencia ? formatarCompetencia(r.competencia) : '-' },
     { header: 'Nome', accessor: r => r.nome },
     { header: 'CPF', accessor: r => r.cpf },
+    { header: 'Matrícula', accessor: r => r.matricula || '-' },
     { header: 'Lotação', accessor: r => r.lotacao_normalizada },
     { header: 'Vínculo', accessor: r => r.vinculo },
     { header: 'Vantagem', accessor: r => r.vantagem },
     { header: 'Desconto', accessor: r => r.desconto },
-    { header: 'Líquido', accessor: r => r.liquido }
+    { header: 'Líquido', accessor: r => r.liquido },
+    { header: 'Situação', accessor: r => r.situacao || '-' }
   ];
   
   exportarCSV('relatorio_vencimentos', dados, colunas);

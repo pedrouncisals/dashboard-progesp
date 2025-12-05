@@ -5,6 +5,33 @@
 
 import { mapearLotacao, obterLotacoesOriginais, obterSublotacoes } from '../utils/lotacao-mapping.js';
 
+// Cache simples para melhorar performance
+const cache = {
+  arquivos: null,
+  folhas: new Map(), // Cache de arquivos individuais
+  todasFolhas: null,
+  timestamp: null,
+  TTL: 5 * 60 * 1000 // Time-to-live: 5 minutos
+};
+
+/**
+ * Limpa o cache
+ */
+export function limparCache() {
+  cache.arquivos = null;
+  cache.folhas.clear();
+  cache.todasFolhas = null;
+  cache.timestamp = null;
+}
+
+/**
+ * Verifica se o cache é válido
+ */
+function isCacheValido() {
+  if (!cache.timestamp) return false;
+  return Date.now() - cache.timestamp < cache.TTL;
+}
+
 /**
  * Lista todos os arquivos JSON disponíveis dinamicamente
  * Descobre automaticamente todos os arquivos na pasta converted/
@@ -12,6 +39,11 @@ import { mapearLotacao, obterLotacoesOriginais, obterSublotacoes } from '../util
  * @returns {Promise<Array<string>>} Array com nomes dos arquivos
  */
 export async function listarArquivosJSON() {
+  // Verificar cache
+  if (cache.arquivos && isCacheValido()) {
+    return cache.arquivos;
+  }
+  
   try {
     // Tentar primeiro usar o arquivo de índice estático (para Netlify/ambiente estático)
     try {
@@ -23,6 +55,10 @@ export async function listarArquivosJSON() {
         if (arquivos.length === 0) {
           console.warn('⚠️ Nenhum arquivo JSON encontrado. Verifique se a pasta converted/ contém arquivos.');
         }
+        
+        // Atualizar cache
+        cache.arquivos = arquivos;
+        cache.timestamp = Date.now();
         
         return arquivos;
       }
@@ -42,6 +78,10 @@ export async function listarArquivosJSON() {
       console.warn('⚠️ Nenhum arquivo JSON encontrado. Verifique se a pasta converted/ contém arquivos.');
     }
     
+    // Atualizar cache
+    cache.arquivos = arquivos;
+    cache.timestamp = Date.now();
+    
     return arquivos;
   } catch (error) {
     console.error('❌ Erro ao listar arquivos JSON:', error);
@@ -52,38 +92,88 @@ export async function listarArquivosJSON() {
 }
 
 /**
- * Carrega um arquivo JSON específico
+ * Carrega um arquivo JSON específico com retry automático
  * @param {string} arquivo - Nome do arquivo
+ * @param {number} tentativas - Número de tentativas (padrão: 3)
  * @returns {Promise<Object>} Dados do arquivo
  */
-export async function carregarFolha(arquivo) {
-  try {
-    const response = await fetch(`/converted/${arquivo}`);
-    if (!response.ok) {
-      throw new Error(`Erro ao carregar arquivo: ${response.statusText}`);
-    }
-    const data = await response.json();
-    
-    // NÃO REMOVER DUPLICATAS - Pessoas podem ter múltiplos vínculos (mesmo CPF, vínculos diferentes)
-    // O JSON é a fonte da verdade, carregar tudo exatamente como está
-    if (data.registros && data.registros.length > 0) {
-      console.log(`📄 Arquivo ${arquivo}: ${data.registros.length} registros carregados`);
-      
-      // Log de informações
-      const situacoes = {};
-      data.registros.forEach(reg => {
-        const situacao = reg.situacao || 'NÃO INFORMADO';
-        situacoes[situacao] = (situacoes[situacao] || 0) + 1;
-      });
-      
-      console.log(`   Situações encontradas:`, situacoes);
-    }
-    
-    return data;
-  } catch (error) {
-    console.error('Erro ao carregar folha:', error);
-    throw error;
+export async function carregarFolha(arquivo, tentativas = 3) {
+  // Verificar cache
+  if (cache.folhas.has(arquivo) && isCacheValido()) {
+    return cache.folhas.get(arquivo);
   }
+  
+  let ultimoErro = null;
+  
+  for (let tentativa = 1; tentativa <= tentativas; tentativa++) {
+    try {
+      const response = await fetch(`/converted/${arquivo}`);
+      
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error(`Arquivo não encontrado: ${arquivo}`);
+        }
+        throw new Error(`Erro HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      
+      // Validar estrutura do JSON
+      if (!data || typeof data !== 'object') {
+        throw new Error(`Formato inválido no arquivo ${arquivo}: esperado objeto JSON`);
+      }
+      
+      // Validar se tem registros (pode ser array vazio, mas deve existir)
+      if (!Array.isArray(data.registros)) {
+        throw new Error(`Campo 'registros' inválido no arquivo ${arquivo}: esperado array`);
+      }
+      
+      // NÃO REMOVER DUPLICATAS - Pessoas podem ter múltiplos vínculos (mesmo CPF, vínculos diferentes)
+      // O JSON é a fonte da verdade, carregar tudo exatamente como está
+      if (data.registros.length > 0) {
+        console.log(`📄 Arquivo ${arquivo}: ${data.registros.length} registros carregados`);
+        
+        // Log de informações detalhadas (apenas quando necessário para debug)
+        // Removido verificação de process.env.NODE_ENV pois não existe no navegador
+        // Para reduzir logs, comentar a seção abaixo se não for necessário
+        try {
+          const debugMode = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+          if (debugMode) {
+            const situacoes = {};
+            data.registros.forEach(reg => {
+              const situacao = reg.situacao || 'NÃO INFORMADO';
+              situacoes[situacao] = (situacoes[situacao] || 0) + 1;
+            });
+            console.log(`   Situações encontradas:`, situacoes);
+          }
+        } catch (debugError) {
+          // Ignorar erros no código de debug - não devem impedir o carregamento
+          console.warn('Erro ao processar logs de debug:', debugError);
+        }
+      } else {
+        console.warn(`⚠️ Arquivo ${arquivo} está vazio (0 registros)`);
+      }
+      
+      // Atualizar cache
+      cache.folhas.set(arquivo, data);
+      cache.timestamp = Date.now();
+      
+      return data;
+    } catch (error) {
+      ultimoErro = error;
+      
+      // Se não for a última tentativa, aguardar antes de tentar novamente
+      if (tentativa < tentativas) {
+        const delay = Math.min(1000 * Math.pow(2, tentativa - 1), 5000); // Backoff exponencial (max 5s)
+        console.warn(`⚠️ Tentativa ${tentativa}/${tentativas} falhou para ${arquivo}. Tentando novamente em ${delay}ms...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+  }
+  
+  // Se todas as tentativas falharam, lançar erro
+  console.error(`❌ Erro ao carregar folha ${arquivo} após ${tentativas} tentativas:`, ultimoErro);
+  throw new Error(`Não foi possível carregar o arquivo ${arquivo}: ${ultimoErro?.message || 'Erro desconhecido'}`);
 }
 
 /**
@@ -109,48 +199,79 @@ export async function carregarFolhaPorCompetencia(competencia) {
 export async function carregarTodasFolhas() {
   try {
     const arquivos = await listarArquivosJSON();
+    
+    if (arquivos.length === 0) {
+      throw new Error('Nenhum arquivo JSON encontrado. Verifique se a pasta converted/ contém arquivos no formato correto (YYYY-MM_*.json)');
+    }
+    
     const todasFolhas = [];
+    const arquivosComErro = [];
     let totalRegistrosJSON = 0;
     
     // CARREGAR TODOS OS REGISTROS SEM FILTRAR NADA
     // O JSON é a fonte da verdade - não devemos perder nenhum registro
     for (const arquivo of arquivos) {
-      const data = await carregarFolha(arquivo);
-      
-      if (!data.registros || !Array.isArray(data.registros)) {
-        console.warn(`⚠️ Arquivo ${arquivo} não tem registros ou formato inválido`);
-        continue;
-      }
-      
-      const registrosNoArquivo = data.registros.length;
-      totalRegistrosJSON += registrosNoArquivo;
-      
-      // Adicionar competencia a cada registro
-      // IMPORTANTE: NÃO FILTRAR NADA - ADICIONAR TODOS OS REGISTROS
-      data.registros.forEach((reg, idx) => {
-        // Garantir que o registro tenha competência
-        if (!reg.competencia) {
-          reg.competencia = data.competencia;
+      try {
+        const data = await carregarFolha(arquivo);
+        
+        if (!data.registros || !Array.isArray(data.registros)) {
+          console.warn(`⚠️ Arquivo ${arquivo} não tem registros ou formato inválido`);
+          arquivosComErro.push({ arquivo, erro: 'Formato inválido' });
+          continue;
         }
         
-        // ADICIONAR TODOS OS REGISTROS - SEM FILTROS
-        todasFolhas.push(reg);
-      });
-      
-      console.log(`   ✅ ${arquivo}: ${registrosNoArquivo} registros adicionados`);
+        const registrosNoArquivo = data.registros.length;
+        totalRegistrosJSON += registrosNoArquivo;
+        
+        // Adicionar competencia a cada registro
+        // IMPORTANTE: NÃO FILTRAR NADA - ADICIONAR TODOS OS REGISTROS
+        data.registros.forEach((reg) => {
+          // Garantir que o registro tenha competência
+          if (!reg.competencia) {
+            reg.competencia = data.competencia || 'NÃO INFORMADO';
+          }
+          
+          // Validar campos essenciais
+          if (!reg.nome || !reg.cpf) {
+            console.warn(`⚠️ Registro sem nome ou CPF no arquivo ${arquivo}`);
+          }
+          
+          // ADICIONAR TODOS OS REGISTROS - SEM FILTROS
+          todasFolhas.push(reg);
+        });
+        
+        console.log(`   ✅ ${arquivo}: ${registrosNoArquivo} registros adicionados`);
+      } catch (error) {
+        console.error(`❌ Erro ao processar arquivo ${arquivo}:`, error.message);
+        arquivosComErro.push({ arquivo, erro: error.message });
+        // Continuar processando outros arquivos mesmo se um falhar
+      }
+    }
+    
+    // Avisar sobre arquivos com erro
+    if (arquivosComErro.length > 0) {
+      console.warn(`⚠️ ${arquivosComErro.length} arquivo(s) com erro:`, arquivosComErro);
+    }
+    
+    if (todasFolhas.length === 0) {
+      throw new Error('Nenhum registro foi carregado. Verifique se os arquivos JSON contêm dados válidos.');
     }
     
     console.log(`📊 TOTAL: ${totalRegistrosJSON} registros no JSON → ${todasFolhas.length} registros carregados`);
     
     // Verificar se perdemos algum registro
     if (totalRegistrosJSON !== todasFolhas.length) {
-      console.error(`❌ ERRO: Perdemos ${totalRegistrosJSON - todasFolhas.length} registros!`);
+      console.warn(`⚠️ Diferença detectada: ${totalRegistrosJSON} registros no JSON vs ${todasFolhas.length} carregados`);
     }
     
     return todasFolhas;
   } catch (error) {
-    console.error('Erro ao carregar todas as folhas:', error);
-    throw error;
+    console.error('❌ Erro ao carregar todas as folhas:', error);
+    // Melhorar mensagem de erro para o usuário
+    if (error.message) {
+      throw error;
+    }
+    throw new Error(`Erro ao carregar dados: ${error.message || 'Erro desconhecido'}`);
   }
 }
 
@@ -197,16 +318,24 @@ export function filtrarFolha(dados, filtros) {
   // Filtro por lotação - usar mapeamento reverso para encontrar todas as lotações normalizadas que mapeiam para a lotação correta
   // Se for uma lotação principal, incluir também todas as suas sublotações
   if (filtros.lotacao) {
-    const sublots = obterSublotacoes(filtros.lotacao);
+    // IMPORTANTE: Para PROGESP, considerar apenas as sublotações específicas (CGPA, SUMOF, SASBEM, SUDES, SUPLAF)
+    // Não incluir lotações que foram mapeadas incorretamente (como PORTUGAL RAMALHO ou ETSAL)
+    let lotacoesCorretasParaIncluir = new Set([filtros.lotacao]);
     
-    // Criar conjunto de todas as lotações corretas que devem ser incluídas
-    const lotacoesCorretasParaIncluir = new Set([filtros.lotacao]);
-    
-    // Se for uma lotação principal, adicionar todas as suas sublotações
-    if (sublots.length > 0) {
+    // Se for PROGESP, usar apenas as sublotações definidas (não incluir outras que possam ter sido mapeadas incorretamente)
+    if (filtros.lotacao === 'PROGESP') {
+      const sublots = obterSublotacoes('PROGESP'); // ['SUMOF', 'SASBEM', 'CGPA', 'SUPLAF', 'SUDES']
       sublots.forEach(sublot => {
         lotacoesCorretasParaIncluir.add(sublot);
       });
+    } else {
+      // Para outras lotações, usar a lógica normal
+      const sublots = obterSublotacoes(filtros.lotacao);
+      if (sublots.length > 0) {
+        sublots.forEach(sublot => {
+          lotacoesCorretasParaIncluir.add(sublot);
+        });
+      }
     }
     
     // Agora, para cada lotação correta, obter todas as lotações normalizadas originais que mapeiam para ela
@@ -218,7 +347,15 @@ export function filtrarFolha(dados, filtros) {
     
     resultado = resultado.filter(r => {
       const lotacaoMapeada = mapearLotacao(r.lotacao_normalizada, r.lotacao_original);
-      // Verificar se a lotação mapeada está no conjunto de lotações corretas OU se a lotação original está no conjunto de originais
+      
+      // Para PROGESP, verificar se a lotação mapeada está nas sublotações corretas
+      if (filtros.lotacao === 'PROGESP') {
+        // Apenas aceitar se for uma das sublotações específicas de PROGESP
+        const sublotsProgesp = ['PROGESP', 'SUMOF', 'SASBEM', 'CGPA', 'SUPLAF', 'SUDES'];
+        return sublotsProgesp.includes(lotacaoMapeada);
+      }
+      
+      // Para outras lotações, usar a lógica normal
       return lotacoesCorretasParaIncluir.has(lotacaoMapeada) || lotacoesOriginaisParaIncluir.has(r.lotacao_normalizada);
     });
   }
@@ -267,6 +404,47 @@ export function filtrarFolha(dados, filtros) {
     resultado = resultado.filter(r => 
       r.nome.toLowerCase().includes(busca)
     );
+  }
+  
+  // Filtro por múltiplos vínculos - mostrar apenas pessoas com mais de 1 vínculo
+  if (filtros.multiplosVinculos) {
+    // Agrupar por CPF (ou nome se não tiver CPF) e contar vínculos únicos
+    const pessoasPorCpf = new Map();
+    
+    resultado.forEach(reg => {
+      const chave = reg.cpf && reg.cpf.trim() !== '' 
+        ? reg.cpf.trim() 
+        : (reg.nome && reg.nome.trim() !== '' ? reg.nome.trim() : null);
+      
+      if (!chave) return;
+      
+      if (!pessoasPorCpf.has(chave)) {
+        pessoasPorCpf.set(chave, {
+          nome: reg.nome,
+          cpf: reg.cpf,
+          vinculos: new Set()
+        });
+      }
+      
+      // Adicionar vínculo único (matrícula + vínculo)
+      const vinculoUnico = `${reg.matricula || ''}_${reg.vinculo || ''}`;
+      pessoasPorCpf.get(chave).vinculos.add(vinculoUnico);
+    });
+    
+    // Filtrar apenas pessoas com mais de 1 vínculo
+    const cpfsComMultiplosVinculos = new Set();
+    pessoasPorCpf.forEach((info, cpf) => {
+      if (info.vinculos.size > 1) {
+        cpfsComMultiplosVinculos.add(cpf);
+      }
+    });
+    
+    resultado = resultado.filter(r => {
+      const chave = r.cpf && r.cpf.trim() !== '' 
+        ? r.cpf.trim() 
+        : (r.nome && r.nome.trim() !== '' ? r.nome.trim() : null);
+      return chave && cpfsComMultiplosVinculos.has(chave);
+    });
   }
   
   return resultado;

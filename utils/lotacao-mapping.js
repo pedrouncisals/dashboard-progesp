@@ -11,7 +11,7 @@ export const LOTACAO_MAPPING = {
   'MOVIMENTACAO FUNCIONA': 'SUMOF',
   '- SAUDE': 'SERVIDORES CEDIDOS - SAUDE',
   'REITORIA': 'REITORIA',
-  'PRO-REITORIA': 'PROGESP', // PRO-REITORIA DA GESTAO DE PESSOAS mapeia para PROGESP
+  // PRO-REITORIA não mapeia diretamente para PROGESP - apenas se for especificamente de Gestão de Pessoas (verificado na função mapearLotacao)
   'CHEF GES PESSOAS': 'PROGESP', // CHEF GES PESSOAS MATERN ESC SANTA M
   'CHEFIA DE GESTAO DE PESSOAS': 'PROGESP', // CHEFIA DE GESTAO DE PESSOAS DA ACAD
   'HELVIO AUTO': 'HEHA',
@@ -94,10 +94,20 @@ export const LOTACAO_REVERSE_MAPPING = (() => {
 export function mapearLotacao(lotacaoNormalizada, lotacaoOriginal = null) {
   if (!lotacaoNormalizada) return null;
   
+  // Caso especial: PRO-REITORIA só mapeia para PROGESP se for especificamente de Gestão de Pessoas
+  if (lotacaoNormalizada === 'PRO-REITORIA' && lotacaoOriginal) {
+    const originalUpper = lotacaoOriginal.toUpperCase();
+    if (originalUpper.includes('GESTAO DE PESSOAS') || originalUpper.includes('GES PESSOAS')) {
+      return 'PROGESP';
+    }
+    // Se não for de Gestão de Pessoas, retorna null ou outro mapeamento apropriado
+    // Por enquanto, mantém como está (sem mapeamento direto no LOTACAO_MAPPING)
+  }
+  
   // Caso especial: REITORIA que vem de PRO-REITORIA DA GESTAO DE PESSOAS deve mapear para PROGESP
   if (lotacaoNormalizada === 'REITORIA' && lotacaoOriginal) {
     const originalUpper = lotacaoOriginal.toUpperCase();
-    if (originalUpper.includes('GESTAO DE PESSOAS') || originalUpper.includes('GES PESSOAS')) {
+    if (originalUpper.includes('PRO-REITORIA') && (originalUpper.includes('GESTAO DE PESSOAS') || originalUpper.includes('GES PESSOAS'))) {
       return 'PROGESP';
     }
   }
@@ -111,21 +121,15 @@ export function mapearLotacao(lotacaoNormalizada, lotacaoOriginal = null) {
     }
   }
   
-  // Caso especial: MATERN ESC SANTA que vem de CHEF GES PESSOAS deve mapear para PROGESP
-  if (lotacaoNormalizada === 'MATERN ESC SANTA' && lotacaoOriginal) {
-    const originalUpper = lotacaoOriginal.toUpperCase();
-    if (originalUpper.includes('CHEF') && originalUpper.includes('GES PESSOAS')) {
-      return 'PROGESP';
-    }
-  }
+  // REMOVIDO: MATERN ESC SANTA não deve mapear para PROGESP
+  // MATERN ESC SANTA sempre mapeia para MESM (Maternidade Escola Santa Maria) conforme LOTACAO_MAPPING (linha 26)
+  // A lotação "CHEF GES PESSOAS MATERN ESC SANTA M" é mapeada como "CHEF GES PESSOAS" -> PROGESP, não como "MATERN ESC SANTA" -> PROGESP
   
-  // Caso especial: PORTUGAL RAMALHO que vem de CHEF GES PESS HOSP deve mapear para PROGESP (gestão de pessoas)
-  if (lotacaoNormalizada === 'PORTUGAL RAMALHO' && lotacaoOriginal) {
-    const originalUpper = lotacaoOriginal.toUpperCase();
-    if (originalUpper.includes('CHEF') && (originalUpper.includes('GES PESS') || originalUpper.includes('GESTAO DE PESSOAS'))) {
-      return 'PROGESP';
-    }
-  }
+  // REMOVIDO: PORTUGAL RAMALHO não deve mapear para PROGESP
+  // PORTUGAL RAMALHO mapeia para HEPR conforme LOTACAO_MAPPING (linha 8)
+  // Apenas lotações específicas da PROGESP devem ser consideradas: CGPA, SUMOF, SASBEM, SUDES, SUPLAF
+  
+  // IMPORTANTE: PROFA VALERIA (Escola Técnica) mapeia para ETSAL, NÃO para PROGESP
   
   const mapped = LOTACAO_MAPPING[lotacaoNormalizada];
   if (mapped === null) return null; // Ignorar (ex: SEM LOTAÇÃO)

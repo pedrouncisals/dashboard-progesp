@@ -12,6 +12,7 @@ import {
   agregarPorCompetencia
 } from '../services/folha-pagamento.js';
 import { showToast } from '../utils/feedback.js';
+import { Pagination } from '../utils/pagination.js';
 
 export function renderRelatorioConsolidado(dados) {
   const container = document.getElementById('relatorio-detalhado-container');
@@ -57,9 +58,13 @@ export function renderRelatorioConsolidado(dados) {
           <p class="text-muted mb-0">Visão completa de todas as métricas e agregações da folha de pagamento</p>
         </div>
         <div class="d-flex gap-2">
-          <button class="btn btn-primary btn-sm" onclick="exportarRelatorioConsolidadoPDF()">
+          <button class="btn btn-primary btn-sm" onclick="exportarRelatorioConsolidadoPDF('top')">
             <i class="bi bi-file-pdf me-1"></i>
-            Exportar PDF
+            PDF (Top)
+          </button>
+          <button class="btn btn-outline-primary btn-sm" onclick="exportarRelatorioConsolidadoPDF('todos')">
+            <i class="bi bi-file-pdf me-1"></i>
+            PDF (Todos)
           </button>
         </div>
       </div>
@@ -167,8 +172,13 @@ export function renderRelatorioConsolidado(dados) {
       <!-- Por Lotação -->
       <div class="col-md-6">
         <div class="card chart-card">
-          <div class="card-header chart-header">
+          <div class="card-header chart-header d-flex justify-content-between align-items-center">
             <h6 class="mb-0">Top 5 Lotações por Folha</h6>
+            ${totalLotacoes > 5 ? `
+            <button class="btn btn-sm btn-outline-primary" id="btn-ver-todas-lotacoes-consolidado">
+              <i class="bi bi-arrow-down-circle me-1"></i>Ver Todas (${totalLotacoes})
+            </button>
+            ` : ''}
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -191,6 +201,34 @@ export function renderRelatorioConsolidado(dados) {
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Seção expandida para todas as lotações -->
+      <div id="container-todas-lotacoes-consolidado" style="display: none;" class="col-12 mt-4">
+        <div class="card chart-card">
+          <div class="card-header chart-header d-flex justify-content-between align-items-center">
+            <h6 class="mb-0">Todas as Lotações (${totalLotacoes})</h6>
+            <button class="btn btn-sm btn-outline-secondary" id="btn-fechar-todas-lotacoes-consolidado">
+              <i class="bi bi-x-circle me-1"></i>Fechar
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-custom table-sm">
+                <thead>
+                  <tr>
+                    <th>Lotação</th>
+                    <th class="text-end">Funcionários</th>
+                    <th class="text-end">Total Líquido</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-todas-lotacoes-consolidado">
+                </tbody>
+              </table>
+            </div>
+            <div id="pagination-todas-lotacoes-consolidado" class="mt-3"></div>
           </div>
         </div>
       </div>
@@ -333,8 +371,65 @@ export function renderRelatorioConsolidado(dados) {
   
   container.innerHTML = html;
   
+  // Armazenar dados completos globalmente
+  window._dadosConsolidado = {
+    todasLotacoes: todasLotacoes.sort((a, b) => b.liquido - a.liquido),
+    periodo,
+    stats,
+    totalLotacoes
+  };
+  
+  // Configurar interatividade
+  function configurarInteratividadeConsolidado() {
+    // Botão Ver Todas Lotações
+    const btnVerTodasLotacoes = document.getElementById('btn-ver-todas-lotacoes-consolidado');
+    if (btnVerTodasLotacoes) {
+      btnVerTodasLotacoes.addEventListener('click', () => {
+        const container = document.getElementById('container-todas-lotacoes-consolidado');
+        if (container.style.display === 'none') {
+          container.style.display = 'block';
+          renderizarTodasLotacoesConsolidado();
+          btnVerTodasLotacoes.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    }
+    
+    // Botão Fechar Todas Lotações
+    const btnFecharTodasLotacoes = document.getElementById('btn-fechar-todas-lotacoes-consolidado');
+    if (btnFecharTodasLotacoes) {
+      btnFecharTodasLotacoes.addEventListener('click', () => {
+        document.getElementById('container-todas-lotacoes-consolidado').style.display = 'none';
+      });
+    }
+  }
+  
+  function renderizarTodasLotacoesConsolidado() {
+    const tbody = document.getElementById('tbody-todas-lotacoes-consolidado');
+    if (!tbody || !window._dadosConsolidado) return;
+    
+    const pagination = new Pagination('#pagination-todas-lotacoes-consolidado', {
+      itemsPerPage: 50,
+      onPageChange: (page, pageData) => {
+        tbody.innerHTML = pageData.map(l => `
+          <tr>
+            <td class="fw-semibold">${l.lotacao || 'N/A'}</td>
+            <td class="text-end">${l.count || 0}</td>
+            <td class="text-end fw-bold">${formatarMoeda(l.liquido || 0)}</td>
+          </tr>
+        `).join('');
+      }
+    });
+    
+    pagination.setData(window._dadosConsolidado.todasLotacoes);
+    // Garantir que a primeira página seja renderizada imediatamente
+    pagination.goToPage(1);
+  }
+  
+  // Chamar a função de configuração
+  configurarInteratividadeConsolidado();
+  
   // Expor função de exportação globalmente
-  window.exportarRelatorioConsolidadoPDF = () => {
+  window.exportarRelatorioConsolidadoPDF = (tipo = 'top') => {
     try {
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF('p', 'mm', 'a4');
@@ -363,16 +458,46 @@ export function renderRelatorioConsolidado(dados) {
       
       doc.setFontSize(10);
       doc.setFont(undefined, 'normal');
-      doc.text(`Total de Funcionários: ${formatarNumero(stats.totalFuncionarios)} (${formatarNumero(stats.totalVinculos || stats.totalFuncionarios)} vínculos)`, 15, y);
+      doc.text(`Total de Funcionários: ${formatarNumero(dados.stats.totalFuncionarios)} (${formatarNumero(dados.stats.totalVinculos || dados.stats.totalFuncionarios)} vínculos)`, 15, y);
       y += 6;
-      doc.text(`Folha Total (Líquido): ${formatarMoeda(stats.totalLiquido)}`, 15, y);
+      doc.text(`Folha Total (Líquido): ${formatarMoeda(dados.stats.totalLiquido)}`, 15, y);
       y += 6;
-      doc.text(`Total de Vantagens: ${formatarMoeda(stats.totalVantagem)}`, 15, y);
+      doc.text(`Total de Vantagens: ${formatarMoeda(dados.stats.totalVantagem)}`, 15, y);
       y += 6;
-      doc.text(`Total de Descontos: ${formatarMoeda(stats.totalDesconto)}`, 15, y);
+      doc.text(`Total de Descontos: ${formatarMoeda(dados.stats.totalDesconto)}`, 15, y);
       y += 6;
-      doc.text(`Salário Médio: ${formatarMoeda(stats.mediaLiquido)}`, 15, y);
+      doc.text(`Salário Médio: ${formatarMoeda(dados.stats.mediaLiquido)}`, 15, y);
       y += 10;
+      
+      // Tabela de Lotações
+      const dados = window._dadosConsolidado;
+      if (dados) {
+        const lotacoesParaExportar = tipo === 'todos' ? dados.todasLotacoes : dados.todasLotacoes.slice(0, 5);
+        
+        if (lotacoesParaExportar.length > 0) {
+          doc.setFontSize(12);
+          doc.setFont(undefined, 'bold');
+          doc.text(`${tipo === 'todos' ? `Todas as Lotações (${dados.totalLotacoes})` : 'Top 5 Lotações por Folha'}`, 15, y);
+          y += 8;
+          
+          const tableDataLotacoes = lotacoesParaExportar.map(l => [
+            l.lotacao || 'N/A',
+            (l.count || 0).toString(),
+            formatarMoeda(l.liquido || 0)
+          ]);
+          
+          doc.autoTable({
+            startY: y,
+            head: [['Lotação', 'Funcionários', 'Total Líquido']],
+            body: tableDataLotacoes,
+            theme: 'grid',
+            styles: { fontSize: 8, cellPadding: 2 },
+            headStyles: { fillColor: [0, 102, 255], textColor: [255, 255, 255], fontStyle: 'bold' }
+          });
+          
+          y = doc.lastAutoTable.finalY + 15;
+        }
+      }
       
       // Tabela de Vínculos
       if (porVinculo.length > 0) {
@@ -386,7 +511,7 @@ export function renderRelatorioConsolidado(dados) {
           return [
             v.vinculo || 'N/A',
             funcionariosUnicos.toString(),
-            `${((funcionariosUnicos / stats.totalFuncionarios) * 100).toFixed(1)}%`
+            `${((funcionariosUnicos / dados.stats.totalFuncionarios) * 100).toFixed(1)}%`
           ];
         });
         
@@ -414,8 +539,11 @@ export function renderRelatorioConsolidado(dados) {
         );
       }
       
-      doc.save(`Relatorio_Consolidado_${new Date().getTime()}.pdf`);
-      showToast('PDF exportado com sucesso!', 'success');
+      const sufixo = tipo === 'todos' ? '_Completo' : '_Top';
+      doc.save(`Relatorio_Consolidado${sufixo}_${new Date().getTime()}.pdf`);
+      if (typeof showToast === 'function') {
+        showToast(`PDF ${tipo === 'todos' ? 'completo' : 'Top'} exportado com sucesso!`, 'success');
+      }
     } catch (error) {
       console.error('Erro ao exportar PDF:', error);
       showToast('Erro ao exportar PDF. Verifique o console.', 'danger');

@@ -204,6 +204,21 @@
           </div>
           
           <div class="col-12">
+            <div class="form-check">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="filtro-multiplos-vinculos"
+                value="1"
+              >
+              <label class="form-check-label" for="filtro-multiplos-vinculos">
+                <i class="bi bi-person-badge me-2"></i>
+                Mostrar apenas pessoas com múltiplos vínculos
+              </label>
+            </div>
+          </div>
+          
+          <div class="col-12">
             <button type="button" class="btn btn-outline-secondary" id="btn-limpar-filtros">
               <i class="bi bi-x-circle me-2"></i>Limpar Filtros
             </button>
@@ -212,74 +227,20 @@
       </div>
     </div>
     
-    <!-- Gráficos -->
-    <div class="row mb-5">
-      <div class="col-12">
-        <h2 class="fw-bold mb-2" style="font-size: 1.875rem; letter-spacing: -0.02em;">
-          <i class="bi bi-bar-chart-fill me-2 text-primary"></i>Visualizações
-        </h2>
-        <p class="text-muted mb-4" style="font-size: 0.9375rem;">
-          Gráficos interativos e análises visuais dos dados
-        </p>
-      </div>
-    </div>
-    
-    <div class="row g-3 mb-4">
-      <!-- Gráfico: Distribuição por Lotação -->
-      <div class="col-12 col-lg-8">
-        <div class="card h-100 chart-card">
-          <div class="card-header chart-header">
-            <h5 class="card-title mb-0">
-              <i class="bi bi-pie-chart-fill me-2"></i>Distribuição por Lotação
-            </h5>
-            <p class="text-muted small mb-0 mt-1">Empenhos por unidade</p>
-          </div>
-          <div class="card-body chart-container-medium">
-            <canvas id="chart-lotacao"></canvas>
+    <!-- Banner de Busca por Nome -->
+    <div id="banner-busca-nome" class="alert alert-info d-none mb-4 shadow-sm" role="alert" style="border-left: 4px solid #0dcaf0; background: linear-gradient(135deg, rgba(13, 202, 240, 0.1) 0%, rgba(13, 202, 240, 0.05) 100%);">
+      <div class="d-flex align-items-start justify-content-between flex-wrap gap-3">
+        <div class="flex-grow-1">
+          <h6 class="alert-heading mb-2 fw-semibold d-flex align-items-center">
+            <i class="bi bi-search me-2"></i>Busca por Nome Ativa
+          </h6>
+          <div id="banner-busca-conteudo">
+            <!-- Conteúdo será preenchido dinamicamente -->
           </div>
         </div>
-      </div>
-      
-      <!-- Gráfico: Evolução Mensal -->
-      <div class="col-12 col-lg-4">
-        <div class="card h-100 chart-card">
-          <div class="card-header chart-header chart-header-compact">
-            <div class="d-flex justify-content-between align-items-center mb-1">
-              <h5 class="card-title mb-0" style="font-size: 0.95rem;">
-                <i class="bi bi-graph-up me-1"></i>Evolução Mensal
-              </h5>
-            </div>
-            <div class="btn-group btn-group-sm w-100 mt-1" role="group" id="toggle-evolucao-view">
-              <button type="button" class="btn btn-outline-primary active" data-evolucao-view="ultimo">
-                Último
-              </button>
-              <button type="button" class="btn btn-outline-primary" data-evolucao-view="3meses">
-                3 Meses
-              </button>
-              <button type="button" class="btn btn-outline-primary" data-evolucao-view="todos">
-                Todos
-              </button>
-            </div>
-          </div>
-          <div class="card-body chart-container-compact">
-            <canvas id="chart-evolucao"></canvas>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Gráfico: Top 10 Salários -->
-      <div class="col-12">
-        <div class="card chart-card">
-          <div class="card-header chart-header">
-            <h5 class="card-title mb-0">
-              <i class="bi bi-bar-chart-fill me-2"></i>Top 10 Maiores Salários
-            </h5>
-            <p class="text-muted small mb-0 mt-1">Ranking de maiores valores líquidos</p>
-          </div>
-          <div class="card-body chart-container-medium">
-            <canvas id="chart-top-salarios"></canvas>
-          </div>
-        </div>
+        <button type="button" class="btn btn-sm btn-outline-info" id="btn-limpar-busca-nome" title="Limpar busca">
+          <i class="bi bi-x-lg"></i>
+        </button>
       </div>
     </div>
     
@@ -287,7 +248,7 @@
     <div class="row mb-5">
       <div class="col-12">
         <h2 class="fw-bold mb-2" style="font-size: 1.875rem; letter-spacing: -0.02em;">
-          <i class="bi bi-file-text me-2 text-info"></i>Relatórios Disponíveis
+          <i class="bi bi-file-text me-2 text-primary"></i>Relatórios Disponíveis
         </h2>
         <p class="text-muted mb-4" style="font-size: 0.9375rem;">
           Acesse análises detalhadas e específicas dos empenhos da instituição
@@ -358,6 +319,80 @@
             <i class="bi bi-arrow-right"></i>
           </div>
         </a>
+      </div>
+    </div>
+    
+    <!-- Gráficos -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="fw-bold mb-2" style="font-size: 1.875rem; letter-spacing: -0.02em;">
+          <i class="bi bi-bar-chart-fill me-2 text-primary"></i>Visualizações
+        </h2>
+        <p class="text-muted mb-4" style="font-size: 0.9375rem;">
+          Gráficos interativos e análises visuais dos dados
+        </p>
+      </div>
+    </div>
+    
+    <div class="row g-3 mb-4">
+      <!-- Gráfico: Distribuição por Lotação -->
+      <div class="col-12 col-lg-8">
+        <div class="card h-100 chart-card">
+          <div class="card-header chart-header">
+            <h5 class="card-title mb-0">
+              <i class="bi bi-pie-chart-fill me-2"></i>Distribuição por Lotação
+            </h5>
+            <p class="text-muted small mb-0 mt-1">Empenhos por unidade</p>
+          </div>
+          <div class="card-body chart-container-medium">
+            <canvas id="chart-lotacao"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gráfico: Evolução Mensal -->
+      <div class="col-12 col-lg-4">
+        <div class="card h-100 chart-card">
+          <div class="card-header chart-header chart-header-compact">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <h5 class="card-title mb-0" style="font-size: 0.95rem;">
+                <i class="bi bi-graph-up me-1"></i>Evolução Mensal
+              </h5>
+              <span class="badge" id="variacao-evolucao-mes" style="font-size: 0.65rem; padding: 0.2rem 0.4rem;">
+                <i class="bi bi-arrow-up"></i> Carregando...
+              </span>
+            </div>
+            <div class="btn-group btn-group-sm w-100 mt-1" role="group" id="toggle-evolucao-view">
+              <button type="button" class="btn btn-outline-primary active" data-evolucao-view="ultimo">
+                Último
+              </button>
+              <button type="button" class="btn btn-outline-primary" data-evolucao-view="3meses">
+                3 Meses
+              </button>
+              <button type="button" class="btn btn-outline-primary" data-evolucao-view="todos">
+                Todos
+              </button>
+            </div>
+          </div>
+          <div class="card-body chart-container-compact">
+            <canvas id="chart-evolucao"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gráfico: Top 10 Salários -->
+      <div class="col-12">
+        <div class="card chart-card">
+          <div class="card-header chart-header">
+            <h5 class="card-title mb-0">
+              <i class="bi bi-bar-chart-fill me-2"></i>Top 10 Maiores Salários
+            </h5>
+            <p class="text-muted small mb-0 mt-1">Ranking de maiores valores líquidos</p>
+          </div>
+          <div class="card-body chart-container-medium">
+            <canvas id="chart-top-salarios"></canvas>
+          </div>
+        </div>
       </div>
     </div>
     

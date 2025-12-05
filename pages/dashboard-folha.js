@@ -48,23 +48,75 @@ async function init() {
     if (navLinkServidores) {
       navLinkServidores.style.opacity = '1';
       navLinkServidores.style.fontWeight = '600';
+      navLinkServidores.setAttribute('aria-current', 'page');
     }
     if (navLinkEmpenhos) {
       navLinkEmpenhos.style.opacity = '0.7';
+      navLinkEmpenhos.removeAttribute('aria-current');
     }
     
     showLoader('Carregando dados dos servidores...');
     
-    // Carregar todos os dados
-    dadosCompletos = await carregarTodasFolhas();
-    dadosFiltrados = [...dadosCompletos];
-    
-    console.log(`✅ ${dadosCompletos.length} registros carregados`);
-    
-    // Atualizar status no dashboard
-    const statusEl = document.getElementById('status-dados');
-    if (statusEl) {
-      statusEl.textContent = `${dadosCompletos.length.toLocaleString('pt-BR')} registros`;
+    // Carregar todos os dados com tratamento de erro melhorado
+    try {
+      dadosCompletos = await carregarTodasFolhas();
+      dadosFiltrados = [...dadosCompletos];
+      
+      if (!dadosCompletos || dadosCompletos.length === 0) {
+        throw new Error('Nenhum dado foi carregado. Verifique se os arquivos JSON estão na pasta converted/');
+      }
+      
+      console.log(`✅ ${dadosCompletos.length} registros carregados`);
+      
+      // Atualizar status no dashboard
+      const statusEl = document.getElementById('status-dados');
+      if (statusEl) {
+        statusEl.textContent = `${dadosCompletos.length.toLocaleString('pt-BR')} registros`;
+        statusEl.setAttribute('title', `${dadosCompletos.length.toLocaleString('pt-BR')} registros carregados com sucesso`);
+      }
+    } catch (error) {
+      hideLoader();
+      console.error('Erro ao carregar dados:', error);
+      
+      // Exibir mensagem de erro amigável
+      const errorMessage = error.message || 'Erro desconhecido ao carregar dados';
+      showToast(`Erro ao carregar dados: ${errorMessage}`, 'danger', 8000);
+      
+      // Exibir mensagem no dashboard
+      const statusEl = document.getElementById('status-dados');
+      if (statusEl) {
+        statusEl.textContent = 'Erro ao carregar';
+        statusEl.parentElement.classList.remove('badge-success');
+        statusEl.parentElement.classList.add('badge-danger');
+      }
+      
+      // Mostrar mensagem de erro no container principal
+      const dashboardMain = document.getElementById('dashboard-main');
+      if (dashboardMain) {
+        dashboardMain.innerHTML = `
+          <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i>Erro ao Carregar Dados
+            </h4>
+            <p>${errorMessage}</p>
+            <hr>
+            <p class="mb-0">
+              <strong>Soluções possíveis:</strong>
+              <ul class="mt-2 mb-0">
+                <li>Verifique se os arquivos JSON estão na pasta <code>converted/</code></li>
+                <li>Verifique se o servidor está rodando corretamente</li>
+                <li>Abra o console do navegador (F12) para mais detalhes</li>
+                <li>Recarregue a página (F5)</li>
+              </ul>
+            </p>
+            <button class="btn btn-primary mt-3" onclick="location.reload()">
+              <i class="bi bi-arrow-clockwise me-2"></i>Recarregar Página
+            </button>
+          </div>
+        `;
+      }
+      
+      return; // Parar execução se não houver dados
     }
     
     // Calcular período dos dados
@@ -376,6 +428,338 @@ function preencherFiltros() {
   });
   
   console.log(`✅ Filtro de motivo de afastamento preenchido com ${motivosOrdenados.length} opções:`, motivosOrdenados);
+}
+
+/**
+ * Atualiza os filtros dinamicamente baseado nos filtros já selecionados
+ * Quando um filtro é selecionado, os outros mostram apenas opções relevantes
+ */
+function atualizarFiltrosDinamicos() {
+  // Obter valores atuais dos filtros
+  const filtroAno = document.getElementById('filtro-ano').value;
+  const filtroCompetencia = document.getElementById('filtro-competencia').value;
+  const filtroLotacao = document.getElementById('filtro-lotacao').value;
+  const filtroFuncao = document.getElementById('filtro-funcao').value;
+  const filtroVinculo = document.getElementById('filtro-vinculo').value;
+  const filtroNivel = document.getElementById('filtro-nivel').value;
+  const filtroSituacao = document.getElementById('filtro-situacao').value;
+  
+  // Aplicar filtros progressivamente para obter dados filtrados
+  let dadosFiltrados = [...dadosCompletos];
+  
+  // Filtrar por ano e competência primeiro (filtros temporais)
+  if (filtroAno) {
+    dadosFiltrados = dadosFiltrados.filter(r => {
+      const comp = r.competencia || '';
+      return comp.startsWith(filtroAno);
+    });
+  }
+  
+  if (filtroCompetencia) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.competencia === filtroCompetencia);
+  }
+  
+  // Filtrar por lotação - usar a mesma lógica de filtrarFolha para incluir sublotações
+  if (filtroLotacao) {
+    // IMPORTANTE: Para PROGESP, considerar apenas as sublotações específicas (CGPA, SUMOF, SASBEM, SUDES, SUPLAF)
+    let lotacoesCorretasParaIncluir = new Set([filtroLotacao]);
+    
+    // Se for PROGESP, usar apenas as sublotações definidas
+    if (filtroLotacao === 'PROGESP') {
+      const sublots = obterSublotacoes('PROGESP'); // ['SUMOF', 'SASBEM', 'CGPA', 'SUPLAF', 'SUDES']
+      sublots.forEach(sublot => {
+        lotacoesCorretasParaIncluir.add(sublot);
+      });
+    } else {
+      // Para outras lotações, usar a lógica normal
+      const sublots = obterSublotacoes(filtroLotacao);
+      if (sublots.length > 0) {
+        sublots.forEach(sublot => {
+          lotacoesCorretasParaIncluir.add(sublot);
+        });
+      }
+    }
+    
+    dadosFiltrados = dadosFiltrados.filter(r => {
+      const lotNormalizada = r.lotacao_normalizada || '';
+      const lotOriginal = r.lotacao_original || '';
+      const lotMapeada = mapearLotacao(lotNormalizada, lotOriginal);
+      
+      // Para PROGESP, verificar se a lotação mapeada está nas sublotações corretas
+      if (filtroLotacao === 'PROGESP') {
+        // Apenas aceitar se for uma das sublotações específicas de PROGESP
+        const sublotsProgesp = ['PROGESP', 'SUMOF', 'SASBEM', 'CGPA', 'SUPLAF', 'SUDES'];
+        return sublotsProgesp.includes(lotMapeada);
+      }
+      
+      // Para outras lotações, usar a lógica normal
+      return lotacoesCorretasParaIncluir.has(lotMapeada) || lotacoesCorretasParaIncluir.has(lotNormalizada);
+    });
+  }
+  
+  // Filtrar por função
+  if (filtroFuncao) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.funcao === filtroFuncao);
+  }
+  
+  // Filtrar por vínculo
+  if (filtroVinculo) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.vinculo === filtroVinculo);
+  }
+  
+  // Filtrar por nível
+  if (filtroNivel) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.nivel === filtroNivel);
+  }
+  
+  // Filtrar por situação
+  if (filtroSituacao) {
+    dadosFiltrados = dadosFiltrados.filter(r => {
+      const sit = (r.situacao || '').trim().toUpperCase();
+      return sit === filtroSituacao;
+    });
+  }
+  
+  // Agora atualizar os filtros baseado nos dados filtrados
+  
+  // Se lotação foi limpa, restaurar todos os filtros
+  if (!filtroLotacao) {
+    // Restaurar Funções
+    const selectFuncao = document.getElementById('filtro-funcao');
+    const valorAtualFuncao = selectFuncao.value;
+    const todasFuncoes = valoresUnicos(dadosCompletos, 'funcao').filter(f => f && f.trim() !== '');
+    
+    while (selectFuncao.children.length > 1) {
+      selectFuncao.removeChild(selectFuncao.lastChild);
+    }
+    
+    todasFuncoes.sort().forEach(func => {
+      const option = document.createElement('option');
+      option.value = func;
+      option.textContent = func;
+      selectFuncao.appendChild(option);
+    });
+    
+    if (valorAtualFuncao && todasFuncoes.includes(valorAtualFuncao)) {
+      selectFuncao.value = valorAtualFuncao;
+    } else {
+      selectFuncao.value = '';
+    }
+    
+    // Restaurar Vínculos
+    const selectVinculo = document.getElementById('filtro-vinculo');
+    const valorAtualVinculo = selectVinculo.value;
+    const todosVinculos = valoresUnicos(dadosCompletos, 'vinculo').filter(v => v && v.trim() !== '');
+    
+    while (selectVinculo.children.length > 1) {
+      selectVinculo.removeChild(selectVinculo.lastChild);
+    }
+    
+    todosVinculos.sort().forEach(vin => {
+      const option = document.createElement('option');
+      option.value = vin;
+      option.textContent = vin;
+      selectVinculo.appendChild(option);
+    });
+    
+    if (valorAtualVinculo && todosVinculos.includes(valorAtualVinculo)) {
+      selectVinculo.value = valorAtualVinculo;
+    } else {
+      selectVinculo.value = '';
+    }
+    
+    // Restaurar Níveis
+    const selectNivel = document.getElementById('filtro-nivel');
+    const valorAtualNivel = selectNivel.value;
+    const todosNiveis = valoresUnicos(dadosCompletos, 'nivel').filter(n => n && n.trim() !== '');
+    
+    while (selectNivel.children.length > 1) {
+      selectNivel.removeChild(selectNivel.lastChild);
+    }
+    
+    todosNiveis.sort().forEach(niv => {
+      const option = document.createElement('option');
+      option.value = niv;
+      option.textContent = niv;
+      selectNivel.appendChild(option);
+    });
+    
+    if (valorAtualNivel && todosNiveis.includes(valorAtualNivel)) {
+      selectNivel.value = valorAtualNivel;
+    } else {
+      selectNivel.value = '';
+    }
+    
+    // Restaurar Situações
+    const selectSituacao = document.getElementById('filtro-situacao');
+    const valorAtualSituacao = selectSituacao.value;
+    const situacoesBrutas = valoresUnicos(dadosCompletos, 'situacao');
+    const todasSituacoes = situacoesBrutas
+      .filter(sit => sit != null && sit !== undefined && String(sit).trim() !== '')
+      .map(sit => String(sit).trim().toUpperCase())
+      .filter((sit, index, self) => self.indexOf(sit) === index);
+    
+    while (selectSituacao.children.length > 1) {
+      selectSituacao.removeChild(selectSituacao.lastChild);
+    }
+    
+    const situacoesOrdenadas = [...todasSituacoes].sort((a, b) => {
+      if (a === 'ATIVO') return -1;
+      if (b === 'ATIVO') return 1;
+      return a.localeCompare(b);
+    });
+    
+    situacoesOrdenadas.forEach(sit => {
+      const option = document.createElement('option');
+      option.value = sit;
+      option.textContent = sit.split(' ').map(palavra => 
+        palavra.charAt(0) + palavra.slice(1).toLowerCase()
+      ).join(' ');
+      selectSituacao.appendChild(option);
+    });
+    
+    if (valorAtualSituacao && todasSituacoes.includes(valorAtualSituacao)) {
+      selectSituacao.value = valorAtualSituacao;
+    } else {
+      selectSituacao.value = '';
+    }
+  }
+  
+  // Atualizar Funções (se lotação foi selecionada)
+  if (filtroLotacao) {
+    const selectFuncao = document.getElementById('filtro-funcao');
+    const valorAtual = selectFuncao.value;
+    const funcoesDisponiveis = valoresUnicos(dadosFiltrados, 'funcao').filter(f => f && f.trim() !== '');
+    
+    // Limpar opções (exceto "Todas")
+    while (selectFuncao.children.length > 1) {
+      selectFuncao.removeChild(selectFuncao.lastChild);
+    }
+    
+    // Adicionar novas opções
+    funcoesDisponiveis.sort().forEach(func => {
+      const option = document.createElement('option');
+      option.value = func;
+      option.textContent = func;
+      selectFuncao.appendChild(option);
+    });
+    
+    // Restaurar valor se ainda existir, senão limpar
+    if (valorAtual && funcoesDisponiveis.includes(valorAtual)) {
+      selectFuncao.value = valorAtual;
+    } else {
+      selectFuncao.value = '';
+    }
+  }
+  
+  // Atualizar Vínculos (se lotação ou função foi selecionada)
+  if (filtroLotacao || filtroFuncao) {
+    const selectVinculo = document.getElementById('filtro-vinculo');
+    const valorAtual = selectVinculo.value;
+    const vinculosDisponiveis = valoresUnicos(dadosFiltrados, 'vinculo').filter(v => v && v.trim() !== '');
+    
+    while (selectVinculo.children.length > 1) {
+      selectVinculo.removeChild(selectVinculo.lastChild);
+    }
+    
+    vinculosDisponiveis.sort().forEach(vin => {
+      const option = document.createElement('option');
+      option.value = vin;
+      option.textContent = vin;
+      selectVinculo.appendChild(option);
+    });
+    
+    if (valorAtual && vinculosDisponiveis.includes(valorAtual)) {
+      selectVinculo.value = valorAtual;
+    } else {
+      selectVinculo.value = '';
+    }
+  }
+  
+  // Atualizar Níveis (se lotação, função ou vínculo foi selecionado)
+  if (filtroLotacao || filtroFuncao || filtroVinculo) {
+    const selectNivel = document.getElementById('filtro-nivel');
+    const valorAtual = selectNivel.value;
+    const niveisDisponiveis = valoresUnicos(dadosFiltrados, 'nivel').filter(n => n && n.trim() !== '');
+    
+    while (selectNivel.children.length > 1) {
+      selectNivel.removeChild(selectNivel.lastChild);
+    }
+    
+    niveisDisponiveis.sort().forEach(niv => {
+      const option = document.createElement('option');
+      option.value = niv;
+      option.textContent = niv;
+      selectNivel.appendChild(option);
+    });
+    
+    if (valorAtual && niveisDisponiveis.includes(valorAtual)) {
+      selectNivel.value = valorAtual;
+    } else {
+      selectNivel.value = '';
+    }
+  }
+  
+  // Atualizar Situações (se qualquer filtro foi selecionado)
+  if (filtroLotacao || filtroFuncao || filtroVinculo || filtroNivel) {
+    const selectSituacao = document.getElementById('filtro-situacao');
+    const valorAtual = selectSituacao.value;
+    const situacoesBrutas = valoresUnicos(dadosFiltrados, 'situacao');
+    const situacoesDisponiveis = situacoesBrutas
+      .filter(sit => sit != null && sit !== undefined && String(sit).trim() !== '')
+      .map(sit => String(sit).trim().toUpperCase())
+      .filter((sit, index, self) => self.indexOf(sit) === index);
+    
+    while (selectSituacao.children.length > 1) {
+      selectSituacao.removeChild(selectSituacao.lastChild);
+    }
+    
+    const situacoesOrdenadas = [...situacoesDisponiveis].sort((a, b) => {
+      if (a === 'ATIVO') return -1;
+      if (b === 'ATIVO') return 1;
+      return a.localeCompare(b);
+    });
+    
+    situacoesOrdenadas.forEach(sit => {
+      const option = document.createElement('option');
+      option.value = sit;
+      option.textContent = sit.split(' ').map(palavra => 
+        palavra.charAt(0) + palavra.slice(1).toLowerCase()
+      ).join(' ');
+      selectSituacao.appendChild(option);
+    });
+    
+    if (valorAtual && situacoesDisponiveis.includes(valorAtual)) {
+      selectSituacao.value = valorAtual;
+    } else {
+      selectSituacao.value = '';
+    }
+  }
+  
+  // Atualizar Motivos de Afastamento (se situação foi selecionada)
+  if (filtroSituacao) {
+    const selectMotivo = document.getElementById('filtro-motivo-afastamento');
+    const valorAtual = selectMotivo.value;
+    const motivosDisponiveis = valoresUnicos(dadosFiltrados, 'motivo_afastamento')
+      .filter(m => m && m.trim() !== '');
+    
+    while (selectMotivo.children.length > 1) {
+      selectMotivo.removeChild(selectMotivo.lastChild);
+    }
+    
+    motivosDisponiveis.sort().forEach(motivo => {
+      const option = document.createElement('option');
+      option.value = motivo;
+      option.textContent = motivo;
+      selectMotivo.appendChild(option);
+    });
+    
+    if (valorAtual && motivosDisponiveis.includes(valorAtual)) {
+      selectMotivo.value = valorAtual;
+    } else {
+      selectMotivo.value = '';
+    }
+  }
 }
 
 /**
@@ -710,20 +1094,30 @@ function criarGraficoTopSalarios() {
  * Configura event listeners
  */
 function configurarEventos() {
-  // Filtros
-  const aplicarFiltrosDebounced = debounce(aplicarFiltros, 500);
+  // Filtros - atualizar dinamicamente antes de aplicar
+  const aplicarFiltrosComAtualizacao = () => {
+    atualizarFiltrosDinamicos();
+    aplicarFiltros();
+  };
   
-  document.getElementById('filtro-ano').addEventListener('change', aplicarFiltros);
-  document.getElementById('filtro-competencia').addEventListener('change', aplicarFiltros);
-  document.getElementById('filtro-lotacao').addEventListener('change', aplicarFiltros);
-  document.getElementById('filtro-funcao').addEventListener('change', aplicarFiltros);
-  document.getElementById('filtro-vinculo').addEventListener('change', aplicarFiltros);
-  document.getElementById('filtro-nivel').addEventListener('change', aplicarFiltros);
-  document.getElementById('filtro-situacao').addEventListener('change', aplicarFiltros);
+  const aplicarFiltrosDebounced = debounce(aplicarFiltrosComAtualizacao, 500);
+  
+  // Para lotação, função, vínculo e nível, atualizar filtros dinâmicos antes
+  document.getElementById('filtro-ano').addEventListener('change', aplicarFiltrosComAtualizacao);
+  document.getElementById('filtro-competencia').addEventListener('change', aplicarFiltrosComAtualizacao);
+  document.getElementById('filtro-lotacao').addEventListener('change', aplicarFiltrosComAtualizacao);
+  document.getElementById('filtro-funcao').addEventListener('change', aplicarFiltrosComAtualizacao);
+  document.getElementById('filtro-vinculo').addEventListener('change', aplicarFiltrosComAtualizacao);
+  document.getElementById('filtro-nivel').addEventListener('change', aplicarFiltrosComAtualizacao);
+  document.getElementById('filtro-situacao').addEventListener('change', aplicarFiltrosComAtualizacao);
   document.getElementById('filtro-motivo-afastamento').addEventListener('change', aplicarFiltros);
   document.getElementById('filtro-busca-nome').addEventListener('input', aplicarFiltrosDebounced);
+  const filtroMultiplosVinculos = document.getElementById('filtro-multiplos-vinculos');
+  if (filtroMultiplosVinculos) {
+    filtroMultiplosVinculos.addEventListener('change', aplicarFiltros);
+  }
   
-  // Limpar filtros
+  // Limpar filtros - restaurar todos os filtros ao estado inicial
   document.getElementById('btn-limpar-filtros').addEventListener('click', () => {
     document.getElementById('filtro-ano').value = '';
     document.getElementById('filtro-competencia').value = '';
@@ -734,6 +1128,11 @@ function configurarEventos() {
     document.getElementById('filtro-situacao').value = '';
     document.getElementById('filtro-motivo-afastamento').value = '';
     document.getElementById('filtro-busca-nome').value = '';
+    const filtroMultiplosVinculos = document.getElementById('filtro-multiplos-vinculos');
+    if (filtroMultiplosVinculos) filtroMultiplosVinculos.checked = false;
+    
+    // Restaurar todos os filtros ao estado inicial
+    preencherFiltros();
     aplicarFiltros();
   });
   
@@ -1101,7 +1500,8 @@ function aplicarFiltros() {
     nivel: document.getElementById('filtro-nivel').value,
     situacao: document.getElementById('filtro-situacao').value,
     motivoAfastamento: document.getElementById('filtro-motivo-afastamento').value,
-    buscaNome: document.getElementById('filtro-busca-nome').value.trim()
+    buscaNome: document.getElementById('filtro-busca-nome').value.trim(),
+    multiplosVinculos: document.getElementById('filtro-multiplos-vinculos')?.checked || false
   };
   
   dadosFiltrados = filtrarFolha(dadosCompletos, filtros);

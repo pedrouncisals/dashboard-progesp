@@ -3,7 +3,7 @@
  * Lista completa de funcionários com seus vencimentos de empenho
  */
 
-import { formatarMoeda, formatarCPF, normalizarCPF } from '../utils/formatters.js';
+import { formatarMoeda, formatarCPF, normalizarCPF, formatarCompetencia } from '../utils/formatters.js';
 import { Pagination } from '../utils/pagination.js';
 import { exportRelatorioPDF, exportarCSV } from '../utils/pdf.js';
 
@@ -35,6 +35,7 @@ export function renderRelatorioVencimentosEmpenho(dados) {
           <table class="table table-custom">
             <thead>
               <tr>
+                <th>Mês</th>
                 <th class="sortable">Nome</th>
                 <th>CPF</th>
                 <th>Matrícula</th>
@@ -83,7 +84,7 @@ function renderTabelaVencimentosEmpenho(dados) {
   const tbody = document.getElementById('tbody-vencimentos-empenho');
   
   if (dados.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="9" class="text-center">Nenhum registro encontrado</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="10" class="text-center">Nenhum registro encontrado</td></tr>';
     return;
   }
   
@@ -122,8 +123,11 @@ function renderTabelaVencimentosEmpenho(dados) {
     const temMultiplosVinculos = cpfNormalizado && cpfsComMultiplasMatriculas.has(cpfNormalizado);
     const cargaHoraria = r.carga_horaria || '-';
     
+    const competencia = r.competencia ? formatarCompetencia(r.competencia) : '-';
+    
     return `
       <tr ${temMultiplosVinculos ? 'style="background-color: rgba(13, 202, 240, 0.05) !important;"' : ''}>
+        <td style="color: var(--color-text-secondary) !important;"><small>${competencia}</small></td>
         <td style="color: var(--color-text-primary) !important;">
           ${nome}
           ${temMultiplosVinculos ? `<span class="badge bg-info-subtle text-info ms-2" style="font-size: 0.7rem;" title="Esta pessoa possui múltiplos vínculos">
@@ -151,6 +155,7 @@ function renderTabelaVencimentosEmpenho(dados) {
 
 function exportarVencimentosEmpenhoPDF(dados) {
   const colunas = [
+    { header: 'Mês', accessor: r => r.competencia ? formatarCompetencia(r.competencia) : '-' },
     { header: 'Nome', accessor: r => r.nome },
     { header: 'CPF', accessor: r => formatarCPF(r.cpf) },
     { header: 'Matrícula', accessor: r => r.matricula || '-' },
@@ -167,6 +172,7 @@ function exportarVencimentosEmpenhoPDF(dados) {
 
 function exportarVencimentosEmpenhoCSV(dados) {
   const colunas = [
+    { header: 'Mês', accessor: r => r.competencia ? formatarCompetencia(r.competencia) : '-' },
     { header: 'Nome', accessor: r => r.nome },
     { header: 'CPF', accessor: r => r.cpf },
     { header: 'Matrícula', accessor: r => r.matricula || '' },

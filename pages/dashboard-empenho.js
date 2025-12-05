@@ -244,6 +244,291 @@ function preencherFiltros() {
 }
 
 /**
+ * Atualiza os filtros dinamicamente baseado nos filtros já selecionados
+ * Quando um filtro é selecionado, os outros mostram apenas opções relevantes
+ */
+function atualizarFiltrosDinamicos() {
+  // Obter valores atuais dos filtros
+  const filtroAno = document.getElementById('filtro-ano')?.value || '';
+  const filtroCompetencia = document.getElementById('filtro-competencia')?.value || '';
+  const filtroLotacao = document.getElementById('filtro-lotacao')?.value || '';
+  const filtroFuncao = document.getElementById('filtro-funcao')?.value || '';
+  const filtroVinculo = document.getElementById('filtro-vinculo')?.value || '';
+  const filtroSituacao = document.getElementById('filtro-situacao')?.value || '';
+  const filtroArea = document.getElementById('filtro-area')?.value || '';
+  
+  // Aplicar filtros progressivamente para obter dados filtrados
+  let dadosFiltrados = [...dadosCompletos];
+  
+  // Filtrar por ano e competência primeiro (filtros temporais)
+  if (filtroAno) {
+    dadosFiltrados = dadosFiltrados.filter(r => {
+      const comp = r.competencia || '';
+      return comp.startsWith(filtroAno);
+    });
+  }
+  
+  if (filtroCompetencia) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.competencia === filtroCompetencia);
+  }
+  
+  // Filtrar por lotação
+  if (filtroLotacao) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.lotacao_normalizada === filtroLotacao);
+  }
+  
+  // Filtrar por função
+  if (filtroFuncao) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.funcao === filtroFuncao);
+  }
+  
+  // Filtrar por vínculo
+  if (filtroVinculo) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.vinculo === filtroVinculo);
+  }
+  
+  // Filtrar por situação
+  if (filtroSituacao) {
+    dadosFiltrados = dadosFiltrados.filter(r => {
+      const sit = (r.situacao || '').trim().toUpperCase();
+      return sit === filtroSituacao;
+    });
+  }
+  
+  // Filtrar por área
+  if (filtroArea) {
+    dadosFiltrados = dadosFiltrados.filter(r => r.area === filtroArea);
+  }
+  
+  // Se lotação foi limpa, restaurar todos os filtros
+  if (!filtroLotacao) {
+    // Restaurar Funções
+    const selectFuncao = document.getElementById('filtro-funcao');
+    if (selectFuncao) {
+      const valorAtualFuncao = selectFuncao.value;
+      const todasFuncoes = valoresUnicos(dadosCompletos, 'funcao').filter(f => f && f.trim() !== '');
+      
+      while (selectFuncao.children.length > 1) {
+        selectFuncao.removeChild(selectFuncao.lastChild);
+      }
+      
+      todasFuncoes.sort().forEach(func => {
+        const option = document.createElement('option');
+        option.value = func;
+        option.textContent = func;
+        selectFuncao.appendChild(option);
+      });
+      
+      if (valorAtualFuncao && todasFuncoes.includes(valorAtualFuncao)) {
+        selectFuncao.value = valorAtualFuncao;
+      } else {
+        selectFuncao.value = '';
+      }
+    }
+    
+    // Restaurar Vínculos
+    const selectVinculo = document.getElementById('filtro-vinculo');
+    if (selectVinculo) {
+      const valorAtualVinculo = selectVinculo.value;
+      const todosVinculos = valoresUnicos(dadosCompletos, 'vinculo').filter(v => v && v.trim() !== '');
+      
+      while (selectVinculo.children.length > 1) {
+        selectVinculo.removeChild(selectVinculo.lastChild);
+      }
+      
+      todosVinculos.sort().forEach(vin => {
+        const option = document.createElement('option');
+        option.value = vin;
+        option.textContent = vin;
+        selectVinculo.appendChild(option);
+      });
+      
+      if (valorAtualVinculo && todosVinculos.includes(valorAtualVinculo)) {
+        selectVinculo.value = valorAtualVinculo;
+      } else {
+        selectVinculo.value = '';
+      }
+    }
+    
+    // Restaurar Situações
+    const selectSituacao = document.getElementById('filtro-situacao');
+    if (selectSituacao) {
+      const valorAtualSituacao = selectSituacao.value;
+      const situacoesBrutas = valoresUnicos(dadosCompletos, 'situacao');
+      const todasSituacoes = situacoesBrutas
+        .filter(sit => sit != null && sit !== undefined && String(sit).trim() !== '')
+        .map(sit => String(sit).trim().toUpperCase())
+        .filter((sit, index, self) => self.indexOf(sit) === index);
+      
+      while (selectSituacao.children.length > 1) {
+        selectSituacao.removeChild(selectSituacao.lastChild);
+      }
+      
+      const situacoesOrdenadas = [...todasSituacoes].sort((a, b) => {
+        if (a === 'ATIVO') return -1;
+        if (b === 'ATIVO') return 1;
+        return a.localeCompare(b);
+      });
+      
+      situacoesOrdenadas.forEach(sit => {
+        const option = document.createElement('option');
+        option.value = sit;
+        option.textContent = sit.split(' ').map(palavra => 
+          palavra.charAt(0) + palavra.slice(1).toLowerCase()
+        ).join(' ');
+        selectSituacao.appendChild(option);
+      });
+      
+      if (valorAtualSituacao && todasSituacoes.includes(valorAtualSituacao)) {
+        selectSituacao.value = valorAtualSituacao;
+      } else {
+        selectSituacao.value = '';
+      }
+    }
+    
+    // Restaurar Áreas
+    const selectArea = document.getElementById('filtro-area');
+    if (selectArea) {
+      const valorAtualArea = selectArea.value;
+      const todasAreas = valoresUnicos(dadosCompletos, 'area').filter(a => a && a.trim() !== '');
+      
+      while (selectArea.children.length > 1) {
+        selectArea.removeChild(selectArea.lastChild);
+      }
+      
+      todasAreas.sort().forEach(area => {
+        const option = document.createElement('option');
+        option.value = area;
+        option.textContent = area;
+        selectArea.appendChild(option);
+      });
+      
+      if (valorAtualArea && todasAreas.includes(valorAtualArea)) {
+        selectArea.value = valorAtualArea;
+      } else {
+        selectArea.value = '';
+      }
+    }
+  }
+  
+  // Atualizar Funções (se lotação foi selecionada)
+  if (filtroLotacao) {
+    const selectFuncao = document.getElementById('filtro-funcao');
+    if (selectFuncao) {
+      const valorAtual = selectFuncao.value;
+      const funcoesDisponiveis = valoresUnicos(dadosFiltrados, 'funcao').filter(f => f && f.trim() !== '');
+      
+      while (selectFuncao.children.length > 1) {
+        selectFuncao.removeChild(selectFuncao.lastChild);
+      }
+      
+      funcoesDisponiveis.sort().forEach(func => {
+        const option = document.createElement('option');
+        option.value = func;
+        option.textContent = func;
+        selectFuncao.appendChild(option);
+      });
+      
+      if (valorAtual && funcoesDisponiveis.includes(valorAtual)) {
+        selectFuncao.value = valorAtual;
+      } else {
+        selectFuncao.value = '';
+      }
+    }
+  }
+  
+  // Atualizar Vínculos (se lotação ou função foi selecionada)
+  if (filtroLotacao || filtroFuncao) {
+    const selectVinculo = document.getElementById('filtro-vinculo');
+    if (selectVinculo) {
+      const valorAtual = selectVinculo.value;
+      const vinculosDisponiveis = valoresUnicos(dadosFiltrados, 'vinculo').filter(v => v && v.trim() !== '');
+      
+      while (selectVinculo.children.length > 1) {
+        selectVinculo.removeChild(selectVinculo.lastChild);
+      }
+      
+      vinculosDisponiveis.sort().forEach(vin => {
+        const option = document.createElement('option');
+        option.value = vin;
+        option.textContent = vin;
+        selectVinculo.appendChild(option);
+      });
+      
+      if (valorAtual && vinculosDisponiveis.includes(valorAtual)) {
+        selectVinculo.value = valorAtual;
+      } else {
+        selectVinculo.value = '';
+      }
+    }
+  }
+  
+  // Atualizar Situações (se qualquer filtro foi selecionado)
+  if (filtroLotacao || filtroFuncao || filtroVinculo) {
+    const selectSituacao = document.getElementById('filtro-situacao');
+    if (selectSituacao) {
+      const valorAtual = selectSituacao.value;
+      const situacoesBrutas = valoresUnicos(dadosFiltrados, 'situacao');
+      const situacoesDisponiveis = situacoesBrutas
+        .filter(sit => sit != null && sit !== undefined && String(sit).trim() !== '')
+        .map(sit => String(sit).trim().toUpperCase())
+        .filter((sit, index, self) => self.indexOf(sit) === index);
+      
+      while (selectSituacao.children.length > 1) {
+        selectSituacao.removeChild(selectSituacao.lastChild);
+      }
+      
+      const situacoesOrdenadas = [...situacoesDisponiveis].sort((a, b) => {
+        if (a === 'ATIVO') return -1;
+        if (b === 'ATIVO') return 1;
+        return a.localeCompare(b);
+      });
+      
+      situacoesOrdenadas.forEach(sit => {
+        const option = document.createElement('option');
+        option.value = sit;
+        option.textContent = sit.split(' ').map(palavra => 
+          palavra.charAt(0) + palavra.slice(1).toLowerCase()
+        ).join(' ');
+        selectSituacao.appendChild(option);
+      });
+      
+      if (valorAtual && situacoesDisponiveis.includes(valorAtual)) {
+        selectSituacao.value = valorAtual;
+      } else {
+        selectSituacao.value = '';
+      }
+    }
+  }
+  
+  // Atualizar Áreas (se lotação foi selecionada)
+  if (filtroLotacao) {
+    const selectArea = document.getElementById('filtro-area');
+    if (selectArea) {
+      const valorAtual = selectArea.value;
+      const areasDisponiveis = valoresUnicos(dadosFiltrados, 'area').filter(a => a && a.trim() !== '');
+      
+      while (selectArea.children.length > 1) {
+        selectArea.removeChild(selectArea.lastChild);
+      }
+      
+      areasDisponiveis.sort().forEach(area => {
+        const option = document.createElement('option');
+        option.value = area;
+        option.textContent = area;
+        selectArea.appendChild(option);
+      });
+      
+      if (valorAtual && areasDisponiveis.includes(valorAtual)) {
+        selectArea.value = valorAtual;
+      } else {
+        selectArea.value = '';
+      }
+    }
+  }
+}
+
+/**
  * Atualiza todo o dashboard com os dados filtrados
  */
 function atualizarDashboard() {
@@ -519,7 +804,13 @@ function criarGraficoTopSalarios() {
  * Configura event listeners
  */
 function configurarEventos() {
-  const aplicarFiltrosDebounced = debounce(aplicarFiltros, 500);
+  // Filtros - atualizar dinamicamente antes de aplicar
+  const aplicarFiltrosComAtualizacao = () => {
+    atualizarFiltrosDinamicos();
+    aplicarFiltros();
+  };
+  
+  const aplicarFiltrosDebounced = debounce(aplicarFiltrosComAtualizacao, 500);
   
   const filtroAno = document.getElementById('filtro-ano');
   const filtroCompetencia = document.getElementById('filtro-competencia');
@@ -531,14 +822,19 @@ function configurarEventos() {
   const filtroBuscaNome = document.getElementById('filtro-busca-nome');
   const btnLimparFiltros = document.getElementById('btn-limpar-filtros');
   
-  if (filtroAno) filtroAno.addEventListener('change', aplicarFiltros);
-  if (filtroCompetencia) filtroCompetencia.addEventListener('change', aplicarFiltros);
-  if (filtroLotacao) filtroLotacao.addEventListener('change', aplicarFiltros);
-  if (filtroFuncao) filtroFuncao.addEventListener('change', aplicarFiltros);
-  if (filtroVinculo) filtroVinculo.addEventListener('change', aplicarFiltros);
-  if (filtroSituacao) filtroSituacao.addEventListener('change', aplicarFiltros);
+  // Para lotação, função, vínculo e situação, atualizar filtros dinâmicos antes
+  if (filtroAno) filtroAno.addEventListener('change', aplicarFiltrosComAtualizacao);
+  if (filtroCompetencia) filtroCompetencia.addEventListener('change', aplicarFiltrosComAtualizacao);
+  if (filtroLotacao) filtroLotacao.addEventListener('change', aplicarFiltrosComAtualizacao);
+  if (filtroFuncao) filtroFuncao.addEventListener('change', aplicarFiltrosComAtualizacao);
+  if (filtroVinculo) filtroVinculo.addEventListener('change', aplicarFiltrosComAtualizacao);
+  if (filtroSituacao) filtroSituacao.addEventListener('change', aplicarFiltrosComAtualizacao);
   if (filtroArea) filtroArea.addEventListener('change', aplicarFiltros);
   if (filtroBuscaNome) filtroBuscaNome.addEventListener('input', aplicarFiltrosDebounced);
+  const filtroMultiplosVinculos = document.getElementById('filtro-multiplos-vinculos');
+  if (filtroMultiplosVinculos) {
+    filtroMultiplosVinculos.addEventListener('change', aplicarFiltros);
+  }
   
   if (btnLimparFiltros) {
     btnLimparFiltros.addEventListener('click', () => {
@@ -550,6 +846,20 @@ function configurarEventos() {
       if (filtroSituacao) filtroSituacao.value = '';
       if (filtroArea) filtroArea.value = '';
       if (filtroBuscaNome) filtroBuscaNome.value = '';
+      const filtroMultiplosVinculos = document.getElementById('filtro-multiplos-vinculos');
+      if (filtroMultiplosVinculos) filtroMultiplosVinculos.checked = false;
+      
+      // Restaurar todos os filtros ao estado inicial
+      preencherFiltros();
+      aplicarFiltros();
+    });
+  }
+  
+  // Botão para limpar apenas a busca por nome (no banner)
+  const btnLimparBuscaNome = document.getElementById('btn-limpar-busca-nome');
+  if (btnLimparBuscaNome) {
+    btnLimparBuscaNome.addEventListener('click', () => {
+      document.getElementById('filtro-busca-nome').value = '';
       aplicarFiltros();
     });
   }
@@ -795,13 +1105,17 @@ function aplicarFiltros() {
     vinculo: document.getElementById('filtro-vinculo')?.value || '',
     situacao: document.getElementById('filtro-situacao')?.value || '',
     area: document.getElementById('filtro-area')?.value || '',
-    buscaNome: document.getElementById('filtro-busca-nome')?.value.trim() || ''
+    buscaNome: document.getElementById('filtro-busca-nome')?.value.trim() || '',
+    multiplosVinculos: document.getElementById('filtro-multiplos-vinculos')?.checked || false
   };
   
   dadosFiltrados = filtrarEmpenho(dadosCompletos, filtros);
   
   console.log(`🔍 Filtros aplicados:`, filtros);
   console.log(`📊 Resultado: ${dadosFiltrados.length} registros`);
+  
+  // Atualizar banner de busca por nome
+  atualizarBannerBuscaNome(filtros.buscaNome, dadosFiltrados);
   
   atualizarDashboard();
   
@@ -815,6 +1129,85 @@ function aplicarFiltros() {
       showToast('Erro ao atualizar relatório. Verifique o console.', 'danger', 3000);
     }
   }
+}
+
+/**
+ * Atualiza o banner informativo quando há busca por nome
+ */
+function atualizarBannerBuscaNome(buscaNome, dadosFiltrados) {
+  const banner = document.getElementById('banner-busca-nome');
+  const conteudo = document.getElementById('banner-busca-conteudo');
+  
+  if (!banner || !conteudo) return;
+  
+  // Se não há busca por nome, ocultar banner
+  if (!buscaNome || buscaNome.trim() === '') {
+    banner.classList.add('d-none');
+    return;
+  }
+  
+  // Calcular pessoas únicas encontradas com informações de vínculos
+  const pessoasUnicas = new Map(); // CPF -> { nome, registros, matriculas, competencias }
+  
+  dadosFiltrados.forEach(reg => {
+    const cpf = reg.cpf && reg.cpf.trim() !== '' ? reg.cpf.trim() : null;
+    const nome = reg.nome && reg.nome.trim() !== '' ? reg.nome.trim() : 'Sem nome';
+    const matricula = reg.matricula && reg.matricula.trim() !== '' ? reg.matricula.trim() : null;
+    
+    if (cpf) {
+      if (!pessoasUnicas.has(cpf)) {
+        pessoasUnicas.set(cpf, {
+          nome: nome,
+          registros: 0,
+          matriculas: new Set(),
+          competencias: new Set()
+        });
+      }
+      const pessoa = pessoasUnicas.get(cpf);
+      pessoa.registros++;
+      if (matricula) pessoa.matriculas.add(matricula);
+      if (reg.competencia) pessoa.competencias.add(reg.competencia);
+    } else if (nome && nome !== 'Sem nome') {
+      // Se não tem CPF, usar nome como chave
+      const chave = `nome_${nome}`;
+      if (!pessoasUnicas.has(chave)) {
+        pessoasUnicas.set(chave, {
+          nome: nome,
+          registros: 0,
+          matriculas: new Set(),
+          competencias: new Set()
+        });
+      }
+      const pessoa = pessoasUnicas.get(chave);
+      pessoa.registros++;
+      if (matricula) pessoa.matriculas.add(matricula);
+      if (reg.competencia) pessoa.competencias.add(reg.competencia);
+    }
+  });
+  
+  // Exibir banner com informações
+  banner.classList.remove('d-none');
+  
+  const totalPessoas = pessoasUnicas.size;
+  const totalRegistros = dadosFiltrados.length;
+  
+  let html = `<p class="mb-0">Encontrados <strong>${totalRegistros.toLocaleString('pt-BR')}</strong> registro(s) para <strong>"${buscaNome}"</strong>`;
+  
+  if (totalPessoas > 0) {
+    html += `, referentes a <strong>${totalPessoas.toLocaleString('pt-BR')}</strong> pessoa(s) única(s)`;
+    
+    // Mostrar informações sobre múltiplos vínculos se houver
+    const pessoasComMultiplosVinculos = Array.from(pessoasUnicas.values())
+      .filter(p => p.matriculas.size > 1);
+    
+    if (pessoasComMultiplosVinculos.length > 0) {
+      html += ` (${pessoasComMultiplosVinculos.length} com múltiplos vínculos)`;
+    }
+  }
+  
+  html += `.</p>`;
+  
+  conteudo.innerHTML = html;
 }
 
 // Expor charts globalmente para o dark mode toggle

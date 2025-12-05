@@ -15,12 +15,18 @@ export function showToast(mensagem, tipo = 'info', duracao = 3000) {
   if (!container) {
     container = document.createElement('div');
     container.className = 'toast-container';
+    container.setAttribute('role', 'region');
+    container.setAttribute('aria-label', 'Notificações');
+    container.setAttribute('aria-live', 'polite');
+    container.setAttribute('aria-atomic', 'true');
     document.body.appendChild(container);
   }
   
   // Criar toast
   const toast = document.createElement('div');
   toast.className = `toast toast-${tipo}`;
+  toast.setAttribute('role', 'alert');
+  toast.setAttribute('aria-live', 'assertive');
   
   // Ícones por tipo
   const icones = {
@@ -30,15 +36,34 @@ export function showToast(mensagem, tipo = 'info', duracao = 3000) {
     info: 'bi-info-circle-fill'
   };
   
+  // Labels acessíveis
+  const labels = {
+    success: 'Sucesso',
+    danger: 'Erro',
+    warning: 'Aviso',
+    info: 'Informação'
+  };
+  
   toast.innerHTML = `
-    <i class="bi ${icones[tipo]} text-${tipo}"></i>
+    <i class="bi ${icones[tipo]} text-${tipo}" aria-hidden="true"></i>
     <span>${mensagem}</span>
+    <button class="toast-close" aria-label="Fechar notificação" onclick="this.parentElement.remove()">
+      <i class="bi bi-x" aria-hidden="true"></i>
+    </button>
   `;
+  
+  // Adicionar título acessível
+  toast.setAttribute('title', `${labels[tipo]}: ${mensagem}`);
   
   container.appendChild(toast);
   
+  // Animar entrada
+  requestAnimationFrame(() => {
+    toast.classList.add('show');
+  });
+  
   // Remover após duração
-  setTimeout(() => {
+  const timeoutId = setTimeout(() => {
     toast.classList.add('hiding');
     setTimeout(() => {
       toast.remove();
@@ -48,6 +73,16 @@ export function showToast(mensagem, tipo = 'info', duracao = 3000) {
       }
     }, 300);
   }, duracao);
+  
+  // Permitir fechar manualmente
+  const closeBtn = toast.querySelector('.toast-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      clearTimeout(timeoutId);
+      toast.classList.add('hiding');
+      setTimeout(() => toast.remove(), 300);
+    });
+  }
 }
 
 /**
@@ -61,20 +96,29 @@ export function showLoader(mensagem = 'Carregando...') {
     overlay = document.createElement('div');
     overlay.id = 'loader-overlay';
     overlay.className = 'loader-overlay';
+    overlay.setAttribute('role', 'status');
+    overlay.setAttribute('aria-live', 'polite');
+    overlay.setAttribute('aria-busy', 'true');
+    overlay.setAttribute('aria-label', mensagem);
     overlay.innerHTML = `
       <div class="loader-content">
-        <div class="spinner"></div>
+        <div class="spinner" aria-hidden="true"></div>
         <div id="loader-message">${mensagem}</div>
       </div>
     `;
     document.body.appendChild(overlay);
   } else {
-    document.getElementById('loader-message').textContent = mensagem;
+    const messageEl = document.getElementById('loader-message');
+    if (messageEl) {
+      messageEl.textContent = mensagem;
+    }
+    overlay.setAttribute('aria-label', mensagem);
   }
   
   // Forçar reflow para animação funcionar
   overlay.offsetHeight;
   overlay.classList.add('show');
+  overlay.setAttribute('aria-busy', 'true');
 }
 
 /**
@@ -84,6 +128,7 @@ export function hideLoader() {
   const overlay = document.getElementById('loader-overlay');
   if (overlay) {
     overlay.classList.remove('show');
+    overlay.setAttribute('aria-busy', 'false');
   }
 }
 

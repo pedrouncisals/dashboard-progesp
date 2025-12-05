@@ -3,7 +3,7 @@
  * Ranking dos maiores salários líquidos de empenho
  */
 
-import { formatarMoeda, formatarCPF } from '../utils/formatters.js';
+import { formatarMoeda, formatarCPF, formatarCompetencia } from '../utils/formatters.js';
 import { topN, calcularEstatisticas } from '../services/empenho.js';
 import { showToast } from '../utils/feedback.js';
 
@@ -84,6 +84,7 @@ export function renderRelatorioTopSalariosEmpenho(dados) {
             <thead>
               <tr>
                 <th class="text-center">#</th>
+                <th>Mês</th>
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>Lotação</th>
@@ -95,11 +96,13 @@ export function renderRelatorioTopSalariosEmpenho(dados) {
             <tbody>
               ${top10.length > 0 ? top10.map((r, idx) => {
                 const nome = r.nome && r.nome !== '*Totais*' ? r.nome : 'N/A';
+                const competencia = r.competencia ? formatarCompetencia(r.competencia) : '-';
                 return `
                   <tr>
                     <td class="text-center" style="color: var(--color-text-primary) !important;">
                       <span class="badge bg-info">${idx + 1}</span>
                     </td>
+                    <td style="color: var(--color-text-secondary) !important;"><small>${competencia}</small></td>
                     <td style="color: var(--color-text-primary) !important;">${nome}</td>
                     <td style="color: var(--color-text-secondary) !important;"><small>${formatarCPF(r.cpf || '')}</small></td>
                     <td style="color: var(--color-text-secondary) !important;"><small>${r.lotacao_normalizada || '-'}</small></td>
@@ -108,7 +111,7 @@ export function renderRelatorioTopSalariosEmpenho(dados) {
                     <td class="text-end fw-bold" style="color: var(--color-text-primary) !important;">${formatarMoeda(r.liquido)}</td>
                   </tr>
                 `;
-              }).join('') : '<tr><td colspan="7" class="text-center">Nenhum registro encontrado</td></tr>'}
+              }).join('') : '<tr><td colspan="8" class="text-center">Nenhum registro encontrado</td></tr>'}
             </tbody>
           </table>
         </div>
@@ -126,6 +129,7 @@ export function renderRelatorioTopSalariosEmpenho(dados) {
             <thead>
               <tr>
                 <th class="text-center">#</th>
+                <th>Mês</th>
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>Lotação</th>
@@ -136,11 +140,13 @@ export function renderRelatorioTopSalariosEmpenho(dados) {
             <tbody>
               ${top20.slice(10).map((r, idx) => {
                 const nome = r.nome && r.nome !== '*Totais*' ? r.nome : 'N/A';
+                const competencia = r.competencia ? formatarCompetencia(r.competencia) : '-';
                 return `
                   <tr>
                     <td class="text-center" style="color: var(--color-text-primary) !important;">
                       <span class="badge bg-secondary">${idx + 11}</span>
                     </td>
+                    <td style="color: var(--color-text-secondary) !important;"><small>${competencia}</small></td>
                     <td style="color: var(--color-text-primary) !important;">${nome}</td>
                     <td style="color: var(--color-text-secondary) !important;"><small>${formatarCPF(r.cpf || '')}</small></td>
                     <td style="color: var(--color-text-secondary) !important;"><small>${r.lotacao_normalizada || '-'}</small></td>

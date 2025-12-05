@@ -3,7 +3,7 @@
  * Ranking dos maiores salários líquidos
  */
 
-import { formatarMoeda, formatarCPF } from '../utils/formatters.js';
+import { formatarMoeda, formatarCPF, formatarCompetencia } from '../utils/formatters.js';
 import { topN, calcularEstatisticas } from '../services/folha-pagamento.js';
 import { showToast } from '../utils/feedback.js';
 
@@ -84,6 +84,7 @@ export function renderRelatorioTopSalarios(dados) {
             <thead>
               <tr>
                 <th class="text-center">#</th>
+                <th>Mês</th>
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>Lotação</th>
@@ -95,6 +96,7 @@ export function renderRelatorioTopSalarios(dados) {
             <tbody>
               ${top10.length > 0 ? top10.map((r, idx) => {
                 const nome = r.nome && r.nome !== '*Totais*' ? r.nome : 'N/A';
+                const competencia = r.competencia ? formatarCompetencia(r.competencia) : '-';
                 return `
                   <tr>
                     <td class="text-center" style="color: var(--color-text-primary) !important;">
@@ -102,6 +104,7 @@ export function renderRelatorioTopSalarios(dados) {
                         ${idx + 1}º
                       </span>
                     </td>
+                    <td style="color: var(--color-text-secondary) !important;"><small>${competencia}</small></td>
                     <td class="fw-semibold" style="color: var(--color-text-primary) !important;">${nome}</td>
                     <td style="color: var(--color-text-secondary) !important;"><small>${formatarCPF(r.cpf || '')}</small></td>
                     <td style="color: var(--color-text-secondary) !important;"><small>${r.lotacao_normalizada || 'N/A'}</small></td>
@@ -110,7 +113,7 @@ export function renderRelatorioTopSalarios(dados) {
                     <td class="text-end fw-bold" style="color: var(--color-success) !important;">${formatarMoeda(Number(r.liquido) || 0)}</td>
                   </tr>
                 `;
-              }).join('') : '<tr><td colspan="7" class="text-center" style="color: var(--color-text-primary) !important;">Nenhum registro encontrado</td></tr>'}
+              }).join('') : '<tr><td colspan="8" class="text-center" style="color: var(--color-text-primary) !important;">Nenhum registro encontrado</td></tr>'}
             </tbody>
           </table>
         </div>
@@ -127,6 +130,7 @@ export function renderRelatorioTopSalarios(dados) {
             <thead>
               <tr>
                 <th class="text-center">#</th>
+                <th>Mês</th>
                 <th>Nome</th>
                 <th>Lotação</th>
                 <th class="text-end">Salário Líquido</th>
@@ -135,15 +139,17 @@ export function renderRelatorioTopSalarios(dados) {
             <tbody>
               ${top20.length > 10 ? top20.slice(10).map((r, idx) => {
                 const nome = r.nome && r.nome !== '*Totais*' ? r.nome : 'N/A';
+                const competencia = r.competencia ? formatarCompetencia(r.competencia) : '-';
                 return `
                   <tr>
                     <td class="text-center" style="color: var(--color-text-primary) !important;">${idx + 11}º</td>
+                    <td style="color: var(--color-text-secondary) !important;"><small>${competencia}</small></td>
                     <td style="color: var(--color-text-primary) !important;">${nome}</td>
                     <td style="color: var(--color-text-secondary) !important;"><small>${r.lotacao_normalizada || 'N/A'}</small></td>
                     <td class="text-end fw-semibold" style="color: var(--color-text-primary) !important;">${formatarMoeda(Number(r.liquido) || 0)}</td>
                   </tr>
                 `;
-              }).join('') : '<tr><td colspan="4" class="text-center" style="color: var(--color-text-primary) !important;">Nenhum registro encontrado</td></tr>'}
+              }).join('') : '<tr><td colspan="5" class="text-center" style="color: var(--color-text-primary) !important;">Nenhum registro encontrado</td></tr>'}
             </tbody>
           </table>
         </div>

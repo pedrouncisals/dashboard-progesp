@@ -2072,10 +2072,47 @@ body {
   opacity: 0;
   transform: translateX(100%);
   animation: slideIn var(--transition-base) forwards;
+  position: relative;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .toast.hiding {
   animation: slideOut var(--transition-base) forwards;
+}
+
+.toast-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  transition: all var(--transition-fast);
+  opacity: 0.6;
+  line-height: 1;
+}
+
+.toast-close:hover {
+  opacity: 1;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.toast-close:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 @keyframes slideIn {

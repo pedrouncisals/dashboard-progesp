@@ -22,7 +22,14 @@
   <script>
     (function() {
       document.documentElement.setAttribute('data-theme', 'dark');
-      document.body.classList.add('dark-mode');
+      // Aguardar o body estar disponível
+      if (document.body) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.classList.add('dark-mode');
+        });
+      }
     })();
   </script>
 </head>
@@ -208,6 +215,21 @@
               id="filtro-busca-nome" 
               placeholder="Digite o nome do funcionário..."
             >
+          </div>
+          
+          <div class="col-12">
+            <div class="form-check">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="filtro-multiplos-vinculos"
+                value="1"
+              >
+              <label class="form-check-label" for="filtro-multiplos-vinculos">
+                <i class="bi bi-person-badge me-2"></i>
+                Mostrar apenas pessoas com múltiplos vínculos
+              </label>
+            </div>
           </div>
           
           <div class="col-12">
