@@ -376,7 +376,9 @@ export function renderRelatorioConsolidado(dados) {
     todasLotacoes: todasLotacoes.sort((a, b) => b.liquido - a.liquido),
     periodo,
     stats,
-    totalLotacoes
+    totalLotacoes,
+    porVinculo,
+    porCompetencia
   };
   
   // Configurar interatividade
@@ -431,6 +433,12 @@ export function renderRelatorioConsolidado(dados) {
   // Expor função de exportação globalmente
   window.exportarRelatorioConsolidadoPDF = (tipo = 'top') => {
     try {
+      const dados = window._dadosConsolidado;
+      if (!dados) {
+        showToast('Erro: Dados não disponíveis para exportação.', 'danger');
+        return;
+      }
+      
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF('p', 'mm', 'a4');
       
@@ -442,15 +450,15 @@ export function renderRelatorioConsolidado(dados) {
       doc.setFontSize(10);
       doc.setFont(undefined, 'normal');
       doc.text('UNCISAL - Universidade Estadual de Ciências da Saúde de Alagoas', 15, 28);
-      if (periodo) {
-        doc.text(`Período: ${periodo}`, 15, 34);
+      if (dados.periodo) {
+        doc.text(`Período: ${dados.periodo}`, 15, 34);
         doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 40);
       } else {
         doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 15, 34);
       }
       
       // Métricas principais
-      let y = periodo ? 47 : 41;
+      let y = dados.periodo ? 47 : 41;
       doc.setFontSize(12);
       doc.setFont(undefined, 'bold');
       doc.text('Métricas Principais', 15, y);
@@ -470,7 +478,6 @@ export function renderRelatorioConsolidado(dados) {
       y += 10;
       
       // Tabela de Lotações
-      const dados = window._dadosConsolidado;
       if (dados) {
         const lotacoesParaExportar = tipo === 'todos' ? dados.todasLotacoes : dados.todasLotacoes.slice(0, 5);
         
@@ -500,13 +507,13 @@ export function renderRelatorioConsolidado(dados) {
       }
       
       // Tabela de Vínculos
-      if (porVinculo.length > 0) {
+      if (dados.porVinculo && dados.porVinculo.length > 0) {
         doc.setFontSize(12);
         doc.setFont(undefined, 'bold');
         doc.text('Distribuição por Vínculo', 15, y);
         y += 8;
         
-        const tableData = porVinculo.map(v => {
+        const tableData = dados.porVinculo.map(v => {
           const funcionariosUnicos = v.funcionariosUnicos ? v.funcionariosUnicos.size : v.count;
           return [
             v.vinculo || 'N/A',
